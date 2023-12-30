@@ -1,0 +1,55 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Reference",
+"class": "Hex",
+"language": "GDScript",
+"path": "res://script/Hex.gd"
+}, {
+"base": "Reference",
+"class": "HexLayout",
+"language": "GDScript",
+"path": "res://script/HexLayout.gd"
+} ]
+_global_script_class_icons={
+"Hex": "",
+"HexLayout": ""
+}
+
+[application]
+
+config/name="HexPush"
+run/main_scene="res://Gameplay.tscn"
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/test_width=960
+window/size/test_height=540
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://default_env.tres"
