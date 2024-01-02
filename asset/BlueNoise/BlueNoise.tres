@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ArrayTexture2D" load_steps=10 format=3 uid="uid://bi5yaii6peent"]
+
+[ext_resource type="Script" path="res://script/ArrayTexture2D.gd" id="1_33w30"]
+[ext_resource type="Texture2D" uid="uid://dgttgfncmvaru" path="res://asset/BlueNoise/LDR_LLL1_0.png" id="1_p3oee"]
+[ext_resource type="Texture2D" uid="uid://df3votk7vx37i" path="res://asset/BlueNoise/LDR_LLL1_1.png" id="2_pgvnc"]
+[ext_resource type="Texture2D" uid="uid://ccnkcgu0vuf6t" path="res://asset/BlueNoise/LDR_LLL1_2.png" id="3_rm2pn"]
+[ext_resource type="Texture2D" uid="uid://dgficjnubj8sy" path="res://asset/BlueNoise/LDR_LLL1_3.png" id="4_d7yx6"]
+[ext_resource type="Texture2D" uid="uid://8jjachdewnwj" path="res://asset/BlueNoise/LDR_LLL1_4.png" id="5_y1hhw"]
+[ext_resource type="Texture2D" uid="uid://bhebte2dk56bc" path="res://asset/BlueNoise/LDR_LLL1_5.png" id="6_bkd6n"]
+[ext_resource type="Texture2D" uid="uid://b77ntmk4ios46" path="res://asset/BlueNoise/LDR_LLL1_6.png" id="7_31wsv"]
+[ext_resource type="Texture2D" uid="uid://dlc1nbgw42cle" path="res://asset/BlueNoise/LDR_LLL1_7.png" id="8_7xq4h"]
+
+[resource]
+script = ExtResource("1_33w30")
+array = Array[Texture2D]([ExtResource("1_p3oee"), ExtResource("2_pgvnc"), ExtResource("3_rm2pn"), ExtResource("4_d7yx6"), ExtResource("5_y1hhw"), ExtResource("6_bkd6n"), ExtResource("7_31wsv"), ExtResource("8_7xq4h")])

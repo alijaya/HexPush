@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="MapGenerator" load_steps=5 format=3 uid="uid://60xy72c72keb"]
+
+[ext_resource type="Resource" uid="uid://bi5yaii6peent" path="res://asset/BlueNoise/BlueNoise.tres" id="1_gsh13"]
+[ext_resource type="Script" path="res://script/MapGenerator.gd" id="1_nvv76"]
+[ext_resource type="Texture2D" uid="uid://cjopbue31mvju" path="res://asset/color map.png" id="2_cmv0n"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qkvja"]
+seed = 3
+frequency = 0.05
+
+[resource]
+script = ExtResource("1_nvv76")
+seed = 0
+noise = SubResource("FastNoiseLite_qkvja")
+colorMap = ExtResource("2_cmv0n")
+blueNoises = ExtResource("1_gsh13")
+minElevation = -0.8
+maxElevation = 1.8
+gainElevation = 1.0
+minMoisture = 0.2
+maxMoisture = 1.2
+gainMoisture = 1.0
+minRockProbs = -0.3
+maxRockProbs = 0.6
+minTreeProbs = -1.0
+maxTreeProbs = 1.0
