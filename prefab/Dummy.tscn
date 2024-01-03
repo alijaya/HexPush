@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://djg1ni0sj7t23"]
+
+[ext_resource type="Script" path="res://prefab/Dummy.gd" id="1_wo765"]
+[ext_resource type="Script" path="res://script/AutoLabel.gd" id="2_3ypnp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pohak"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="Dummy" type="Node2D"]
+script = ExtResource("1_wo765")
+text = "dummy"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 50)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -13.0
+offset_right = 33.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(33, 13)
+text = "dummy"
+label_settings = SubResource("LabelSettings_pohak")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("2_3ypnp")
