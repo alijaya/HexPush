@@ -27,6 +27,11 @@ func set_data(coords: Vector2i, key: StringName, value: Variant):
 func set_data_cell(coords: Vector2i, dict: Dictionary):
 	datas[coords] = dict
 
+func has_data(coords: Vector2i, key: StringName) -> bool:
+	var cell = datas.get(coords)
+	if !cell: return false
+	return cell.has(key)
+
 func get_data(coords: Vector2i, key: StringName, default: Variant = null) -> Variant:
 	var cell = datas.get(coords)
 	if !cell: return default

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="StructureFeature" load_steps=2 format=3 uid="uid://kax14uwwn6pg"]
+
+[ext_resource type="Script" path="res://resource/structure/_script/StructureFeature.gd" id="1_fdul7"]
+
+[resource]
+script = ExtResource("1_fdul7")
+name = "Tree"
+color = Color(0.286275, 0.592157, 0.317647, 1)

@@ -4,18 +4,28 @@ class_name Structure
 @export var name: String = ""
 @export var color: Color = Color.WHITE
 
-func _ready(object):
-	var structureObject := object as StructureObject
-	structureObject.dummy.text = name
-	structureObject.dummy.color = color
+const structurePrefab := preload("res://prefab/StructureObject.tscn")
+
+func create_object() -> StructureObject:
+	var object: StructureObject = structurePrefab.instantiate()
+	object.structure = self
+	return object
+
+func _ready(object: StructureObject):
 	pass
 
-func _process(object, delta: float):
-	var structureObject := object as StructureObject
+func _step_tick(object: StructureObject):
 	pass
+
+func _process(object: StructureObject, delta: float):
+	pass
+
+func _update_view(object: StructureObject):
+	object.dummy.text = name
+	object.dummy.color = color
 
 func can_enter(dir: Constant.Direction):
 	return false
 
-func equals(other) -> bool:
+func equals(other: Structure) -> bool:
 	return self == other

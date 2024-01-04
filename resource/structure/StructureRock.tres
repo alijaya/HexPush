@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="StructureFeature" load_steps=2 format=3 uid="uid://b2kjhr8je0wby"]
+
+[ext_resource type="Script" path="res://resource/structure/_script/StructureFeature.gd" id="1_vowu0"]
+
+[resource]
+script = ExtResource("1_vowu0")
+name = "Rock"
+color = Color(0.0745098, 0.145098, 0.196078, 1)

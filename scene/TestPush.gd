@@ -161,95 +161,69 @@ func step():
 	gens.sort_custom(func (a, b): return get_obj(a[0]).wait > get_obj(b[0]).wait)
 	for gen in gens:
 		var obj = get_obj(gen[0])
-		var can_push = check_can_push(gen[0], gen[1])
-		if !can_push:
+		#var can_push = check_can_push(gen[0], gen[1])
+		if push_object(gen[0], gen[1]):
+			obj.wait = 0
+			var dummy = create_item(gen[0], obj.generator_dummy.color.lightened(0.5))
+			add_child(dummy)
+			obj.item = {}
+			obj.item_dummy = dummy
+		else:
 			obj.wait += 1
-			continue
-		obj.wait = 0
-		var dummy = create_item(gen[0], obj.generator_dummy.color.lightened(0.5))
-		add_child(dummy)
-		obj.item = {}
-		obj.item_dummy = dummy
-		push_object(gen[0], gen[1], true)
+		
 	
 	bubs.sort_custom(func (a, b): return get_obj(a[0]).wait > get_obj(b[0]).wait)
 	for bub in bubs:
 		var obj = get_obj(bub[0])
-		var can_push = check_can_push(bub[0], bub[1])
-		if !can_push:
+		#var can_push = check_can_push(bub[0], bub[1])
+		if push_object(bub[0], bub[1]):
+			obj.wait = 0
+			var dummy = create_item(bub[0], obj.bubbler_dummy.color.lightened(0.5))
+			add_child(dummy)
+			obj.item = {is_bubble = true}
+			obj.item_dummy = dummy
+		else:
 			obj.wait += 1
-			continue
-		obj.wait = 0
-		push_object(bub[0], bub[1], true)
-		var dummy = create_item(bub[0], obj.bubbler_dummy.color.lightened(0.5))
-		add_child(dummy)
-		obj.item = {is_bubble = true}
-		obj.item_dummy = dummy
 
-func push_object(coordsi: Vector2i, dir: Dir, force: bool = false) -> bool:
+func push_object(coordsi: Vector2i, dir: Dir) -> bool:
 	var obj = get_obj(coordsi)
 	var data = get_data(coordsi)
-	data.confirmed = true
-	if !force and !can_enter(coordsi, dir): return false
-	if !obj.has("item"): return true
 	
-	var item = obj.item
-	var dummy = obj.item_dummy
-	var nex_dir := dir
-	if obj.type == Type.COMBINER: nex_dir = obj.combiner[1]
+	var result := false
+	if !obj.has("item"): result = true
+	else:
+		var item = obj.item
+		var dummy = obj.item_dummy
+		var nex_dir := dir
+		if obj.type == Type.COMBINER: nex_dir = obj.combiner[1]
+		
+		var nex_coordsi := coordsi + dirs_v[nex_dir]
+		if can_enter(nex_coordsi, nex_dir) and push_object(nex_coordsi, nex_dir):
+			obj.erase("item")
+			obj.erase("item_dummy")
+			var tween := get_tree().create_tween().bind_node(dummy)
+			tween.tween_property(dummy, "position", coords_to_pixel(nex_coordsi), 1./4)
+			var nex_obj = get_obj(nex_coordsi)
+			nex_obj.item = item
+			nex_obj.item_dummy = dummy
+			result = true
+		elif item.get("is_bubble", false):
+			# pop bubble
+			var tween := get_tree().create_tween().bind_node(dummy)
+			tween.tween_property(dummy, "scale", Vector2.ZERO, 1./4)
+			tween.tween_callback(func (): remove_child(dummy))
+			result = true
 	
-	var nex_coordsi := coordsi + dirs_v[nex_dir]
-	if push_object(nex_coordsi, nex_dir):
-		obj.erase("item")
-		obj.erase("item_dummy")
-		var tween := get_tree().create_tween().bind_node(dummy)
-		tween.tween_property(dummy, "position", coords_to_pixel(nex_coordsi), 1./4)
-		var nex_obj = get_obj(nex_coordsi)
-		nex_obj.item = item
-		nex_obj.item_dummy = dummy
-		return true
-	elif item.get("is_bubble", false):
-		remove_child(dummy)
-		return true
-		# pop bubble
-	
-	return false
+	if result: data.confirmed = true
+	return result
 
 func can_enter(coordsi: Vector2i, dir: Dir):
+	var data = get_data(coordsi)
 	var obj = get_obj(coordsi)
+	if data.confirmed: return false
 	if obj.type == Type.GENERATOR or obj.type == Type.BLOCKER: return false
 	elif obj.type == Type.BUBBLER: return dir == obj.bubbler[1]
 	else: return true
-
-func check_can_push(coordsi: Vector2i, dir: Dir):
-	var data = get_data(coordsi)
-	var obj = get_obj(coordsi)
-	if data.confirmed or data.visited: return false
-	data.visited = true
-	
-	var nex_coordsi := coordsi + dirs_v[dir]
-	var nex_data = get_data(nex_coordsi)
-	var nex_obj = get_obj(nex_coordsi)
-	
-	if nex_data.confirmed or nex_data.visited: return false
-	var result: bool = false
-	if nex_obj.type == Type.EMPTY or nex_obj.type == Type.COMBINER:
-		if !nex_obj.has("item"): result = true
-		elif nex_obj.type == Type.EMPTY:
-			result = check_can_push(nex_coordsi, dir)
-		elif nex_obj.type == Type.COMBINER:
-			result = check_can_push(nex_coordsi, nex_obj.combiner[1])
-	elif nex_obj.type == Type.BUBBLER:
-		if dir == nex_obj.bubbler[1]:
-			if !nex_obj.has("item"): result = true
-			else:
-				result = check_can_push(nex_coordsi, nex_obj.bubbler[1])
-		else: result = false
-	
-	if !result: # check if this is bubble
-		if obj.get("item", {}).get("is_bubble", false): result = true
-	nex_data.visited = false
-	return result
 
 func tab(depth: int):
 	var str := ""

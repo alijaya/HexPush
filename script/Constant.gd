@@ -82,3 +82,10 @@ const BiomeToLayer := {
 	Biome.Mountain: Layer.Mountain,
 	Biome.Water: Layer.Water,
 }
+
+const DataKey := {
+	Confirmed = &"confirmed",
+	Biome = &"biome",
+	Structure = &"structure",
+	Item = &"item",
+}
