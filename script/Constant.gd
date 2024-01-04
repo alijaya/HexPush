@@ -1,6 +1,8 @@
 extends RefCounted
 class_name Constant
 
+enum Direction { SE, NE, N, NW, SW, S }
+
 enum Biome {
 	Grassland,
 	Forest,
@@ -39,6 +41,13 @@ const BiomeToTerrain := {
 	Biome.Forest: 1,
 	Biome.Mountain: 2,
 	Biome.Water: 3,
+}
+
+const BiomeToTile := {
+	Biome.Grassland: [5, Vector2i.ZERO, 0],
+	Biome.Forest: [6, Vector2i.ZERO, 0],
+	Biome.Mountain: [7, Vector2i.ZERO, 0],
+	Biome.Water: [8, Vector2i.ZERO, 0],
 }
 
 const SelectionTerrain := 4

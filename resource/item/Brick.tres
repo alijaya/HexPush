@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://dcrx6n24xmmg1"]
+
+[ext_resource type="Script" path="res://resource/item/_script/Item.gd" id="1_0l8bs"]
+
+[resource]
+script = ExtResource("1_0l8bs")
+name = "Brick"
+color = Color(0.458824, 0.462745, 0.513726, 1)

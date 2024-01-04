@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://xefuwfupf33"]
+
+[ext_resource type="Script" path="res://resource/item/_script/Item.gd" id="1_fleqm"]
+
+[resource]
+script = ExtResource("1_fleqm")
+name = "Plank"
+color = Color(0.635294, 0.34902, 0.172549, 1)

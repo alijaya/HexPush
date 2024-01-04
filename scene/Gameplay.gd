@@ -29,13 +29,12 @@ func _ready():
 
 func generateMap():
 	mapGenerator.setup()
-	var origin := Hex.flat_offset_to_hex(Hex.OffsetType.EVEN, bounding.position)
-	var hexes := Hex.create_map_rectangle_flat(Hex.OffsetType.EVEN, bounding.size.x, bounding.size.y)
+	var origin := Coords.flat_offset_to_coords(Hex.OffsetType.EVEN, bounding.position)
+	var coordss := Coords.create_map_rectangle_flat(Hex.OffsetType.EVEN, bounding.size.x, bounding.size.y)
 	var biomeCoords := {}
-	for hex in hexes:
-		hex = hex + origin
-		var coords = Hex.hex_to_tilemap(hex)
-		var uv = Hex.hex_to_pixel(DataTileMap.hex_unit_layout, hex)
+	for coords in coordss:
+		coords = coords + origin
+		var uv = Coords.coords_to_pixel(DataTileMap.hex_unit_layout, coords)
 		var biome = mapGenerator.f_biome.call(uv.x, uv.y)
 		var feature = mapGenerator.f_feature.call(uv.x, uv.y)
 		var list = biomeCoords.get(biome, [])
@@ -48,8 +47,12 @@ func generateMap():
 	
 	for biome in biomeCoords:
 		var list = biomeCoords.get(biome, [])
-		BetterTerrain.set_cells(tilemap, Constant.BiomeToLayer[biome], list, Constant.BiomeToTerrain[biome])
-		BetterTerrain.update_terrain_cells(tilemap, Constant.BiomeToLayer[biome], list)
+		var layer = Constant.BiomeToLayer[biome]
+		var tile = Constant.BiomeToTile[biome]
+		for coordsi in list:
+			tilemap.set_cell(layer, coordsi, tile[0], tile[1], tile[2])
+		#BetterTerrain.set_cells(tilemap, Constant.BiomeToLayer[biome], list, Constant.BiomeToTerrain[biome])
+		#BetterTerrain.update_terrain_cells(tilemap, Constant.BiomeToLayer[biome], list)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -58,7 +61,8 @@ func _process(_delta):
 	
 	clear_selection()
 	
-	highlightedCoords.assign(Hex.hex_ring(Hex.tilemap_to_hex(pos), 2).map(func (hex): return Hex.hex_to_tilemap(hex)))
+	highlightedCoords = [pos]
+	#highlightedCoords.assign(Hex.hex_ring(Hex.tilemap_to_hex(pos), 2).map(func (hex): return Hex.hex_to_tilemap(hex)))
 	add_selection(highlightedCoords)
 
 func _unhandled_input(event):
@@ -80,3 +84,5 @@ func add_selection(selections: Array[Vector2i]):
 
 func add_feature(coords: Vector2i, sourceID: int, atlasCoords: Vector2i, alternativeTile: int = 0):
 	tilemap.set_cell(Constant.Layer.Feature, coords, sourceID, atlasCoords, alternativeTile)
+
+#func add_structure(coords: Vector2i, )

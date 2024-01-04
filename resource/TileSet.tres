@@ -1,10 +1,14 @@
-[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://b02bhtuwbt788"]
+[gd_resource type="TileSet" load_steps=19 format=3 uid="uid://b02bhtuwbt788"]
 
 [ext_resource type="Texture2D" uid="uid://cuwi3qdt25okw" path="res://asset/autotile transparent.png" id="1_ftcox"]
 [ext_resource type="Texture2D" uid="uid://dbx08mwanl7tv" path="res://asset/flat top 30 solid.png" id="2_3jrp4"]
 [ext_resource type="Texture2D" uid="uid://b45duaetu6f34" path="res://asset/selection.png" id="3_ejcl7"]
 [ext_resource type="Texture2D" uid="uid://c5x3tefbgkd3u" path="res://asset/tree.png" id="4_4hfen"]
 [ext_resource type="Texture2D" uid="uid://fk3lx2e6owec" path="res://asset/rock.png" id="5_tpfhe"]
+[ext_resource type="Texture2D" uid="uid://bif4027q3rff" path="res://asset/biome/grassland.png" id="6_kxqns"]
+[ext_resource type="Texture2D" uid="uid://dhlq47kanaea7" path="res://asset/biome/forest.png" id="7_d37jp"]
+[ext_resource type="Texture2D" uid="uid://ddl4nrxnxpc6e" path="res://asset/biome/mountain.png" id="8_ehjs7"]
+[ext_resource type="Texture2D" uid="uid://ctsc4aqxw0pti" path="res://asset/biome/water.png" id="9_x0jnn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l8k8b"]
 texture = ExtResource("1_ftcox")
@@ -951,6 +955,29 @@ texture_region_size = Vector2i(300, 300)
 0:0/3 = 3
 0:0/3/modulate = Color(0.478431, 0.854902, 0.486275, 1)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wauyb"]
+texture = ExtResource("6_kxqns")
+texture_region_size = Vector2i(300, 300)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_03au2"]
+texture = ExtResource("7_d37jp")
+texture_region_size = Vector2i(300, 300)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 15)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i5uf3"]
+texture = ExtResource("8_ehjs7")
+texture_region_size = Vector2i(300, 300)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 15)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mqhn2"]
+texture = ExtResource("9_x0jnn")
+texture_region_size = Vector2i(300, 300)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -25)
+
 [resource]
 tile_shape = 3
 tile_layout = 5
@@ -961,6 +988,10 @@ sources/2 = SubResource("TileSetAtlasSource_14k4e")
 sources/1 = SubResource("TileSetAtlasSource_qv2vk")
 sources/3 = SubResource("TileSetAtlasSource_6eyf4")
 sources/4 = SubResource("TileSetAtlasSource_fhy0n")
+sources/5 = SubResource("TileSetAtlasSource_wauyb")
+sources/6 = SubResource("TileSetAtlasSource_03au2")
+sources/7 = SubResource("TileSetAtlasSource_i5uf3")
+sources/8 = SubResource("TileSetAtlasSource_mqhn2")
 metadata/_better_terrain = {
 "decoration": ["Decoration", Color(0.411765, 0.411765, 0.411765, 1), 3, [], {
 "path": "res://addons/better-terrain/icons/Decoration.svg"

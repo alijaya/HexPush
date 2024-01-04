@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbbbaid6qsenw"]
+[gd_scene load_steps=6 format=3 uid="uid://cbbbaid6qsenw"]
 
 [ext_resource type="Script" path="res://scene/Gameplay.gd" id="1_skbf5"]
 [ext_resource type="Resource" uid="uid://60xy72c72keb" path="res://resource/MapGenerator.tres" id="2_2d7ta"]
 [ext_resource type="TileSet" uid="uid://b02bhtuwbt788" path="res://resource/TileSet.tres" id="2_4gish"]
 [ext_resource type="Script" path="res://script/DataTileMap.gd" id="3_6purl"]
-[ext_resource type="PackedScene" uid="uid://b18vy865qft3y" path="res://prefab/Generator.tscn" id="4_apcsu"]
 [ext_resource type="Script" path="res://script/CameraMouseControl.gd" id="5_opsyr"]
 
 [node name="Gameplay" type="Node2D"]
@@ -18,55 +17,31 @@ position = Vector2(-100, -75)
 tile_set = ExtResource("2_4gish")
 format = 2
 layer_0/name = "water"
-layer_0/modulate = Color(0.329412, 0.313726, 0.478431, 1)
 layer_0/y_sort_enabled = true
-layer_0/z_index = -1
+layer_0/z_index = -2
 layer_1/name = "grassland"
-layer_1/enabled = true
-layer_1/modulate = Color(0.407843, 0.580392, 0.34902, 1)
 layer_1/y_sort_enabled = true
-layer_1/y_sort_origin = 0
-layer_1/z_index = -1
+layer_1/z_index = -2
 layer_1/tile_data = PackedInt32Array()
 layer_2/name = "mountain"
-layer_2/enabled = true
-layer_2/modulate = Color(0.356863, 0.356863, 0.356863, 1)
 layer_2/y_sort_enabled = true
-layer_2/y_sort_origin = 0
-layer_2/z_index = -1
+layer_2/z_index = -2
 layer_2/tile_data = PackedInt32Array()
 layer_3/name = "forest"
-layer_3/enabled = true
-layer_3/modulate = Color(0.254902, 0.505882, 0.333333, 1)
 layer_3/y_sort_enabled = true
-layer_3/y_sort_origin = 0
-layer_3/z_index = -1
+layer_3/z_index = -2
 layer_3/tile_data = PackedInt32Array()
 layer_4/name = "selection"
-layer_4/enabled = true
-layer_4/modulate = Color(1, 1, 1, 1)
 layer_4/y_sort_enabled = true
-layer_4/y_sort_origin = 0
 layer_4/z_index = -1
 layer_4/tile_data = PackedInt32Array()
 layer_5/name = "feature"
-layer_5/enabled = true
-layer_5/modulate = Color(1, 1, 1, 1)
 layer_5/y_sort_enabled = true
-layer_5/y_sort_origin = 0
-layer_5/z_index = 0
 layer_5/tile_data = PackedInt32Array()
 layer_6/name = "data"
-layer_6/enabled = true
-layer_6/modulate = Color(1, 1, 1, 1)
 layer_6/y_sort_enabled = true
-layer_6/y_sort_origin = 0
-layer_6/z_index = 0
 layer_6/tile_data = PackedInt32Array()
 script = ExtResource("3_6purl")
-
-[node name="Generator" parent="TileMap" instance=ExtResource("4_apcsu")]
-position = Vector2(100, 75)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_smoothed = true

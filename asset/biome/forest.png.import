@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cheop6l3022pn"
-path="res://.godot/imported/tile_bit_tools_16.svg-d3d960897b553a49b1b4c28f73a2a661.ctex"
+uid="uid://dhlq47kanaea7"
+path="res://.godot/imported/forest.png-9f6241a608cd92bd84105786fc727755.ctex"
 metadata={
-"has_editor_variant": true,
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/tile_bit_tools/controls/icons/tile_bit_tools_16.svg"
-dest_files=["res://.godot/imported/tile_bit_tools_16.svg-d3d960897b553a49b1b4c28f73a2a661.ctex"]
+source_file="res://asset/biome/forest.png"
+dest_files=["res://.godot/imported/forest.png-9f6241a608cd92bd84105786fc727755.ctex"]
 
 [params]
 
@@ -33,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=true
-editor/convert_colors_with_editor_theme=true

@@ -8,7 +8,7 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="Dummy" type="Node2D"]
 script = ExtResource("1_wo765")
-text = "dummy"
+text = "Dummy"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
@@ -31,16 +31,44 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -33.0
-offset_top = -13.0
-offset_right = 33.0
-offset_bottom = 13.0
+offset_left = -31.0
+offset_top = -11.5
+offset_right = 31.0
+offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(33, 13)
-text = "dummy"
+pivot_offset = Vector2(31, 11.5)
+text = "Dummy"
 label_settings = SubResource("LabelSettings_pohak")
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
 script = ExtResource("2_3ypnp")
+
+[node name="DirectionGroup" type="Node2D" parent="."]
+
+[node name="Up" type="Polygon2D" parent="DirectionGroup"]
+visible = false
+position = Vector2(0, -40)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, -10, 10, 0, -10, 0)
+
+[node name="Right" type="Polygon2D" parent="DirectionGroup"]
+visible = false
+position = Vector2(40, 0)
+rotation = 1.5708
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, -10, 10, 0, -10, 0)
+
+[node name="Down" type="Polygon2D" parent="DirectionGroup"]
+visible = false
+position = Vector2(0, 40)
+rotation = -3.14159
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, -10, 10, 0, -10, 0)
+
+[node name="Left" type="Polygon2D" parent="DirectionGroup"]
+visible = false
+position = Vector2(-40, 0)
+rotation = -1.5708
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, -10, 10, 0, -10, 0)

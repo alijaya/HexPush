@@ -77,15 +77,6 @@ func get_data(coordsi: Vector2i):
 		datas[coordsi] = data
 	return data
 
-static func get_flag(b: int, i: int) -> bool:
-	return b & (1 << i) != 0
-
-static func set_flag(b: int, i: int) -> int:
-	return b | (1 << i)
-
-static func unset_flag(b: int, i: int) -> int:
-	return b & ~(1 << i)
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for generator in gens:
@@ -139,7 +130,7 @@ func _unhandled_input(event):
 func coords_to_pixel(coords: Vector2) -> Vector2:
 	return (coords + Vector2.ONE * 0.5) * cell_size
 
-func create_dummy(pos: Vector2, size: float, text: String, color: Color = Color.WHITE, text_color: Color = Color.BLACK) -> Dummy:
+func create_dummy(pos: Vector2, size: float, text: String, color: Color = Color.WHITE, text_color: Color = Color.BLACK, direction_flags: int = 0) -> Dummy:
 	var dummy: Dummy = dummyPrefab.instantiate()
 	dummy.position = pos
 	dummy.width = size
@@ -147,13 +138,14 @@ func create_dummy(pos: Vector2, size: float, text: String, color: Color = Color.
 	dummy.text = text
 	dummy.color = color
 	dummy.text_color = text_color
+	dummy.direction_flags = direction_flags
 	return dummy
 
 func create_generator(coordsi: Vector2i, color: Color) -> Dummy:
 	return create_dummy(coords_to_pixel(coordsi), cell_size, "G", color)
 
 func create_combiner(coordsi: Vector2i, dir: Dir) -> Dummy:
-	return create_dummy(coords_to_pixel(coordsi), cell_size, ["^",">","v","<"][dir], Color.YELLOW)
+	return create_dummy(coords_to_pixel(coordsi), cell_size, "C", Color.YELLOW, Color.BLACK, 1<<dir)
 
 func create_item(coordsi: Vector2i, color: Color) -> Dummy:
 	return create_dummy(coords_to_pixel(coordsi), cell_size * .7, "I", color)
@@ -162,7 +154,7 @@ func create_block(coordsi: Vector2i) -> Dummy:
 	return create_dummy(coords_to_pixel(coordsi), cell_size, "B", Color.BLACK, Color.WHITE)
 
 func create_bubbler(coordsi: Vector2i, dir: Dir) -> Dummy:
-	return create_dummy(coords_to_pixel(coordsi), cell_size, ["^",">","v","<"][dir], Color.CORNFLOWER_BLUE)
+	return create_dummy(coords_to_pixel(coordsi), cell_size, "BB", Color.CORNFLOWER_BLUE, Color.BLACK, 1<<dir)
 
 func step():
 	datas.clear()

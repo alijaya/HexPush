@@ -19,7 +19,13 @@ static func hex_distance(a: Vector3i, b: Vector3i) -> int:
 static func hex_rotate_left(a: Vector3i) -> Vector3i:
 	return Vector3i(-a.z, -a.x, -a.y)
 
+static func hex_rotate_ccw(a: Vector3i) -> Vector3i:
+	return Vector3i(-a.z, -a.x, -a.y)
+
 static func hex_rotate_right(a: Vector3i) -> Vector3i:
+	return Vector3i(-a.y, -a.z, -a.x)
+
+static func hex_rotate_cw(a: Vector3i) -> Vector3i:
 	return Vector3i(-a.y, -a.z, -a.x)
 
 static func hex_reflect_q(a: Vector3i) -> Vector3i:
@@ -41,52 +47,52 @@ const hex_diagonals = [
 	Vector3i(-2,  1,  1), Vector3i(-1,  2, -1), Vector3i(  1,  1, -2)
 ]
 
-enum FlatDirIdx { SE, NE, N, NW, SW, S }
-enum PointyDirIdx { E, NE, NW, W, SW, SE }
-enum FlatDiagIdx { E, NE, NW, W, SW, SE }
-enum PointyDiagIdx { NE, N, NW, SW, S, SE }
+enum FlatDir { SE, NE, N, NW, SW, S }
+enum PointyDir { E, NE, NW, W, SW, SE }
+enum FlatDiag { E, NE, NW, W, SW, SE }
+enum PointyDiag { NE, N, NW, SW, S, SE }
 
-const FlatDir := {
-	SE = hex_directions[FlatDirIdx.SE],
-	NE = hex_directions[FlatDirIdx.NE],
-	N  = hex_directions[FlatDirIdx.N],
-	NW = hex_directions[FlatDirIdx.NW],
-	SW = hex_directions[FlatDirIdx.SW],
-	S  = hex_directions[FlatDirIdx.S],
+const FlatDirV := {
+	SE = hex_directions[FlatDir.SE],
+	NE = hex_directions[FlatDir.NE],
+	N  = hex_directions[FlatDir.N],
+	NW = hex_directions[FlatDir.NW],
+	SW = hex_directions[FlatDir.SW],
+	S  = hex_directions[FlatDir.S],
 }
 
-const PointyDir := {
-	E  = hex_directions[PointyDirIdx.E],
-	NE = hex_directions[PointyDirIdx.NE],
-	NW = hex_directions[PointyDirIdx.NW],
-	W  = hex_directions[PointyDirIdx.W],
-	SW = hex_directions[PointyDirIdx.SW],
-	SE = hex_directions[PointyDirIdx.SE],
+const PointyDirV := {
+	E  = hex_directions[PointyDir.E],
+	NE = hex_directions[PointyDir.NE],
+	NW = hex_directions[PointyDir.NW],
+	W  = hex_directions[PointyDir.W],
+	SW = hex_directions[PointyDir.SW],
+	SE = hex_directions[PointyDir.SE],
 }
 
-const FlatDiag := {
-	E  = hex_directions[FlatDiagIdx.E],
-	NE = hex_directions[FlatDiagIdx.NE],
-	NW = hex_directions[FlatDiagIdx.NW],
-	W  = hex_directions[FlatDiagIdx.W],
-	SW = hex_directions[FlatDiagIdx.SW],
-	SE = hex_directions[FlatDiagIdx.SE],
+const FlatDiagV := {
+	E  = hex_diagonals[FlatDiag.E],
+	NE = hex_diagonals[FlatDiag.NE],
+	NW = hex_diagonals[FlatDiag.NW],
+	W  = hex_diagonals[FlatDiag.W],
+	SW = hex_diagonals[FlatDiag.SW],
+	SE = hex_diagonals[FlatDiag.SE],
 }
 
-const PointyDiag := {
-	NE = hex_directions[PointyDiagIdx.NE],
-	N  = hex_directions[PointyDiagIdx.N],
-	NW = hex_directions[PointyDiagIdx.NW],
-	SW = hex_directions[PointyDiagIdx.SW],
-	S  = hex_directions[PointyDiagIdx.S],
-	SE = hex_directions[PointyDiagIdx.SE],
+const PointyDiagV := {
+	NE = hex_diagonals[PointyDiag.NE],
+	N  = hex_diagonals[PointyDiag.N],
+	NW = hex_diagonals[PointyDiag.NW],
+	SW = hex_diagonals[PointyDiag.SW],
+	S  = hex_diagonals[PointyDiag.S],
+	SE = hex_diagonals[PointyDiag.SE],
 }
 
 static func hex_direction(direction: int) -> Vector3i:
-	return hex_directions[(6 + (direction % 6)) % 6]
+	return hex_directions[posmod(direction, 6)]
 
 static func hex_diagonal(diagonal: int) -> Vector3i:
-	return hex_diagonals[(6 + (diagonal % 6)) % 6]
+	return hex_diagonals[posmod(diagonal, 6)]
 
 static func hex_neighbor(hex: Vector3i, direction: int) -> Vector3i:
 	return hex + hex_direction(direction)
@@ -108,7 +114,7 @@ static func hex_round(h: Vector3) -> Vector3i:
 		r = - q - s
 	else:
 		s = - q - r
-	return Vector3(q, r, s)
+	return Vector3i(q, r, s)
 
 static func hex_lerp(a: Vector3, b: Vector3, t: float) -> Vector3:
 	return lerp(a, b, t)
@@ -238,12 +244,6 @@ static func pointy_offset_to_hex(offsetType: OffsetType, offset: Vector2i) -> Ve
 	var s := - q - r
 	return Vector3i(q, r, s)
 	
-static func tilemap_to_hex(coords: Vector2) -> Vector3:
-	return Vector3(coords.x-coords.y, coords.y, -coords.x)
-
-static func hex_to_tilemap(hex: Vector3) -> Vector2:
-	return Vector2(-hex.z, hex.y)
-
 # layout conversion
 
 const layout_pointy: Array[float] = [sqrt(3.0), sqrt(3.0) / 2.0, 0.0, 3.0 / 2.0,
@@ -284,7 +284,7 @@ static func hex_corner_offset(layout: HexLayout, corner: int) -> Vector2:
 	var angle = 2.0 * PI * (M[8] + corner) / 6
 	return Vector2(size.x * cos(angle), size.y * sin(angle))
 
-static func polygon_corners(layout: HexLayout, h: Vector3) -> Array[Vector2]:
+static func polygon_corners(layout: HexLayout, h: Vector3i) -> Array[Vector2]:
 	var corners := []
 	var center := hex_to_pixel(layout, h)
 	for i in range(6):

@@ -1,0 +1,86 @@
+[gd_scene load_steps=4 format=3 uid="uid://br8wrqwhs85in"]
+
+[ext_resource type="Script" path="res://prefab/DummyHex.gd" id="1_cqxfp"]
+[ext_resource type="Script" path="res://script/AutoLabel.gd" id="2_ldtj3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pohak"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="DummyHex" type="Node2D"]
+script = ExtResource("1_cqxfp")
+text = "Dummy Hex"
+
+[node name="DirectionGroup" type="Node2D" parent="."]
+
+[node name="PolygonColor" type="Polygon2D" parent="DirectionGroup"]
+polygon = PackedVector2Array(-50, 0, -25, -43.3, 25, -43.3, 50, 0, 25, 43.3, -25, 43.3)
+
+[node name="SE" type="Polygon2D" parent="DirectionGroup"]
+visible = false
+rotation = 2.0944
+color = Color(0, 0, 0, 1)
+offset = Vector2(0, -33.3)
+polygon = PackedVector2Array(0, -10, 10, 0, -10, 0)
+
+[node name="NE" type="Polygon2D" parent="DirectionGroup"]
+visible = false
+rotation = 1.0472
+color = Color(0, 0, 0, 1)
+offset = Vector2(0, -33.3)
+polygon = PackedVector2Array(0, -10, 10, 0, -10, 0)
+
+[node name="N" type="Polygon2D" parent="DirectionGroup"]
+visible = false
+color = Color(0, 0, 0, 1)
+offset = Vector2(0, -33.3)
+polygon = PackedVector2Array(0, -10, 10, 0, -10, 0)
+
+[node name="NW" type="Polygon2D" parent="DirectionGroup"]
+visible = false
+rotation = -1.0472
+color = Color(0, 0, 0, 1)
+offset = Vector2(0, -33.3)
+polygon = PackedVector2Array(0, -10, 10, 0, -10, 0)
+
+[node name="SW" type="Polygon2D" parent="DirectionGroup"]
+visible = false
+rotation = -2.09439
+color = Color(0, 0, 0, 1)
+offset = Vector2(0, -33.3)
+polygon = PackedVector2Array(0, -10, 10, 0, -10, 0)
+
+[node name="S" type="Polygon2D" parent="DirectionGroup"]
+visible = false
+rotation = 3.14159
+color = Color(0, 0, 0, 1)
+offset = Vector2(0, -33.3)
+polygon = PackedVector2Array(0, -10, 10, 0, -10, 0)
+
+[node name="Bound" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -43.3013
+offset_right = 50.0
+offset_bottom = 43.3013
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 43.3013)
+
+[node name="Label" type="Label" parent="Bound"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 43.3013)
+text = "Dummy Hex"
+label_settings = SubResource("LabelSettings_pohak")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_ldtj3")

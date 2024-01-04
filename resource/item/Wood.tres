@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://fw4g2tgxefnj"]
+
+[ext_resource type="Script" path="res://resource/item/_script/Item.gd" id="1_fhtea"]
+
+[resource]
+script = ExtResource("1_fhtea")
+name = "Wood"
+color = Color(0.819608, 0.478431, 0.270588, 1)
