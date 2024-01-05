@@ -10,8 +10,9 @@ func _update_view(object: StructureObject):
 func is_flat():
 	return true
 
+func push_item_to(object: StructureObject, item: ItemObject, input_dir: Constant.Direction) -> bool:
+	if !can_enter(object, input_dir): return false
+	return Gameplay.I.push_item_from(object.coordsi, object.dir)
+
 func can_enter(object: StructureObject, input_dir: Constant.Direction):
 	return input_dir != posmod(object.dir + 3, 6)
-
-func get_output_dir(object: StructureObject, input_dir: Constant.Direction) -> Constant.Direction:
-	return object.dir

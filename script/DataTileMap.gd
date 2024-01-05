@@ -18,6 +18,10 @@ static var hex_unit_layout := HexLayout.new():
 		return hex_unit_layout
 
 func set_data(coords: Vector2i, key: StringName, value: Variant):
+	if value == null:
+		erase_data(coords, key)
+		return
+	
 	var cell = datas.get(coords)
 	if !cell:
 		cell = {}

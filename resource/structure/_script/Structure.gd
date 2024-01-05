@@ -12,6 +12,15 @@ func create_object() -> StructureObject:
 	object.structure = self
 	return object
 
+func is_flat() -> bool:
+	return false
+
+func get_priority() -> int:
+	return 0
+
+func can_accept_multiple() -> bool:
+	return false
+
 func _ready(object: StructureObject):
 	pass
 
@@ -36,17 +45,14 @@ func _update_view(object: StructureObject):
 func _on_item_enter(object: StructureObject, item: ItemObject, input_dir: Constant.Direction):
 	pass
 
-func is_flat() -> bool:
-	return false
+func _on_item_exit(object: StructureObject, item: ItemObject, output_dir: Constant.Direction):
+	pass
 
-func get_priority() -> int:
-	return 0
+func push_item_to(object: StructureObject, item: ItemObject, input_dir: Constant.Direction) -> bool:
+	return false
 
 func can_enter(object: StructureObject, input_dir: Constant.Direction) -> bool:
 	return false
-
-func get_output_dir(object: StructureObject, input_dir: Constant.Direction) -> Constant.Direction:
-	return Constant.Direction.None
 
 func equals(other: Structure) -> bool:
 	return self == other

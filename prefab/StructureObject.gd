@@ -30,13 +30,20 @@ func _update_view():
 func _on_item_enter(item: ItemObject, input_dir: Constant.Direction):
 	if structure: return structure._on_item_enter(self, item, input_dir)
 
+func _on_item_exit(item: ItemObject, output_dir: Constant.Direction):
+	if structure: return structure._on_item_exit(self, item, output_dir)
+	
+func push_item_to(item: ItemObject, input_dir: Constant.Direction) -> bool:
+	if structure: return structure.push_item_to(self, item, input_dir)
+	return false
+
 func can_enter(input_dir: Constant.Direction) -> bool:
 	if structure: return structure.can_enter(self, input_dir)
 	return false
 
-func get_output_dir(input_dir: Constant.Direction) -> Constant.Direction:
-	if structure: return structure.get_output_dir(self, input_dir)
-	return Constant.Direction.None
+func can_accept_multiple() -> bool:
+	if structure: return structure.can_accept_multiple()
+	return false
 
 func rotateCCW():
 	dir = posmod(dir+1, 6) as Constant.Direction

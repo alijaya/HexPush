@@ -13,10 +13,13 @@ const infoPanelPrefab := preload("res://prefab/info_panel/InfoPanel.tscn")
 @export var mapGenerator: MapGenerator
 
 var structureToAdd := {
-	Key.KEY_1: StructureGenerator.Default,
-	Key.KEY_2: StructureCombiner.Default,
+	Key.KEY_1: StructureGenerator.WoodGenerator,
+	Key.KEY_2: StructureGenerator.StoneGenerator,
 	Key.KEY_3: StructureDestroyer.Default,
 	Key.KEY_4: StructureBubbler.Default,
+	Key.KEY_5: StructureCombiner.Default,
+	Key.KEY_6: StructureSplitter.Default,
+	Key.KEY_7: StructureCrossover.Default,
 }
 
 var highlightedCoords: Array[Vector2i] = []
@@ -138,50 +141,66 @@ func step_tick():
 
 func clear_selection():
 	tilemap.clear_layer(Constant.Layer.Selection)
-
-func push_item(coords: Vector2i, dir: Constant.Direction) -> bool:
+	
+func push_item_from(coords: Vector2i, output_dir: Constant.Direction) -> bool:
 	var item: ItemObject = get_item(coords)
 	var structure: StructureObject = get_structure(coords)
 	
-	tilemap.set_data(coords, Constant.DataKey.Visited, true)
 	var result := false
 	if !item: result = true
 	else:
-		#var dummy = obj.item_dummy
-		var nex_dir := dir
-		if structure: nex_dir = structure.get_output_dir(dir)
+		var nex_coords := Coords.coords_neighbor(coords, output_dir)
 		
-		var nex_coords := Coords.coords_neighbor(coords, nex_dir)
-		var nex_structure := get_structure(nex_coords)
-		if can_enter(nex_coords, nex_dir) and push_item(nex_coords, nex_dir):
+		if can_enter(nex_coords, output_dir) and push_item_to(item, nex_coords, output_dir):
 			tilemap.erase_data(coords, Constant.DataKey.Item)
-			if item.has_meta("tween"): item.get_meta("tween").kill()
-			item.set_coords_keep_position(nex_coords)
-			var tween := get_tree().create_tween().bind_node(item)
-			item.set_meta("tween", tween)
-			tween.tween_property(item, "offset_coords", Vector2.ZERO, secondsPerTick)
-			tilemap.set_data(nex_coords, Constant.DataKey.Item, item)
-			if nex_structure: nex_structure._on_item_enter(item, nex_dir)
+			if structure: structure._on_item_exit(item, output_dir)
 			result = true
 		elif item.equals(ItemBubble.Default):
 			# pop bubble
 			remove_item(item.coordsi, true)
 			result = true
 	
-	tilemap.set_data(coords, Constant.DataKey.Visited, false)
-	if result: tilemap.set_data(coords, Constant.DataKey.Confirmed, true)
 	return result
 
-func can_enter(coords: Vector2i, dir: Constant.Direction):
+func push_item_to(item: ItemObject, coords: Vector2i, input_dir: Constant.Direction) -> bool:
+	var structure: StructureObject = get_structure(coords)
+	
+	tilemap.set_data(coords, Constant.DataKey.Visited, true)
+	var result := false
+	
+	if structure:
+		result = structure.push_item_to(item, input_dir)
+	else:
+		result = push_item_from(coords, input_dir)
+	
+	tilemap.set_data(coords, Constant.DataKey.Visited, false)
+	
+	if result:
+		tilemap.set_data(coords, Constant.DataKey.Item, item)
+		if item:
+			#item.coords = coords
+			if item.has_meta("tween"): item.get_meta("tween").kill()
+			item.set_coords_keep_position(coords)
+			var tween := get_tree().create_tween().bind_node(item)
+			item.set_meta("tween", tween)
+			tween.tween_property(item, "offset_coords", Vector2.ZERO, secondsPerTick)
+			tilemap.set_data(coords, Constant.DataKey.Confirmed, true)
+			if structure: structure._on_item_enter(item, input_dir)
+	
+	return result
+
+func can_enter(coords: Vector2i, input_dir: Constant.Direction):
 	var visited: bool = tilemap.get_data(coords, Constant.DataKey.Visited, false)
 	var confirmed: bool = tilemap.get_data(coords, Constant.DataKey.Confirmed, false)
-	if confirmed or visited: return false
+	var structure: StructureObject = get_structure(coords)
+	
+	if !structure or !structure.can_accept_multiple():
+		if confirmed or visited: return false
 	
 	var biome = get_biome(coords)
 	if biome == Constant.Biome.Water or biome == Constant.Biome.None: return false
 	
-	var structure: StructureObject = get_structure(coords)
-	if structure: return structure.can_enter(dir)
+	if structure: return structure.can_enter(input_dir)
 	
 	return true
 
@@ -202,6 +221,12 @@ func get_structure(coordsi: Vector2i) -> StructureObject:
 func get_item(coordsi: Vector2i) -> ItemObject:
 	return tilemap.get_data(coordsi, Constant.DataKey.Item)
 
+func set_structure(coordsi: Vector2i, obj: StructureObject):
+	return tilemap.set_data(coordsi, Constant.DataKey.Structure, obj)
+
+func set_item(coordsi: Vector2i, obj: ItemObject):
+	return tilemap.set_data(coordsi, Constant.DataKey.Item, obj)
+
 func add_structure(coords: Vector2i, structure: Structure, animate: bool = false):
 	if tilemap.has_data(coords, Constant.DataKey.Structure): return
 	if !structure.is_flat() and tilemap.has_data(coords, Constant.DataKey.Item): return
@@ -214,11 +239,15 @@ func add_structure(coords: Vector2i, structure: Structure, animate: bool = false
 		var tween := obj.create_tween().bind_node(obj)
 		tween.tween_property(obj, "scale", Vector2.ONE, 1./4).from(Vector2.ZERO)
 
+var id: int = 0
+
 func add_item(coords: Vector2i, item: Item, animate: bool = false):
 	if tilemap.has_data(coords, Constant.DataKey.Item): return
 	var obj := item.create_object()
 	obj.coords = coords
 	tilemap.add_child(obj)
+	obj.dummy.text += str(id)
+	id += 1
 	tilemap.set_data(coords, Constant.DataKey.Item, obj)
 	items.append(obj)
 	if animate:
