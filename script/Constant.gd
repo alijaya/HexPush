@@ -1,13 +1,14 @@
 extends RefCounted
 class_name Constant
 
-enum Direction { SE, NE, N, NW, SW, S }
+enum Direction { SE, NE, N, NW, SW, S, None = -1 }
 
 enum Biome {
 	Grassland,
 	Forest,
 	Mountain,
 	Water,
+	None = -1
 }
 
 enum Feature {
@@ -44,10 +45,10 @@ const BiomeToTerrain := {
 }
 
 const BiomeToTile := {
-	Biome.Grassland: [5, Vector2i.ZERO, 0],
-	Biome.Forest: [6, Vector2i.ZERO, 0],
-	Biome.Mountain: [7, Vector2i.ZERO, 0],
-	Biome.Water: [8, Vector2i.ZERO, 0],
+	Biome.Grassland: [9, Vector2i.ZERO, 0],
+	Biome.Forest: [10, Vector2i.ZERO, 0],
+	Biome.Mountain: [11, Vector2i.ZERO, 0],
+	Biome.Water: [12, Vector2i.ZERO, 0],
 }
 
 const SelectionTerrain := 4
@@ -83,7 +84,15 @@ const BiomeToLayer := {
 	Biome.Water: Layer.Water,
 }
 
+const BiomeToTexture := {
+	Biome.Grassland: preload("res://asset/new biome/grassland.png"),
+	Biome.Forest: preload("res://asset/new biome/forest.png"),
+	Biome.Mountain: preload("res://asset/new biome/mountain.png"),
+	Biome.Water: preload("res://asset/new biome/water.png"),
+}
+
 const DataKey := {
+	Visited = &"visited",
 	Confirmed = &"confirmed",
 	Biome = &"biome",
 	Structure = &"structure",

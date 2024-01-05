@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ItemBubble" load_steps=2 format=3 uid="uid://b8gvqlv0770b7"]
+
+[ext_resource type="Script" path="res://resource/item/_script/ItemBubble.gd" id="1_dfr54"]
+
+[resource]
+script = ExtResource("1_dfr54")
+name = "Bubble"
+color = Color(0.709804, 0.87451, 0.968627, 1)

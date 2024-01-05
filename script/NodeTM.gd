@@ -95,3 +95,8 @@ func set_offset_dir(dir: int):
 
 func set_offset_neg_dir(dir: int):
 	offset_coords = -Coords.coords_direction(dir)
+
+func set_coords_keep_position(to_coords: Vector2):
+	_offset_coords = coords - to_coords
+	_coords = to_coords
+	_update_position()

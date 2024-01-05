@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="StructureBubbler" load_steps=2 format=3 uid="uid://c7lob1ibeeeqc"]
+
+[ext_resource type="Script" path="res://resource/structure/_script/StructureBubbler.gd" id="1_r00e5"]
+
+[resource]
+script = ExtResource("1_r00e5")
+name = "Bubbler"
+color = Color(0.243137, 0.576471, 0.662745, 1)
+is_flat = true

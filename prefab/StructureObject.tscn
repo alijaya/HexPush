@@ -11,3 +11,5 @@ scale = Vector2(0.9, 0.9)
 width = 200.0
 height = 173.2
 text = "Structure"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=3 uid="uid://cylq1gruio161"]
+
+[ext_resource type="Texture2D" uid="uid://dgdty313npjor" path="res://asset/ui/tech_tree_UI.png" id="1_mcl1d"]
+[ext_resource type="Script" path="res://prefab/info_panel/InfoPanel.gd" id="1_qrtak"]
+[ext_resource type="FontFile" uid="uid://wbr1ac723nda" path="res://asset/font/Justaword.ttf" id="2_8jwuy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_75g6q"]
+font = ExtResource("2_8jwuy")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_sbn34"]
+font = ExtResource("2_8jwuy")
+font_size = 40
+
+[node name="InfoPanel" type="Control"]
+custom_minimum_size = Vector2(400, 230)
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -230.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+script = ExtResource("1_qrtak")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mcl1d")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Sprite" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.0
+offset_top = -63.0
+offset_right = -23.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CategoryLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -58.0
+offset_right = 144.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Category"
+label_settings = SubResource("LabelSettings_75g6q")
+vertical_alignment = 1
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = -28.0
+offset_right = 144.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Title"
+label_settings = SubResource("LabelSettings_sbn34")
+vertical_alignment = 1
+clip_text = true

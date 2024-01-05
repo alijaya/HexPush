@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="StructureCombiner" load_steps=2 format=3 uid="uid://kjt6w0djwg7k"]
+
+[ext_resource type="Script" path="res://resource/structure/_script/StructureCombiner.gd" id="1_rhjlb"]
+
+[resource]
+script = ExtResource("1_rhjlb")
+name = "Combiner"
+color = Color(1, 0.843137, 0.419608, 1)
+is_flat = true

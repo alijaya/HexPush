@@ -1,10 +1,11 @@
 extends Resource
 class_name Item
 
+@export var texture: Texture2D
 @export var name: String = ""
 @export var color: Color = Color.WHITE
 
-const itemPrefab := preload("res://prefab/ItemObject.tscn")
+static var itemPrefab = load("res://prefab/ItemObject.tscn")
 
 func create_object() -> ItemObject:
 	var object: ItemObject = itemPrefab.instantiate()

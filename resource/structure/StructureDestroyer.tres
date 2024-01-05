@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="StructureDestroyer" load_steps=2 format=3 uid="uid://deo304qg2fe3"]
+
+[ext_resource type="Script" path="res://resource/structure/_script/StructureDestroyer.gd" id="1_ebrgj"]
+
+[resource]
+script = ExtResource("1_ebrgj")
+name = "Destroyer"
+color = Color(0.211765, 0.211765, 0.211765, 1)
+is_flat = true
