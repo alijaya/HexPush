@@ -1,10 +1,14 @@
-[gd_resource type="Resource" script_class="StructureFeature" load_steps=3 format=3 uid="uid://kax14uwwn6pg"]
+[gd_resource type="Resource" script_class="StructureResource" load_steps=4 format=3 uid="uid://kax14uwwn6pg"]
 
-[ext_resource type="Script" path="res://resource/structure/_script/StructureFeature.gd" id="1_fdul7"]
+[ext_resource type="Script" path="res://resource/structure/_script/StructureResource.gd" id="1_gkw5g"]
+[ext_resource type="Resource" uid="uid://fw4g2tgxefnj" path="res://resource/item/ItemWood.tres" id="1_vdq8s"]
 [ext_resource type="Texture2D" uid="uid://criwj2gb834jh" path="res://asset/structure/tree fix.png" id="2_5jbf0"]
 
 [resource]
-script = ExtResource("1_fdul7")
+script = ExtResource("1_gkw5g")
+output = ExtResource("1_vdq8s")
+hardness = 1
+richness = 6
 texture = ExtResource("2_5jbf0")
 name = "Tree"
 color = Color(0.286275, 0.592157, 0.317647, 1)

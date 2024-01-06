@@ -35,12 +35,16 @@ layer_4/name = "selection"
 layer_4/y_sort_enabled = true
 layer_4/z_index = -2
 layer_4/tile_data = PackedInt32Array()
-layer_5/name = "feature"
+layer_5/name = "decoration"
 layer_5/y_sort_enabled = true
+layer_5/z_index = -3
 layer_5/tile_data = PackedInt32Array()
-layer_6/name = "data"
+layer_6/name = "feature"
 layer_6/y_sort_enabled = true
 layer_6/tile_data = PackedInt32Array()
+layer_7/name = "data"
+layer_7/y_sort_enabled = true
+layer_7/tile_data = PackedInt32Array()
 script = ExtResource("3_6purl")
 
 [node name="Camera2D" type="Camera2D" parent="."]

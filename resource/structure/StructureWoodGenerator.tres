@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="Generator" load_steps=3 format=3 uid="uid://dv0upg8l70lrq"]
+[gd_resource type="Resource" script_class="StructureGenerator" load_steps=4 format=3 uid="uid://dv0upg8l70lrq"]
 
 [ext_resource type="Resource" uid="uid://fw4g2tgxefnj" path="res://resource/item/ItemWood.tres" id="1_48qps"]
 [ext_resource type="Script" path="res://resource/structure/_script/StructureGenerator.gd" id="2_4lj2p"]
+[ext_resource type="Texture2D" uid="uid://uj804217oow8" path="res://asset/structure/001.lumber-camp.png" id="3_djufi"]
 
 [resource]
 script = ExtResource("2_4lj2p")
 output = ExtResource("1_48qps")
+tick = 1
+texture = ExtResource("3_djufi")
 name = "Generator"
 color = Color(0.933333, 0.396078, 0.454902, 1)

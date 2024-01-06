@@ -30,16 +30,31 @@ func _step_tick(object: StructureObject):
 func _process(object: StructureObject, delta: float):
 	pass
 
+func _on_left_click(object: StructureObject):
+	pass
+
+func _on_left_hold(object: StructureObject):
+	pass
+
+func _on_right_click(object: StructureObject):
+	pass
+
+func _on_right_hold(object: StructureObject):
+	pass
+
 func _update_view(object: StructureObject):
 	object.z_index = 0 if !is_flat() else -1
+	object.dummy.visible = true
 	if texture:
 		object.sprite.visible = true
 		object.sprite.texture = texture
-		object.dummy.visible = false
+		object.dummy.text = ""
+		object.dummy.color = Color.TRANSPARENT
+		object.dummy.text_color = color
 	else:
-		object.dummy.visible = true
 		object.dummy.text = name
 		object.dummy.color = color
+		object.dummy.text_color = Color.BLACK
 		object.sprite.visible = false
 
 func _on_item_enter(object: StructureObject, item: ItemObject, input_dir: Constant.Direction):

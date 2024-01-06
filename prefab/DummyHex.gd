@@ -43,6 +43,7 @@ class_name DummyHex
 @onready var sDir: Polygon2D = $DirectionGroup/S
 
 func _ready():
+	label.label_settings = label.label_settings.duplicate()
 	_update_display()
 
 func _update_display():

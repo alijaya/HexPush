@@ -87,8 +87,17 @@ func _update_position():
 	var local_pos := Coords.coords_to_pixel(hex_layout, coords + offset_coords)
 	global_position = tilemap.to_global(local_pos + Vector2(tilemap.tile_set.tile_size)/2)
 
-func reset_offset():
-	offset_coords = Vector2.ZERO
+func reset_offset(animate: bool = false):
+	if has_meta("offset_coords_tween"): get_meta("offset_coords_tween").kill()
+	if !animate:
+		offset_coords = Vector2.ZERO
+	else:
+		var tween := create_tween().bind_node(self)
+		set_meta("offset_coords_tween", tween)
+		tween.tween_property(self, "offset_coords", Vector2.ZERO, Gameplay.I.secondsPerTick)
+
+func snap_coords():
+	coordsi = coords
 
 func set_offset_dir(dir: int):
 	offset_coords = Coords.coords_direction(dir)
@@ -100,3 +109,7 @@ func set_coords_keep_position(to_coords: Vector2):
 	_offset_coords = coords - to_coords
 	_coords = to_coords
 	_update_position()
+
+func set_local_pos(local_pos: Vector2):
+	if !hex_layout: return
+	coords = Coords.pixel_to_fract_coords(hex_layout, local_pos - Vector2(tilemap.tile_set.tile_size)/2)

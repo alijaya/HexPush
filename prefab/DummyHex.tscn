@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://prefab/DummyHex.gd" id="1_cqxfp"]
 [ext_resource type="Script" path="res://script/AutoLabel.gd" id="2_ldtj3"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_pohak"]
+[sub_resource type="LabelSettings" id="LabelSettings_k4vne"]
 font_color = Color(0, 0, 0, 1)
 
 [node name="DummyHex" type="Node2D"]
@@ -81,7 +81,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(50, 43.3013)
 text = "Dummy Hex"
-label_settings = SubResource("LabelSettings_pohak")
+label_settings = SubResource("LabelSettings_k4vne")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_ldtj3")

@@ -10,7 +10,7 @@ frequency = 0.05
 
 [resource]
 script = ExtResource("1_nvv76")
-seed = 0
+seed = 10
 noise = SubResource("FastNoiseLite_qkvja")
 colorMap = ExtResource("2_cmv0n")
 blueNoises = ExtResource("1_gsh13")

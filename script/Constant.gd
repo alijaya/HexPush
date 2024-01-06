@@ -74,7 +74,8 @@ const Layer := {
 	Mountain = 2,
 	Forest = 3,
 	Selection = 4,
-	Feature = 5,
+	Decoration = 5,
+	Feature = 6,
 }
 
 const BiomeToLayer := {
