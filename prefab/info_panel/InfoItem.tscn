@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cukn363xiq6k8"]
+
+[ext_resource type="PackedScene" uid="uid://cylq1gruio161" path="res://prefab/info_panel/InfoPanel.tscn" id="1_b1jgt"]
+[ext_resource type="Script" path="res://prefab/info_panel/InfoItem.gd" id="2_p41xd"]
+
+[node name="InfoPanel" instance=ExtResource("1_b1jgt")]
+script = ExtResource("2_p41xd")

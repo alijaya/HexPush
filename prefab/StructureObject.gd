@@ -13,6 +13,8 @@ class_name StructureObject
 
 var priority: int = 0
 
+signal state_changed
+
 func _ready():
 	_update_view()
 	if structure: structure._ready(self)
@@ -47,6 +49,10 @@ func _on_right_click():
 
 func _on_right_hold():
 	if structure: return structure._on_right_hold(self)
+
+func create_info() -> InfoStructure:
+	if structure: return structure.create_info(self)
+	return null
 
 func is_flat() -> bool:
 	if structure: return structure.is_flat()

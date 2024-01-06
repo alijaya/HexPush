@@ -7,8 +7,8 @@
 [resource]
 script = ExtResource("1_gkw5g")
 output = ExtResource("1_vdq8s")
-hardness = 1
-richness = 6
+hardness = 3
+richness = 30
 texture = ExtResource("2_5jbf0")
 name = "Tree"
 color = Color(0.286275, 0.592157, 0.317647, 1)

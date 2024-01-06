@@ -4,7 +4,7 @@ class_name Gameplay
 static var I: Gameplay
 
 @onready var secondsPerTick: float = 1.
-@onready var holdThreshold: float = 1.
+@onready var holdThreshold: float = .5
 @onready var camera: CameraMouseControl = $Camera2D
 @onready var tilemap: DataTileMap = $TileMap
 @onready var infoPanels: Container = %InfoPanels
@@ -159,14 +159,24 @@ func on_left_click():
 		structure._on_left_click()
 
 func on_left_hold():
-	drop_item(mouseCoords)
-	var item := get_item(mouseCoords)
 	var structure := get_structure(mouseCoords)
-	if item and !structure:
-		item.build_structure()
-	elif !item and structure:
+	if structure:
+		pick_item(mouseCoords)
 		structure.pack_structure()
 		swap_item(mouseCoords)
+		var item := get_item(mouseCoords)
+		if item: item.build_structure()
+	else:
+		var item := get_item(mouseCoords)
+		if !item:
+			swap_item(mouseCoords)
+			item = get_item(mouseCoords)
+			if item: item.build_structure()
+		else:
+			if !item.build_structure():
+				swap_item(mouseCoords)
+				item = get_item(mouseCoords)
+				if item: item.build_structure()
 
 func on_right_click():
 	var structure := get_structure(mouseCoords)
@@ -372,11 +382,11 @@ func select_cell(coords: Vector2i):
 		#infoPanel.titleLabel.text = item.item.name
 		
 	if structure:
-		var infoPanel: InfoPanel = infoPanelPrefab.instantiate()
+		var infoPanel: InfoPanel = structure.create_info()
 		infoPanels.add_child(infoPanel)
-		infoPanel.sprite.texture = structure.structure.texture
-		infoPanel.categoryLabel.text = "Structure"
-		infoPanel.titleLabel.text = structure.structure.name
+		#infoPanel.sprite.texture = structure.structure.texture
+		#infoPanel.categoryLabel.text = "Structure"
+		#infoPanel.titleLabel.text = structure.structure.name
 		
 	#if biome != -1:
 		#var infoPanel: InfoPanel = infoPanelPrefab.instantiate()

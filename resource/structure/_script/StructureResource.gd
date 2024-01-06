@@ -6,6 +6,8 @@ static var Feature:= {
 	Constant.Feature.Rock : load("res://resource/structure/StructureRock.tres"),
 }
 
+static var infoStructureResourcePrefab := load("res://prefab/info_panel/InfoStructureResource.tscn")
+
 @export var output: Item
 @export var hardness: int = 1
 @export var richness: int = 6
@@ -16,7 +18,12 @@ const COUNT := &"count"
 func _ready(object: StructureObject):
 	object.set_meta(WORK, 0)
 	object.set_meta(COUNT, richness)
-	
+
+func create_info(object: StructureObject) -> InfoStructure:
+	var info: InfoStructure = infoStructureResourcePrefab.instantiate()
+	info.structure = object
+	return info
+
 func can_pack() -> bool:
 	return false
 

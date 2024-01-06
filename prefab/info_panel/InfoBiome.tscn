@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bni0e40ayuxwf"]
+
+[ext_resource type="PackedScene" uid="uid://cylq1gruio161" path="res://prefab/info_panel/InfoPanel.tscn" id="1_66rpi"]
+[ext_resource type="Script" path="res://prefab/info_panel/InfoBiome.gd" id="2_hd6lp"]
+
+[node name="InfoPanel" instance=ExtResource("1_66rpi")]
+script = ExtResource("2_hd6lp")
+biome = 0

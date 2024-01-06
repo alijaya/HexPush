@@ -22,6 +22,10 @@ func _step_tick():
 func equals(other: Item) -> bool:
 	return item.equals(other)
 
+func create_info() -> InfoItem:
+	if item: return item.create_info(self)
+	return null
+
 func build_structure() -> StructureObject:
 	var itemStructure := item as ItemStructure
 	if !itemStructure: return null

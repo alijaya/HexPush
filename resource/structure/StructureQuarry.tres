@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="StructureGatherer" load_steps=3 format=3 uid="uid://caucgfmo63l1c"]
+[gd_resource type="Resource" script_class="StructureGatherer" load_steps=4 format=3 uid="uid://caucgfmo63l1c"]
 
 [ext_resource type="Resource" uid="uid://b2kjhr8je0wby" path="res://resource/structure/StructureRock.tres" id="1_erjlc"]
 [ext_resource type="Script" path="res://resource/structure/_script/StructureGatherer.gd" id="2_vgvbe"]
+[ext_resource type="Texture2D" uid="uid://bg1u8pvrn4cda" path="res://asset/structure/003.quarry.png" id="3_fwyg4"]
 
 [resource]
 script = ExtResource("2_vgvbe")
 resourceType = ExtResource("1_erjlc")
-tickPerClick = 1
+tickPerClick = 2
+texture = ExtResource("3_fwyg4")
 name = "Quarry"
 color = Color(0.2, 0.172549, 0.356863, 1)

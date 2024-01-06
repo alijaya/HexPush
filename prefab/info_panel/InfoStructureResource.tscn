@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://dr1b7lggdqvkh"]
+
+[ext_resource type="PackedScene" uid="uid://c2lrhf85xcwa3" path="res://prefab/info_panel/InfoStructure.tscn" id="1_o4un2"]
+[ext_resource type="FontFile" uid="uid://wbr1ac723nda" path="res://asset/font/Justaword.ttf" id="2_mcdjs"]
+[ext_resource type="Script" path="res://prefab/info_panel/InfoStructureResource.gd" id="2_umhrf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rbbjl"]
+font = ExtResource("2_mcdjs")
+font_size = 21
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_blcte"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="InfoPanel" instance=ExtResource("1_o4un2")]
+script = ExtResource("2_umhrf")
+
+[node name="QuantityLabel" type="Label" parent="." index="4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = 23.0
+offset_right = 144.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quantity:"
+label_settings = SubResource("LabelSettings_rbbjl")
+vertical_alignment = 1
+clip_text = true
+
+[node name="CountLabel" type="Label" parent="." index="5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 52.0
+offset_top = 23.0
+offset_right = 144.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "5"
+label_settings = SubResource("LabelSettings_rbbjl")
+vertical_alignment = 1
+clip_text = true
+
+[node name="WorkProgressBar" type="ProgressBar" parent="." index="6"]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 173.0
+offset_right = 301.0
+offset_bottom = 183.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_blcte")
+max_value = 5.0
+step = 1.0
+show_percentage = false

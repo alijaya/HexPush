@@ -6,11 +6,17 @@ class_name Item
 @export var color: Color = Color.WHITE
 
 static var itemPrefab = load("res://prefab/ItemObject.tscn")
+static var infoItemPrefab = load("res://prefab/info_panel/InfoItem.tscn")
 
 func create_object() -> ItemObject:
 	var object: ItemObject = itemPrefab.instantiate()
 	object.item = self
 	return object
+
+func create_info(object: ItemObject) -> InfoItem:
+	var info: InfoItem = infoItemPrefab.instantiate()
+	info.item = object
+	return info
 
 func _ready(object: ItemObject):
 	pass
