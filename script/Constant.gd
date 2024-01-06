@@ -38,10 +38,10 @@ const ColorToBiome := {
 }
 
 const BiomeToTerrain := {
-	Biome.Grassland: 0,
-	Biome.Forest: 1,
-	Biome.Mountain: 2,
-	Biome.Water: 3,
+	Biome.Grassland: 1,
+	Biome.Forest: 2,
+	Biome.Mountain: 3,
+	Biome.Water: 4,
 }
 
 const BiomeToTile := {
@@ -51,7 +51,7 @@ const BiomeToTile := {
 	Biome.Water: [12, Vector2i.ZERO, 0],
 }
 
-const SelectionTerrain := 4
+const SelectionTerrain := 5
 
 const FeatureToTiles := {
 	Feature.Tree: [
@@ -70,9 +70,9 @@ const FeatureToTiles := {
 
 const Layer := {
 	Water = 0,
-	Grassland = 1,
-	Mountain = 2,
-	Forest = 3,
+	Mountain = 1,
+	Forest = 2,
+	Grassland = 3,
 	Selection = 4,
 	Decoration = 5,
 	Feature = 6,

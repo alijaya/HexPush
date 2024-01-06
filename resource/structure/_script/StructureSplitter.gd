@@ -27,8 +27,13 @@ func push_item_to(object: StructureObject, item: ItemObject, input_dir: Constant
 	var output_index = object.get_meta(OUTPUT_INDEX, output_dirs.size()-1) + 1
 	for i in output_dirs.size():
 		var try_dir := posmod(object.dir + output_dirs[posmod(i + output_index, output_dirs.size())], 6) as Constant.Direction
-		if Gameplay.I.push_item_from(object.coordsi, try_dir):
+		var nex_coords := Coords.coords_neighbor(object.coordsi, try_dir)
+		if Gameplay.I.push_item_to(null, nex_coords, try_dir):
+			Gameplay.I.push_item_from(object.coordsi, try_dir)
 			return true
+	
+	# try pop bubble
+	if Gameplay.I.push_item_from(object.coordsi, input_dir): return true
 	return false
 
 func can_enter(object: StructureObject, input_dir: Constant.Direction):

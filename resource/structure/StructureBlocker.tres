@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Structure" load_steps=3 format=3 uid="uid://dwerwmrdtdmwi"]
+
+[ext_resource type="Script" path="res://resource/structure/_script/Structure.gd" id="1_s1rji"]
+[ext_resource type="Texture2D" uid="uid://qoy8kwwh5wft" path="res://asset/structure/007.blocker.png" id="2_eayme"]
+
+[resource]
+script = ExtResource("1_s1rji")
+texture = ExtResource("2_eayme")
+name = "Blocker"
+color = Color(1, 1, 1, 1)

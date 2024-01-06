@@ -51,7 +51,11 @@ func _on_right_hold():
 	if structure: return structure._on_right_hold(self)
 
 func create_info() -> InfoStructure:
-	if structure: return structure.create_info(self)
+	if structure:
+		var prefab := structure.get_info_prefab(self)
+		var info: InfoStructure = prefab.instantiate()
+		info.structure = self
+		return info
 	return null
 
 func is_flat() -> bool:

@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_20ac5")
 output = ExtResource("1_p7s8j")
-hardness = 1
-richness = 10
+hardness = 3
+richness = 15
 name = "Rock"
 color = Color(0.0745098, 0.145098, 0.196078, 1)

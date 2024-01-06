@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://dyay3vaj300w3"]
+
+[ext_resource type="PackedScene" uid="uid://c2lrhf85xcwa3" path="res://prefab/info_panel/InfoStructure.tscn" id="1_g8dia"]
+[ext_resource type="Script" path="res://prefab/info_panel/InfoStructureMachine.gd" id="2_23d8b"]
+[ext_resource type="Texture2D" uid="uid://bcwmtsernhku2" path="res://asset/item/plank.png" id="3_41sb5"]
+[ext_resource type="FontFile" uid="uid://wbr1ac723nda" path="res://asset/font/Justaword.ttf" id="4_87gxd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ck4rf"]
+font = ExtResource("4_87gxd")
+font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_re1kw"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="InfoPanel" instance=ExtResource("1_g8dia")]
+script = ExtResource("2_23d8b")
+
+[node name="RecipeSprite" type="TextureRect" parent="." index="4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = 23.0
+offset_right = 12.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_41sb5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RecipeLabel" type="Label" parent="." index="5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = 27.0
+offset_right = 144.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Recipe"
+label_settings = SubResource("LabelSettings_ck4rf")
+vertical_alignment = 1
+clip_text = true
+
+[node name="TickProgressBar" type="ProgressBar" parent="." index="6"]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 173.0
+offset_right = 301.0
+offset_bottom = 183.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_re1kw")
+max_value = 5.0
+step = 1.0
+show_percentage = false

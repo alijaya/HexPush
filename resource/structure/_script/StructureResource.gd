@@ -19,29 +19,39 @@ func _ready(object: StructureObject):
 	object.set_meta(WORK, 0)
 	object.set_meta(COUNT, richness)
 
-func create_info(object: StructureObject) -> InfoStructure:
-	var info: InfoStructure = infoStructureResourcePrefab.instantiate()
-	info.structure = object
-	return info
+func get_info_prefab(object: StructureObject) -> PackedScene:
+	return infoStructureResourcePrefab
+
+func get_work(object: StructureObject) -> int:
+	return object.get_meta(WORK, 0)
+
+func set_work(object: StructureObject, work_count: int):
+	object.set_meta(WORK, work_count)
+
+func get_count(object: StructureObject) -> int:
+	return object.get_meta(COUNT, richness)
+
+func set_count(object: StructureObject, count: int):
+	object.set_meta(COUNT, count)
 
 func can_pack() -> bool:
 	return false
 
 func work(object: StructureObject, on_trigger: Callable):
-	var work_count: int = object.get_meta(WORK, 0)
-	var count: int = object.get_meta(COUNT, richness)
+	var work_count := get_work(object)
+	var count := get_count(object)
 	work_count += 1
 	if work_count < hardness:
-		object.set_meta(WORK, work_count)
+		set_work(object, work_count)
 		return
 	
 	if !on_trigger.call(): return
 	
-	object.set_meta(WORK, 0)
+	set_work(object, 0)
 	count -= 1
 	
 	if count > 0:
-		object.set_meta(COUNT, count)
+		set_count(object, count)
 		return
 	
 	object.delete(true)

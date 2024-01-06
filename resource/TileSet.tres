@@ -1,17 +1,12 @@
-[gd_resource type="TileSet" load_steps=27 format=3 uid="uid://b02bhtuwbt788"]
+[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://b02bhtuwbt788"]
 
 [ext_resource type="Texture2D" uid="uid://cuwi3qdt25okw" path="res://asset/autotile transparent.png" id="1_ftcox"]
 [ext_resource type="Texture2D" uid="uid://dbx08mwanl7tv" path="res://asset/flat top 30 solid.png" id="2_3jrp4"]
 [ext_resource type="Texture2D" uid="uid://b45duaetu6f34" path="res://asset/selection.png" id="3_ejcl7"]
 [ext_resource type="Texture2D" uid="uid://d0aty87kalygh" path="res://asset/new biome/forest.png" id="3_v6yow"]
-[ext_resource type="Texture2D" uid="uid://c5x3tefbgkd3u" path="res://asset/tree.png" id="4_4hfen"]
 [ext_resource type="Texture2D" uid="uid://cq6f50lni1tcx" path="res://asset/new biome/mountain.png" id="4_lqe7d"]
 [ext_resource type="Texture2D" uid="uid://km8rgab50lex" path="res://asset/new biome/water.png" id="5_nh7r6"]
-[ext_resource type="Texture2D" uid="uid://fk3lx2e6owec" path="res://asset/rock.png" id="5_tpfhe"]
-[ext_resource type="Texture2D" uid="uid://bif4027q3rff" path="res://asset/biome/grassland.png" id="6_kxqns"]
-[ext_resource type="Texture2D" uid="uid://dhlq47kanaea7" path="res://asset/biome/forest.png" id="7_d37jp"]
-[ext_resource type="Texture2D" uid="uid://ddl4nrxnxpc6e" path="res://asset/biome/mountain.png" id="8_ehjs7"]
-[ext_resource type="Texture2D" uid="uid://ctsc4aqxw0pti" path="res://asset/biome/water.png" id="9_x0jnn"]
+[ext_resource type="Texture2D" uid="uid://5x1bio14bhyl" path="res://asset/new biome/grassland atlas.png" id="7_36dft"]
 [ext_resource type="Texture2D" uid="uid://byirvk27iaoku" path="res://asset/new biome/grassland.png" id="13_0eb1w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l8k8b"]
@@ -19,446 +14,454 @@ texture = ExtResource("1_ftcox")
 texture_region_size = Vector2i(300, 300)
 0:0/0 = 0
 0:0/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-4: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+2: [0],
+4: [0],
+6: [0],
+10: [0],
+12: [0],
+14: [0],
+"symmetry": 0,
 "type": -1
 }
 2:0/0 = 0
 2:0/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-4: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+2: [0],
+4: [0],
+6: [0],
+10: [0],
+14: [0],
 "type": -1
 }
 3:0/0 = 0
 3:0/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-4: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
+2: [0],
+4: [0],
+6: [0],
+10: [0],
+12: [0],
 "type": -1
 }
 4:0/0 = 0
 4:0/0/metadata/_better_terrain = {
-4: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+4: [0],
+6: [0],
+10: [0],
+12: [0],
+14: [0],
 "type": -1
 }
 5:0/0 = 0
 5:0/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+2: [0],
+6: [0],
+10: [0],
+12: [0],
+14: [0],
 "type": -1
 }
 6:0/0 = 0
 6:0/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-4: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+2: [0],
+4: [0],
+10: [0],
+12: [0],
+14: [0],
 "type": -1
 }
 7:0/0 = 0
 7:0/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-4: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+2: [0],
+4: [0],
+6: [0],
+12: [0],
+14: [0],
 "type": -1
 }
 0:1/0 = 0
 0:1/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
+2: [0],
+6: [0],
+12: [0],
+"symmetry": 0,
 "type": -1
 }
 1:1/0 = 0
 1:1/0/metadata/_better_terrain = {
-4: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+4: [0],
+10: [0],
+14: [0],
 "type": -1
 }
 2:1/0 = 0
 2:1/0/metadata/_better_terrain = {
-12: [0, 1, 2, 3],
+12: [0],
 "type": -1
 }
 3:1/0 = 0
 3:1/0/metadata/_better_terrain = {
-14: [0, 1, 2, 3],
+14: [0],
 "type": -1
 }
 4:1/0 = 0
 4:1/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
+2: [0],
 "type": -1
 }
 5:1/0 = 0
 5:1/0/metadata/_better_terrain = {
-4: [0, 1, 2, 3],
+4: [0],
 "type": -1
 }
 6:1/0 = 0
 6:1/0/metadata/_better_terrain = {
-6: [0, 1, 2, 3],
+6: [0],
 "type": -1
 }
 7:1/0 = 0
 7:1/0/metadata/_better_terrain = {
-10: [0, 1, 2, 3],
+10: [0],
 "type": -1
 }
 0:2/0 = 0
 0:2/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
+2: [0],
+10: [0],
+12: [0],
+"symmetry": 0,
 "type": -1
 }
 1:2/0 = 0
 1:2/0/metadata/_better_terrain = {
-4: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+4: [0],
+6: [0],
+14: [0],
 "type": -1
 }
 2:2/0 = 0
 2:2/0/metadata/_better_terrain = {
-4: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
+4: [0],
+6: [0],
+10: [0],
+12: [0],
 "type": -1
 }
 3:2/0 = 0
 3:2/0/metadata/_better_terrain = {
-6: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+6: [0],
+10: [0],
+12: [0],
+14: [0],
 "type": -1
 }
 4:2/0 = 0
 4:2/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+2: [0],
+10: [0],
+12: [0],
+14: [0],
 "type": -1
 }
 5:2/0 = 0
 5:2/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-4: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+2: [0],
+4: [0],
+12: [0],
+14: [0],
 "type": -1
 }
 6:2/0 = 0
 6:2/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-4: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+2: [0],
+4: [0],
+6: [0],
+14: [0],
 "type": -1
 }
 7:2/0 = 0
 7:2/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-4: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
+2: [0],
+4: [0],
+6: [0],
+10: [0],
 "type": -1
 }
 0:3/0 = 0
 0:3/0/metadata/_better_terrain = {
-4: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+4: [0],
+12: [0],
+14: [0],
+"symmetry": 0,
 "type": -1
 }
 1:3/0 = 0
 1:3/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
+2: [0],
+6: [0],
+10: [0],
 "type": -1
 }
 2:3/0 = 0
 2:3/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+2: [0],
+14: [0],
 "type": -1
 }
 3:3/0 = 0
 3:3/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-4: [0, 1, 2, 3],
+2: [0],
+4: [0],
 "type": -1
 }
 4:3/0 = 0
 4:3/0/metadata/_better_terrain = {
-4: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
+4: [0],
+6: [0],
 "type": -1
 }
 5:3/0 = 0
 5:3/0/metadata/_better_terrain = {
-6: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
+6: [0],
+10: [0],
 "type": -1
 }
 6:3/0 = 0
 6:3/0/metadata/_better_terrain = {
-10: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
+10: [0],
+12: [0],
 "type": -1
 }
 7:3/0 = 0
 7:3/0/metadata/_better_terrain = {
-12: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+12: [0],
+14: [0],
 "type": -1
 }
 0:4/0 = 0
 0:4/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+2: [0],
+6: [0],
+14: [0],
+"symmetry": 0,
 "type": -1
 }
 1:4/0 = 0
 1:4/0/metadata/_better_terrain = {
-4: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
+4: [0],
+10: [0],
+12: [0],
 "type": -1
 }
 2:4/0 = 0
 2:4/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-4: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
+2: [0],
+4: [0],
+6: [0],
 "type": -1
 }
 3:4/0 = 0
 3:4/0/metadata/_better_terrain = {
-4: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
+4: [0],
+6: [0],
+10: [0],
 "type": -1
 }
 4:4/0 = 0
 4:4/0/metadata/_better_terrain = {
-6: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
+6: [0],
+10: [0],
+12: [0],
 "type": -1
 }
 5:4/0 = 0
 5:4/0/metadata/_better_terrain = {
-10: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+10: [0],
+12: [0],
+14: [0],
 "type": -1
 }
 6:4/0 = 0
 6:4/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+2: [0],
+12: [0],
+14: [0],
 "type": -1
 }
 7:4/0 = 0
 7:4/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-4: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+2: [0],
+4: [0],
+14: [0],
 "type": -1
 }
 0:5/0 = 0
 0:5/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-4: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
+2: [0],
+4: [0],
+10: [0],
+"symmetry": 0,
 "type": -1
 }
 1:5/0 = 0
 1:5/0/metadata/_better_terrain = {
-6: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+6: [0],
+12: [0],
+14: [0],
 "type": -1
 }
 2:5/0 = 0
 2:5/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-4: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
+2: [0],
+4: [0],
+6: [0],
+12: [0],
 "type": -1
 }
 3:5/0 = 0
 3:5/0/metadata/_better_terrain = {
-4: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+4: [0],
+6: [0],
+10: [0],
+14: [0],
 "type": -1
 }
 4:5/0 = 0
 4:5/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
+2: [0],
+6: [0],
+10: [0],
+12: [0],
 "type": -1
 }
 5:5/0 = 0
 5:5/0/metadata/_better_terrain = {
-4: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+4: [0],
+10: [0],
+12: [0],
+14: [0],
 "type": -1
 }
 6:5/0 = 0
 6:5/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+2: [0],
+6: [0],
+12: [0],
+14: [0],
 "type": -1
 }
 7:5/0 = 0
 7:5/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-4: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+2: [0],
+4: [0],
+10: [0],
+14: [0],
 "type": -1
 }
 0:6/0 = 0
 0:6/0/metadata/_better_terrain = {
-4: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
+4: [0],
+6: [0],
+12: [0],
+"symmetry": 0,
 "type": -1
 }
 1:6/0 = 0
 1:6/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+2: [0],
+10: [0],
+14: [0],
 "type": -1
 }
 2:6/0 = 0
 2:6/0/metadata/_better_terrain = {
-10: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+10: [0],
+14: [0],
 "type": -1
 }
 3:6/0 = 0
 3:6/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
+2: [0],
+12: [0],
 "type": -1
 }
 4:6/0 = 0
 4:6/0/metadata/_better_terrain = {
-4: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+4: [0],
+14: [0],
 "type": -1
 }
 5:6/0 = 0
 5:6/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
+2: [0],
+6: [0],
 "type": -1
 }
 6:6/0 = 0
 6:6/0/metadata/_better_terrain = {
-4: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
+4: [0],
+10: [0],
 "type": -1
 }
 7:6/0 = 0
 7:6/0/metadata/_better_terrain = {
-6: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
+6: [0],
+12: [0],
 "type": -1
 }
 0:7/0 = 0
 0:7/0/metadata/_better_terrain = {
-6: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+6: [0],
+10: [0],
+14: [0],
+"symmetry": 0,
 "type": -1
 }
 1:7/0 = 0
 1:7/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-4: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
+2: [0],
+4: [0],
+12: [0],
 "type": -1
 }
 2:7/0 = 0
 2:7/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+2: [0],
+6: [0],
+10: [0],
+14: [0],
 "type": -1
 }
 3:7/0 = 0
 3:7/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-4: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
+2: [0],
+4: [0],
+10: [0],
+12: [0],
 "type": -1
 }
 4:7/0 = 0
 4:7/0/metadata/_better_terrain = {
-4: [0, 1, 2, 3],
-6: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+4: [0],
+6: [0],
+12: [0],
+14: [0],
 "type": -1
 }
 5:7/0 = 0
 5:7/0/metadata/_better_terrain = {
-4: [0, 1, 2, 3],
-12: [0, 1, 2, 3],
+4: [0],
+12: [0],
 "type": -1
 }
 6:7/0 = 0
 6:7/0/metadata/_better_terrain = {
-6: [0, 1, 2, 3],
-14: [0, 1, 2, 3],
+6: [0],
+14: [0],
 "type": -1
 }
 7:7/0 = 0
 7:7/0/metadata/_better_terrain = {
-2: [0, 1, 2, 3],
-10: [0, 1, 2, 3],
+2: [0],
+10: [0],
 "type": -1
 }
 
@@ -470,573 +473,972 @@ texture_region_size = Vector2i(300, 300)
 0:0/0/metadata/_better_terrain = {
 "type": 0
 }
-0:0/1 = 1
-0:0/1/metadata/_better_terrain = {
-"type": 1
-}
-0:0/2 = 2
-0:0/2/metadata/_better_terrain = {
-"type": 2
-}
-0:0/3 = 3
-0:0/3/metadata/_better_terrain = {
-"type": 3
-}
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uydag"]
 texture = ExtResource("3_v6yow")
 texture_region_size = Vector2i(300, 300)
 0:0/0 = 0
+0:0/0/metadata/_better_terrain = {
+"type": 2
+}
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jiped"]
 texture = ExtResource("4_lqe7d")
 texture_region_size = Vector2i(300, 300)
 0:0/0 = 0
+0:0/0/metadata/_better_terrain = {
+"type": 3
+}
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_np0nv"]
 texture = ExtResource("5_nh7r6")
 texture_region_size = Vector2i(300, 300)
 0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, -25)
+0:0/0/metadata/_better_terrain = {
+"type": 4
+}
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14k4e"]
 texture = ExtResource("3_ejcl7")
 texture_region_size = Vector2i(300, 300)
 0:0/0 = 0
 0:0/0/metadata/_better_terrain = {
-"type": 4
+"type": 5
 }
 1:0/0 = 0
 1:0/0/metadata/_better_terrain = {
-2: [4],
-4: [4],
-6: [4],
-10: [4],
-12: [4],
-14: [4],
-"type": 4
+2: [5],
+4: [5],
+6: [5],
+10: [5],
+12: [5],
+14: [5],
+"type": 5
 }
 2:0/0 = 0
 2:0/0/metadata/_better_terrain = {
-12: [4],
-"type": 4
+12: [5],
+"type": 5
 }
 3:0/0 = 0
 3:0/0/metadata/_better_terrain = {
-14: [4],
-"type": 4
+14: [5],
+"type": 5
 }
 4:0/0 = 0
 4:0/0/metadata/_better_terrain = {
-2: [4],
-"type": 4
+2: [5],
+"type": 5
 }
 5:0/0 = 0
 5:0/0/metadata/_better_terrain = {
-4: [4],
-"type": 4
+4: [5],
+"type": 5
 }
 6:0/0 = 0
 6:0/0/metadata/_better_terrain = {
-6: [4],
-"type": 4
+6: [5],
+"type": 5
 }
 7:0/0 = 0
 7:0/0/metadata/_better_terrain = {
-10: [4],
-"type": 4
+10: [5],
+"type": 5
 }
 0:1/0 = 0
 0:1/0/metadata/_better_terrain = {
-4: [4],
-10: [4],
-14: [4],
-"type": 4
+4: [5],
+10: [5],
+14: [5],
+"type": 5
 }
 1:1/0 = 0
 1:1/0/metadata/_better_terrain = {
-2: [4],
-6: [4],
-12: [4],
-"type": 4
+2: [5],
+6: [5],
+12: [5],
+"type": 5
 }
 2:1/0 = 0
 2:1/0/metadata/_better_terrain = {
-2: [4],
-4: [4],
-6: [4],
-10: [4],
-14: [4],
-"type": 4
+2: [5],
+4: [5],
+6: [5],
+10: [5],
+14: [5],
+"type": 5
 }
 3:1/0 = 0
 3:1/0/metadata/_better_terrain = {
-2: [4],
-4: [4],
-6: [4],
-10: [4],
-12: [4],
-"type": 4
+2: [5],
+4: [5],
+6: [5],
+10: [5],
+12: [5],
+"type": 5
 }
 4:1/0 = 0
 4:1/0/metadata/_better_terrain = {
-4: [4],
-6: [4],
-10: [4],
-12: [4],
-14: [4],
-"type": 4
+4: [5],
+6: [5],
+10: [5],
+12: [5],
+14: [5],
+"type": 5
 }
 5:1/0 = 0
 5:1/0/metadata/_better_terrain = {
-2: [4],
-6: [4],
-10: [4],
-12: [4],
-14: [4],
-"type": 4
+2: [5],
+6: [5],
+10: [5],
+12: [5],
+14: [5],
+"type": 5
 }
 6:1/0 = 0
 6:1/0/metadata/_better_terrain = {
-2: [4],
-4: [4],
-10: [4],
-12: [4],
-14: [4],
-"type": 4
+2: [5],
+4: [5],
+10: [5],
+12: [5],
+14: [5],
+"type": 5
 }
 7:1/0 = 0
 7:1/0/metadata/_better_terrain = {
-2: [4],
-4: [4],
-6: [4],
-12: [4],
-14: [4],
-"type": 4
+2: [5],
+4: [5],
+6: [5],
+12: [5],
+14: [5],
+"type": 5
 }
 0:2/0 = 0
 0:2/0/metadata/_better_terrain = {
-4: [4],
-6: [4],
-14: [4],
-"type": 4
+4: [5],
+6: [5],
+14: [5],
+"type": 5
 }
 1:2/0 = 0
 1:2/0/metadata/_better_terrain = {
-2: [4],
-10: [4],
-12: [4],
-"type": 4
+2: [5],
+10: [5],
+12: [5],
+"type": 5
 }
 2:2/0 = 0
 2:2/0/metadata/_better_terrain = {
-2: [4],
-14: [4],
-"type": 4
+2: [5],
+14: [5],
+"type": 5
 }
 3:2/0 = 0
 3:2/0/metadata/_better_terrain = {
-2: [4],
-4: [4],
-"type": 4
+2: [5],
+4: [5],
+"type": 5
 }
 4:2/0 = 0
 4:2/0/metadata/_better_terrain = {
-4: [4],
-6: [4],
-"type": 4
+4: [5],
+6: [5],
+"type": 5
 }
 5:2/0 = 0
 5:2/0/metadata/_better_terrain = {
-6: [4],
-10: [4],
-"type": 4
+6: [5],
+10: [5],
+"type": 5
 }
 6:2/0 = 0
 6:2/0/metadata/_better_terrain = {
-10: [4],
-12: [4],
-"type": 4
+10: [5],
+12: [5],
+"type": 5
 }
 7:2/0 = 0
 7:2/0/metadata/_better_terrain = {
-12: [4],
-14: [4],
-"type": 4
+12: [5],
+14: [5],
+"type": 5
 }
 0:3/0 = 0
 0:3/0/metadata/_better_terrain = {
-2: [4],
-6: [4],
-10: [4],
-"type": 4
+2: [5],
+6: [5],
+10: [5],
+"type": 5
 }
 1:3/0 = 0
 1:3/0/metadata/_better_terrain = {
-4: [4],
-12: [4],
-14: [4],
-"type": 4
+4: [5],
+12: [5],
+14: [5],
+"type": 5
 }
 2:3/0 = 0
 2:3/0/metadata/_better_terrain = {
-4: [4],
-6: [4],
-10: [4],
-12: [4],
-"type": 4
+4: [5],
+6: [5],
+10: [5],
+12: [5],
+"type": 5
 }
 3:3/0 = 0
 3:3/0/metadata/_better_terrain = {
-6: [4],
-10: [4],
-12: [4],
-14: [4],
-"type": 4
+6: [5],
+10: [5],
+12: [5],
+14: [5],
+"type": 5
 }
 4:3/0 = 0
 4:3/0/metadata/_better_terrain = {
-2: [4],
-10: [4],
-12: [4],
-14: [4],
-"type": 4
+2: [5],
+10: [5],
+12: [5],
+14: [5],
+"type": 5
 }
 5:3/0 = 0
 5:3/0/metadata/_better_terrain = {
-2: [4],
-4: [4],
-12: [4],
-14: [4],
-"type": 4
+2: [5],
+4: [5],
+12: [5],
+14: [5],
+"type": 5
 }
 6:3/0 = 0
 6:3/0/metadata/_better_terrain = {
-2: [4],
-4: [4],
-6: [4],
-14: [4],
-"type": 4
+2: [5],
+4: [5],
+6: [5],
+14: [5],
+"type": 5
 }
 7:3/0 = 0
 7:3/0/metadata/_better_terrain = {
-2: [4],
-4: [4],
-6: [4],
-10: [4],
-"type": 4
+2: [5],
+4: [5],
+6: [5],
+10: [5],
+"type": 5
 }
 0:4/0 = 0
 0:4/0/metadata/_better_terrain = {
-4: [4],
-10: [4],
-12: [4],
-"type": 4
+4: [5],
+10: [5],
+12: [5],
+"type": 5
 }
 1:4/0 = 0
 1:4/0/metadata/_better_terrain = {
-2: [4],
-6: [4],
-14: [4],
-"type": 4
+2: [5],
+6: [5],
+14: [5],
+"type": 5
 }
 2:4/0 = 0
 2:4/0/metadata/_better_terrain = {
-10: [4],
-12: [4],
-14: [4],
-"type": 4
+10: [5],
+12: [5],
+14: [5],
+"type": 5
 }
 3:4/0 = 0
 3:4/0/metadata/_better_terrain = {
-2: [4],
-12: [4],
-14: [4],
-"type": 4
+2: [5],
+12: [5],
+14: [5],
+"type": 5
 }
 4:4/0 = 0
 4:4/0/metadata/_better_terrain = {
-2: [4],
-4: [4],
-14: [4],
-"type": 4
+2: [5],
+4: [5],
+14: [5],
+"type": 5
 }
 5:4/0 = 0
 5:4/0/metadata/_better_terrain = {
-2: [4],
-4: [4],
-6: [4],
-"type": 4
+2: [5],
+4: [5],
+6: [5],
+"type": 5
 }
 6:4/0 = 0
 6:4/0/metadata/_better_terrain = {
-4: [4],
-6: [4],
-10: [4],
-"type": 4
+4: [5],
+6: [5],
+10: [5],
+"type": 5
 }
 7:4/0 = 0
 7:4/0/metadata/_better_terrain = {
-6: [4],
-10: [4],
-12: [4],
-"type": 4
+6: [5],
+10: [5],
+12: [5],
+"type": 5
 }
 0:5/0 = 0
 0:5/0/metadata/_better_terrain = {
-6: [4],
-12: [4],
-14: [4],
-"type": 4
+6: [5],
+12: [5],
+14: [5],
+"type": 5
 }
 1:5/0 = 0
 1:5/0/metadata/_better_terrain = {
-2: [4],
-4: [4],
-10: [4],
-"type": 4
+2: [5],
+4: [5],
+10: [5],
+"type": 5
 }
 2:5/0 = 0
 2:5/0/metadata/_better_terrain = {
-10: [4],
-14: [4],
-"type": 4
+10: [5],
+14: [5],
+"type": 5
 }
 3:5/0 = 0
 3:5/0/metadata/_better_terrain = {
-2: [4],
-12: [4],
-"type": 4
+2: [5],
+12: [5],
+"type": 5
 }
 4:5/0 = 0
 4:5/0/metadata/_better_terrain = {
-4: [4],
-14: [4],
-"type": 4
+4: [5],
+14: [5],
+"type": 5
 }
 5:5/0 = 0
 5:5/0/metadata/_better_terrain = {
-2: [4],
-6: [4],
-"type": 4
+2: [5],
+6: [5],
+"type": 5
 }
 6:5/0 = 0
 6:5/0/metadata/_better_terrain = {
-4: [4],
-10: [4],
-"type": 4
+4: [5],
+10: [5],
+"type": 5
 }
 7:5/0 = 0
 7:5/0/metadata/_better_terrain = {
-6: [4],
-12: [4],
-"type": 4
+6: [5],
+12: [5],
+"type": 5
 }
 0:6/0 = 0
 0:6/0/metadata/_better_terrain = {
-2: [4],
-10: [4],
-14: [4],
-"type": 4
+2: [5],
+10: [5],
+14: [5],
+"type": 5
 }
 1:6/0 = 0
 1:6/0/metadata/_better_terrain = {
-4: [4],
-6: [4],
-12: [4],
-"type": 4
+4: [5],
+6: [5],
+12: [5],
+"type": 5
 }
 2:6/0 = 0
 2:6/0/metadata/_better_terrain = {
-2: [4],
-4: [4],
-6: [4],
-12: [4],
-"type": 4
+2: [5],
+4: [5],
+6: [5],
+12: [5],
+"type": 5
 }
 3:6/0 = 0
 3:6/0/metadata/_better_terrain = {
-4: [4],
-6: [4],
-10: [4],
-14: [4],
-"type": 4
+4: [5],
+6: [5],
+10: [5],
+14: [5],
+"type": 5
 }
 4:6/0 = 0
 4:6/0/metadata/_better_terrain = {
-2: [4],
-6: [4],
-10: [4],
-12: [4],
-"type": 4
+2: [5],
+6: [5],
+10: [5],
+12: [5],
+"type": 5
 }
 5:6/0 = 0
 5:6/0/metadata/_better_terrain = {
-4: [4],
-10: [4],
-12: [4],
-14: [4],
-"type": 4
+4: [5],
+10: [5],
+12: [5],
+14: [5],
+"type": 5
 }
 6:6/0 = 0
 6:6/0/metadata/_better_terrain = {
-2: [4],
-6: [4],
-12: [4],
-14: [4],
-"type": 4
+2: [5],
+6: [5],
+12: [5],
+14: [5],
+"type": 5
 }
 7:6/0 = 0
 7:6/0/metadata/_better_terrain = {
-2: [4],
-4: [4],
-10: [4],
-14: [4],
-"type": 4
+2: [5],
+4: [5],
+10: [5],
+14: [5],
+"type": 5
 }
 0:7/0 = 0
 0:7/0/metadata/_better_terrain = {
-2: [4],
-4: [4],
-12: [4],
-"type": 4
+2: [5],
+4: [5],
+12: [5],
+"type": 5
 }
 1:7/0 = 0
 1:7/0/metadata/_better_terrain = {
-6: [4],
-10: [4],
-14: [4],
-"type": 4
+6: [5],
+10: [5],
+14: [5],
+"type": 5
 }
 2:7/0 = 0
 2:7/0/metadata/_better_terrain = {
-4: [4],
-12: [4],
-"type": 4
+4: [5],
+12: [5],
+"type": 5
 }
 3:7/0 = 0
 3:7/0/metadata/_better_terrain = {
-6: [4],
-14: [4],
-"type": 4
+6: [5],
+14: [5],
+"type": 5
 }
 4:7/0 = 0
 4:7/0/metadata/_better_terrain = {
-2: [4],
-10: [4],
-"type": 4
+2: [5],
+10: [5],
+"type": 5
 }
 5:7/0 = 0
 5:7/0/metadata/_better_terrain = {
-2: [4],
-6: [4],
-10: [4],
-14: [4],
-"type": 4
+2: [5],
+6: [5],
+10: [5],
+14: [5],
+"type": 5
 }
 6:7/0 = 0
 6:7/0/metadata/_better_terrain = {
-2: [4],
-4: [4],
-10: [4],
-12: [4],
-"type": 4
+2: [5],
+4: [5],
+10: [5],
+12: [5],
+"type": 5
 }
 7:7/0 = 0
 7:7/0/metadata/_better_terrain = {
-4: [4],
-6: [4],
-12: [4],
-14: [4],
-"type": 4
+4: [5],
+6: [5],
+12: [5],
+14: [5],
+"type": 5
 }
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6eyf4"]
-texture = ExtResource("4_4hfen")
-texture_region_size = Vector2i(300, 300)
-0:0/next_alternative_id = 4
-0:0/0 = 0
-0:0/1 = 1
-0:0/1/modulate = Color(0.294118, 0.85098, 0, 1)
-0:0/2 = 2
-0:0/2/modulate = Color(0.203922, 0.517647, 0.403922, 1)
-0:0/3 = 3
-0:0/3/modulate = Color(0.752941, 0.717647, 0, 1)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fhy0n"]
-texture = ExtResource("5_tpfhe")
-texture_region_size = Vector2i(300, 300)
-0:0/next_alternative_id = 4
-0:0/0 = 0
-0:0/1 = 1
-0:0/1/modulate = Color(0.564706, 0.780392, 0.819608, 1)
-0:0/2 = 2
-0:0/2/modulate = Color(0.690196, 0.741176, 0.152941, 1)
-0:0/3 = 3
-0:0/3/modulate = Color(0.478431, 0.854902, 0.486275, 1)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wauyb"]
-texture = ExtResource("6_kxqns")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qld8q"]
+texture = ExtResource("7_36dft")
 texture_region_size = Vector2i(300, 300)
 0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_03au2"]
-texture = ExtResource("7_d37jp")
-texture_region_size = Vector2i(300, 300)
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 15)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i5uf3"]
-texture = ExtResource("8_ehjs7")
-texture_region_size = Vector2i(300, 300)
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 15)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mqhn2"]
-texture = ExtResource("9_x0jnn")
-texture_region_size = Vector2i(300, 300)
-0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, -25)
+0:0/0/metadata/_better_terrain = {
+2: [1],
+4: [1],
+6: [1],
+10: [1],
+12: [1],
+14: [1],
+"type": -1
+}
+2:0/0 = 0
+2:0/0/metadata/_better_terrain = {
+2: [1],
+4: [1],
+6: [1],
+10: [1],
+14: [1],
+"type": -1
+}
+3:0/0 = 0
+3:0/0/metadata/_better_terrain = {
+2: [1],
+4: [1],
+6: [1],
+10: [1],
+12: [1],
+"type": -1
+}
+4:0/0 = 0
+4:0/0/metadata/_better_terrain = {
+4: [1],
+6: [1],
+10: [1],
+12: [1],
+14: [1],
+"type": -1
+}
+5:0/0 = 0
+5:0/0/metadata/_better_terrain = {
+2: [1],
+6: [1],
+10: [1],
+12: [1],
+14: [1],
+"type": -1
+}
+6:0/0 = 0
+6:0/0/metadata/_better_terrain = {
+2: [1],
+4: [1],
+10: [1],
+12: [1],
+14: [1],
+"type": -1
+}
+7:0/0 = 0
+7:0/0/metadata/_better_terrain = {
+2: [1],
+4: [1],
+6: [1],
+12: [1],
+14: [1],
+"type": -1
+}
+0:1/0 = 0
+0:1/0/metadata/_better_terrain = {
+2: [1],
+6: [1],
+12: [1],
+"type": -1
+}
+1:1/0 = 0
+1:1/0/metadata/_better_terrain = {
+4: [1],
+10: [1],
+14: [1],
+"type": -1
+}
+2:1/0 = 0
+2:1/0/metadata/_better_terrain = {
+12: [1],
+"type": -1
+}
+3:1/0 = 0
+3:1/0/metadata/_better_terrain = {
+14: [1],
+"type": -1
+}
+4:1/0 = 0
+4:1/0/metadata/_better_terrain = {
+2: [1],
+"type": -1
+}
+5:1/0 = 0
+5:1/0/metadata/_better_terrain = {
+4: [1],
+"type": -1
+}
+6:1/0 = 0
+6:1/0/metadata/_better_terrain = {
+6: [1],
+"type": -1
+}
+7:1/0 = 0
+7:1/0/metadata/_better_terrain = {
+10: [1],
+"type": -1
+}
+0:2/0 = 0
+0:2/0/metadata/_better_terrain = {
+2: [1],
+10: [1],
+12: [1],
+"type": -1
+}
+1:2/0 = 0
+1:2/0/metadata/_better_terrain = {
+4: [1],
+6: [1],
+14: [1],
+"type": -1
+}
+2:2/0 = 0
+2:2/0/metadata/_better_terrain = {
+4: [1],
+6: [1],
+10: [1],
+12: [1],
+"type": -1
+}
+3:2/0 = 0
+3:2/0/metadata/_better_terrain = {
+6: [1],
+10: [1],
+12: [1],
+14: [1],
+"type": -1
+}
+4:2/0 = 0
+4:2/0/metadata/_better_terrain = {
+2: [1],
+10: [1],
+12: [1],
+14: [1],
+"type": -1
+}
+5:2/0 = 0
+5:2/0/metadata/_better_terrain = {
+2: [1],
+4: [1],
+12: [1],
+14: [1],
+"type": -1
+}
+6:2/0 = 0
+6:2/0/metadata/_better_terrain = {
+2: [1],
+4: [1],
+6: [1],
+14: [1],
+"type": -1
+}
+7:2/0 = 0
+7:2/0/metadata/_better_terrain = {
+2: [1],
+4: [1],
+6: [1],
+10: [1],
+"type": -1
+}
+0:3/0 = 0
+0:3/0/metadata/_better_terrain = {
+4: [1],
+12: [1],
+14: [1],
+"type": -1
+}
+1:3/0 = 0
+1:3/0/metadata/_better_terrain = {
+2: [1],
+6: [1],
+10: [1],
+"type": -1
+}
+2:3/0 = 0
+2:3/0/metadata/_better_terrain = {
+2: [1],
+14: [1],
+"type": -1
+}
+3:3/0 = 0
+3:3/0/metadata/_better_terrain = {
+2: [1],
+4: [1],
+"type": -1
+}
+4:3/0 = 0
+4:3/0/metadata/_better_terrain = {
+4: [1],
+6: [1],
+"type": -1
+}
+5:3/0 = 0
+5:3/0/metadata/_better_terrain = {
+6: [1],
+10: [1],
+"type": -1
+}
+6:3/0 = 0
+6:3/0/metadata/_better_terrain = {
+10: [1],
+12: [1],
+"type": -1
+}
+7:3/0 = 0
+7:3/0/metadata/_better_terrain = {
+12: [1],
+14: [1],
+"type": -1
+}
+0:4/0 = 0
+0:4/0/metadata/_better_terrain = {
+2: [1],
+6: [1],
+14: [1],
+"type": -1
+}
+1:4/0 = 0
+1:4/0/metadata/_better_terrain = {
+4: [1],
+10: [1],
+12: [1],
+"type": -1
+}
+2:4/0 = 0
+2:4/0/metadata/_better_terrain = {
+2: [1],
+4: [1],
+6: [1],
+"type": -1
+}
+3:4/0 = 0
+3:4/0/metadata/_better_terrain = {
+4: [1],
+6: [1],
+10: [1],
+"type": -1
+}
+4:4/0 = 0
+4:4/0/metadata/_better_terrain = {
+6: [1],
+10: [1],
+12: [1],
+"type": -1
+}
+5:4/0 = 0
+5:4/0/metadata/_better_terrain = {
+10: [1],
+12: [1],
+14: [1],
+"type": -1
+}
+6:4/0 = 0
+6:4/0/metadata/_better_terrain = {
+2: [1],
+12: [1],
+14: [1],
+"type": -1
+}
+7:4/0 = 0
+7:4/0/metadata/_better_terrain = {
+2: [1],
+4: [1],
+14: [1],
+"type": -1
+}
+0:5/0 = 0
+0:5/0/metadata/_better_terrain = {
+2: [1],
+4: [1],
+10: [1],
+"type": -1
+}
+1:5/0 = 0
+1:5/0/metadata/_better_terrain = {
+6: [1],
+12: [1],
+14: [1],
+"type": -1
+}
+2:5/0 = 0
+2:5/0/metadata/_better_terrain = {
+2: [1],
+4: [1],
+6: [1],
+12: [1],
+"type": -1
+}
+3:5/0 = 0
+3:5/0/metadata/_better_terrain = {
+4: [1],
+6: [1],
+10: [1],
+14: [1],
+"type": -1
+}
+4:5/0 = 0
+4:5/0/metadata/_better_terrain = {
+2: [1],
+6: [1],
+10: [1],
+12: [1],
+"type": -1
+}
+5:5/0 = 0
+5:5/0/metadata/_better_terrain = {
+4: [1],
+10: [1],
+12: [1],
+14: [1],
+"type": -1
+}
+6:5/0 = 0
+6:5/0/metadata/_better_terrain = {
+2: [1],
+6: [1],
+12: [1],
+14: [1],
+"type": -1
+}
+7:5/0 = 0
+7:5/0/metadata/_better_terrain = {
+2: [1],
+4: [1],
+10: [1],
+14: [1],
+"type": -1
+}
+0:6/0 = 0
+0:6/0/metadata/_better_terrain = {
+4: [1],
+6: [1],
+12: [1],
+"type": -1
+}
+1:6/0 = 0
+1:6/0/metadata/_better_terrain = {
+2: [1],
+10: [1],
+14: [1],
+"type": -1
+}
+2:6/0 = 0
+2:6/0/metadata/_better_terrain = {
+10: [1],
+14: [1],
+"type": -1
+}
+3:6/0 = 0
+3:6/0/metadata/_better_terrain = {
+2: [1],
+12: [1],
+"type": -1
+}
+4:6/0 = 0
+4:6/0/metadata/_better_terrain = {
+4: [1],
+14: [1],
+"type": -1
+}
+5:6/0 = 0
+5:6/0/metadata/_better_terrain = {
+2: [1],
+6: [1],
+"type": -1
+}
+6:6/0 = 0
+6:6/0/metadata/_better_terrain = {
+4: [1],
+10: [1],
+"type": -1
+}
+7:6/0 = 0
+7:6/0/metadata/_better_terrain = {
+6: [1],
+12: [1],
+"type": -1
+}
+0:7/0 = 0
+0:7/0/metadata/_better_terrain = {
+6: [1],
+10: [1],
+14: [1],
+"type": -1
+}
+1:7/0 = 0
+1:7/0/metadata/_better_terrain = {
+2: [1],
+4: [1],
+12: [1],
+"type": -1
+}
+2:7/0 = 0
+2:7/0/metadata/_better_terrain = {
+2: [1],
+6: [1],
+10: [1],
+14: [1],
+"type": -1
+}
+3:7/0 = 0
+3:7/0/metadata/_better_terrain = {
+2: [1],
+4: [1],
+10: [1],
+12: [1],
+"type": -1
+}
+4:7/0 = 0
+4:7/0/metadata/_better_terrain = {
+4: [1],
+6: [1],
+12: [1],
+14: [1],
+"type": -1
+}
+5:7/0 = 0
+5:7/0/metadata/_better_terrain = {
+4: [1],
+12: [1],
+"type": -1
+}
+6:7/0 = 0
+6:7/0/metadata/_better_terrain = {
+6: [1],
+14: [1],
+"type": -1
+}
+7:7/0 = 0
+7:7/0/metadata/_better_terrain = {
+2: [1],
+10: [1],
+"type": -1
+}
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yfdn1"]
 texture = ExtResource("13_0eb1w")
 texture_region_size = Vector2i(300, 300)
 0:0/0 = 0
+0:0/0/metadata/_better_terrain = {
+"type": 1
+}
 
 [resource]
 tile_shape = 3
 tile_layout = 5
 tile_offset_axis = 1
 tile_size = Vector2i(200, 150)
-sources/0 = SubResource("TileSetAtlasSource_l8k8b")
 sources/2 = SubResource("TileSetAtlasSource_14k4e")
 sources/1 = SubResource("TileSetAtlasSource_qv2vk")
-sources/3 = SubResource("TileSetAtlasSource_6eyf4")
-sources/4 = SubResource("TileSetAtlasSource_fhy0n")
-sources/5 = SubResource("TileSetAtlasSource_wauyb")
-sources/6 = SubResource("TileSetAtlasSource_03au2")
-sources/7 = SubResource("TileSetAtlasSource_i5uf3")
-sources/8 = SubResource("TileSetAtlasSource_mqhn2")
 sources/9 = SubResource("TileSetAtlasSource_yfdn1")
 sources/10 = SubResource("TileSetAtlasSource_uydag")
 sources/11 = SubResource("TileSetAtlasSource_jiped")
 sources/12 = SubResource("TileSetAtlasSource_np0nv")
+sources/0 = SubResource("TileSetAtlasSource_l8k8b")
+sources/269 = SubResource("TileSetAtlasSource_qld8q")
+tile_proxies/coords_level = [[141, Vector2i(0, 0)], [204, Vector2i(0, 0)], [142, Vector2i(0, 0)], [204, Vector2i(1, 0)], [143, Vector2i(0, 0)], [204, Vector2i(2, 0)], [144, Vector2i(0, 0)], [204, Vector2i(3, 0)], [145, Vector2i(0, 0)], [204, Vector2i(4, 0)], [146, Vector2i(0, 0)], [204, Vector2i(5, 0)], [147, Vector2i(0, 0)], [204, Vector2i(6, 0)], [148, Vector2i(0, 0)], [204, Vector2i(7, 0)], [149, Vector2i(0, 0)], [204, Vector2i(0, 1)], [150, Vector2i(0, 0)], [204, Vector2i(1, 1)], [151, Vector2i(0, 0)], [204, Vector2i(2, 1)], [152, Vector2i(0, 0)], [204, Vector2i(3, 1)], [153, Vector2i(0, 0)], [204, Vector2i(4, 1)], [154, Vector2i(0, 0)], [204, Vector2i(5, 1)], [155, Vector2i(0, 0)], [204, Vector2i(6, 1)], [156, Vector2i(0, 0)], [204, Vector2i(7, 1)], [157, Vector2i(0, 0)], [204, Vector2i(0, 2)], [158, Vector2i(0, 0)], [204, Vector2i(1, 2)], [159, Vector2i(0, 0)], [204, Vector2i(2, 2)], [160, Vector2i(0, 0)], [204, Vector2i(3, 2)], [161, Vector2i(0, 0)], [204, Vector2i(4, 2)], [162, Vector2i(0, 0)], [204, Vector2i(5, 2)], [163, Vector2i(0, 0)], [204, Vector2i(6, 2)], [164, Vector2i(0, 0)], [204, Vector2i(7, 2)], [165, Vector2i(0, 0)], [204, Vector2i(0, 3)], [166, Vector2i(0, 0)], [204, Vector2i(1, 3)], [167, Vector2i(0, 0)], [204, Vector2i(2, 3)], [168, Vector2i(0, 0)], [204, Vector2i(3, 3)], [169, Vector2i(0, 0)], [204, Vector2i(4, 3)], [170, Vector2i(0, 0)], [204, Vector2i(5, 3)], [171, Vector2i(0, 0)], [204, Vector2i(6, 3)], [172, Vector2i(0, 0)], [204, Vector2i(7, 3)], [173, Vector2i(0, 0)], [204, Vector2i(0, 4)], [174, Vector2i(0, 0)], [204, Vector2i(1, 4)], [175, Vector2i(0, 0)], [204, Vector2i(2, 4)], [176, Vector2i(0, 0)], [204, Vector2i(3, 4)], [177, Vector2i(0, 0)], [204, Vector2i(4, 4)], [178, Vector2i(0, 0)], [204, Vector2i(5, 4)], [179, Vector2i(0, 0)], [204, Vector2i(6, 4)], [180, Vector2i(0, 0)], [204, Vector2i(7, 4)], [181, Vector2i(0, 0)], [204, Vector2i(0, 5)], [182, Vector2i(0, 0)], [204, Vector2i(1, 5)], [183, Vector2i(0, 0)], [204, Vector2i(2, 5)], [184, Vector2i(0, 0)], [204, Vector2i(3, 5)], [185, Vector2i(0, 0)], [204, Vector2i(4, 5)], [186, Vector2i(0, 0)], [204, Vector2i(5, 5)], [187, Vector2i(0, 0)], [204, Vector2i(6, 5)], [188, Vector2i(0, 0)], [204, Vector2i(7, 5)], [189, Vector2i(0, 0)], [204, Vector2i(0, 6)], [190, Vector2i(0, 0)], [204, Vector2i(1, 6)], [191, Vector2i(0, 0)], [204, Vector2i(2, 6)], [192, Vector2i(0, 0)], [204, Vector2i(3, 6)], [193, Vector2i(0, 0)], [204, Vector2i(4, 6)], [194, Vector2i(0, 0)], [204, Vector2i(5, 6)], [195, Vector2i(0, 0)], [204, Vector2i(6, 6)], [196, Vector2i(0, 0)], [204, Vector2i(7, 6)], [197, Vector2i(0, 0)], [204, Vector2i(0, 7)], [198, Vector2i(0, 0)], [204, Vector2i(1, 7)], [199, Vector2i(0, 0)], [204, Vector2i(2, 7)], [200, Vector2i(0, 0)], [204, Vector2i(3, 7)], [201, Vector2i(0, 0)], [204, Vector2i(4, 7)], [202, Vector2i(0, 0)], [204, Vector2i(5, 7)], [203, Vector2i(0, 0)], [204, Vector2i(6, 7)], [205, Vector2i(0, 0)], [269, Vector2i(0, 0)], [206, Vector2i(0, 0)], [269, Vector2i(1, 0)], [207, Vector2i(0, 0)], [269, Vector2i(2, 0)], [208, Vector2i(0, 0)], [269, Vector2i(3, 0)], [209, Vector2i(0, 0)], [269, Vector2i(4, 0)], [210, Vector2i(0, 0)], [269, Vector2i(5, 0)], [211, Vector2i(0, 0)], [269, Vector2i(6, 0)], [212, Vector2i(0, 0)], [269, Vector2i(7, 0)], [213, Vector2i(0, 0)], [269, Vector2i(0, 1)], [214, Vector2i(0, 0)], [269, Vector2i(1, 1)], [215, Vector2i(0, 0)], [269, Vector2i(2, 1)], [216, Vector2i(0, 0)], [269, Vector2i(3, 1)], [217, Vector2i(0, 0)], [269, Vector2i(4, 1)], [218, Vector2i(0, 0)], [269, Vector2i(5, 1)], [219, Vector2i(0, 0)], [269, Vector2i(6, 1)], [220, Vector2i(0, 0)], [269, Vector2i(7, 1)], [221, Vector2i(0, 0)], [269, Vector2i(0, 2)], [222, Vector2i(0, 0)], [269, Vector2i(1, 2)], [223, Vector2i(0, 0)], [269, Vector2i(2, 2)], [224, Vector2i(0, 0)], [269, Vector2i(3, 2)], [225, Vector2i(0, 0)], [269, Vector2i(4, 2)], [226, Vector2i(0, 0)], [269, Vector2i(5, 2)], [227, Vector2i(0, 0)], [269, Vector2i(6, 2)], [228, Vector2i(0, 0)], [269, Vector2i(7, 2)], [229, Vector2i(0, 0)], [269, Vector2i(0, 3)], [230, Vector2i(0, 0)], [269, Vector2i(1, 3)], [231, Vector2i(0, 0)], [269, Vector2i(2, 3)], [232, Vector2i(0, 0)], [269, Vector2i(3, 3)], [233, Vector2i(0, 0)], [269, Vector2i(4, 3)], [234, Vector2i(0, 0)], [269, Vector2i(5, 3)], [235, Vector2i(0, 0)], [269, Vector2i(6, 3)], [236, Vector2i(0, 0)], [269, Vector2i(7, 3)], [237, Vector2i(0, 0)], [269, Vector2i(0, 4)], [238, Vector2i(0, 0)], [269, Vector2i(1, 4)], [239, Vector2i(0, 0)], [269, Vector2i(2, 4)], [240, Vector2i(0, 0)], [269, Vector2i(3, 4)], [241, Vector2i(0, 0)], [269, Vector2i(4, 4)], [242, Vector2i(0, 0)], [269, Vector2i(5, 4)], [243, Vector2i(0, 0)], [269, Vector2i(6, 4)], [244, Vector2i(0, 0)], [269, Vector2i(7, 4)], [245, Vector2i(0, 0)], [269, Vector2i(0, 5)], [246, Vector2i(0, 0)], [269, Vector2i(1, 5)], [247, Vector2i(0, 0)], [269, Vector2i(2, 5)], [248, Vector2i(0, 0)], [269, Vector2i(3, 5)], [249, Vector2i(0, 0)], [269, Vector2i(4, 5)], [250, Vector2i(0, 0)], [269, Vector2i(5, 5)], [251, Vector2i(0, 0)], [269, Vector2i(6, 5)], [252, Vector2i(0, 0)], [269, Vector2i(7, 5)], [253, Vector2i(0, 0)], [269, Vector2i(0, 6)], [254, Vector2i(0, 0)], [269, Vector2i(1, 6)], [255, Vector2i(0, 0)], [269, Vector2i(2, 6)], [256, Vector2i(0, 0)], [269, Vector2i(3, 6)], [257, Vector2i(0, 0)], [269, Vector2i(4, 6)], [258, Vector2i(0, 0)], [269, Vector2i(5, 6)], [259, Vector2i(0, 0)], [269, Vector2i(6, 6)], [260, Vector2i(0, 0)], [269, Vector2i(7, 6)], [261, Vector2i(0, 0)], [269, Vector2i(0, 7)], [262, Vector2i(0, 0)], [269, Vector2i(1, 7)], [263, Vector2i(0, 0)], [269, Vector2i(2, 7)], [264, Vector2i(0, 0)], [269, Vector2i(3, 7)], [265, Vector2i(0, 0)], [269, Vector2i(4, 7)], [266, Vector2i(0, 0)], [269, Vector2i(5, 7)], [267, Vector2i(0, 0)], [269, Vector2i(6, 7)], [268, Vector2i(0, 0)], [269, Vector2i(7, 7)]]
 metadata/_better_terrain = {
 "decoration": ["Decoration", Color(0.411765, 0.411765, 0.411765, 1), 3, [], {
 "path": "res://addons/better-terrain/icons/Decoration.svg"
 }],
-"terrains": [["Grassland", Color(0.407843, 0.580392, 0.34902, 1), 0, [], {
+"terrains": [["Dummy", Color(1, 0, 0, 1), 0, [], {
 "coord": Vector2i(0, 0),
 "source_id": 1
+}], ["Grassland", Color(0.407843, 0.580392, 0.34902, 1), 0, [], {
+"coord": Vector2i(0, 0),
+"source_id": 9
 }], ["Forest", Color(0.254902, 0.505882, 0.333333, 1), 0, [], {
 "coord": Vector2i(0, 0),
-"source_id": 1
+"source_id": 10
 }], ["Mountain", Color(0.356863, 0.356863, 0.356863, 1), 0, [], {
 "coord": Vector2i(0, 0),
-"source_id": 1
+"source_id": 11
 }], ["Water", Color(0.329412, 0.313726, 0.478431, 1), 0, [], {
 "coord": Vector2i(0, 0),
-"source_id": 1
+"source_id": 12
 }], ["Selection", Color(1, 1, 1, 1), 0, [], {
 "coord": Vector2i(0, 0),
 "source_id": 2

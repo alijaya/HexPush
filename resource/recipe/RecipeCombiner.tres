@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=7 format=3 uid="uid://djbr51y4h245q"]
+
+[ext_resource type="Resource" uid="uid://fw4g2tgxefnj" path="res://resource/item/ItemWood.tres" id="1_keem7"]
+[ext_resource type="Resource" uid="uid://cu82nk7kwdtgt" path="res://resource/item/ItemStone.tres" id="2_eaaqc"]
+[ext_resource type="Script" path="res://resource/item/_script/ItemStructure.gd" id="3_q1gsm"]
+[ext_resource type="Script" path="res://resource/recipe/Recipe.gd" id="3_u6yl5"]
+[ext_resource type="Resource" uid="uid://kjt6w0djwg7k" path="res://resource/structure/StructureCombiner.tres" id="4_sadiy"]
+
+[sub_resource type="Resource" id="Resource_444k6"]
+script = ExtResource("3_q1gsm")
+structure = ExtResource("4_sadiy")
+name = ""
+color = Color(1, 1, 1, 1)
+
+[resource]
+script = ExtResource("3_u6yl5")
+duration = 1
+inputs = Array[Resource("res://resource/item/_script/Item.gd")]([ExtResource("1_keem7"), ExtResource("2_eaaqc")])
+output = SubResource("Resource_444k6")

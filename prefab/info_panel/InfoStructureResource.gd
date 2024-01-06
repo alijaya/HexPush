@@ -9,6 +9,6 @@ func _process(_delta):
 	if is_instance_valid(structure):
 		var structureResource := structure.structure as StructureResource
 		if structureResource:
-			countLabel.text = str(structure.get_meta(StructureResource.COUNT, 0))
+			countLabel.text = str(structureResource.get_count(structure))
 			workProgressBar.max_value = structureResource.hardness
-			workProgressBar.value = structure.get_meta(StructureResource.WORK, 0)
+			workProgressBar.value = structureResource.get_work(structure)

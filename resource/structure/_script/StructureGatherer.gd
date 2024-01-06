@@ -4,11 +4,30 @@ class_name StructureGatherer
 static var LumberCamp = load("res://resource/structure/StructureLumberCamp.tres")
 static var Quarry = load("res://resource/structure/StructureQuarry.tres")
 
+static var infoStructureGathererPrefab := load("res://prefab/info_panel/InfoStructureGatherer.tscn")
+
 @export var resourceType: StructureResource
 @export var tickPerClick: int = 1
 
 const TICK := &"tick"
 const RESOURCE := &"resource"
+
+func get_info_prefab(object: StructureObject) -> PackedScene:
+	return infoStructureGathererPrefab
+
+func get_resource(object: StructureObject) -> StructureObject:
+	if object.has_meta(RESOURCE):
+		return object.get_meta(RESOURCE)
+	else: return null
+
+func set_resource(object: StructureObject, resource: StructureObject):
+	object.set_meta(RESOURCE, resource)
+
+func get_tick(object: StructureObject) -> int:
+	return object.get_meta(TICK, 0)
+
+func set_tick(object: StructureObject, tick: int):
+	object.set_meta(TICK, tick)
 
 func _ready(object: StructureObject):
 	object.set_meta(TICK, 0)
@@ -18,27 +37,29 @@ func _update_view(object: StructureObject):
 	object.dummy.direction_flags = 1 << object.dir
 
 func _step_tick(object: StructureObject):
-	var tick: int = object.get_meta(TICK, 0)
+	var tick := get_tick(object)
 	tick += 1
 	if tick < tickPerClick:
-		object.set_meta(TICK, tick)
+		set_tick(object, tick)
 		return
 	
 	if !work(object): return
 	
-	object.set_meta(TICK, 0)
+	set_tick(object, 0)
 
 func work(object: StructureObject) -> bool:
-	if !object.has_meta(RESOURCE) or !object.get_meta(RESOURCE):
+	var resource := get_resource(object)
+	if !resource:
 		var search_coords := Coords.coords_ring(object.coordsi, 1)
 		search_coords.shuffle()
 		for coords in search_coords:
 			var structure := Gameplay.I.get_structure(coords)
 			if structure and structure.equals(resourceType):
-				object.set_meta(RESOURCE, structure)
+				resource = structure
+				set_resource(object, resource)
 				break
-	if !object.has_meta(RESOURCE) or !object.get_meta(RESOURCE): return false
-	resourceType.work(object.get_meta(RESOURCE), func (): return spawn(object))
+	if !resource: return false
+	resourceType.work(resource, func (): return spawn(object))
 	return true
 
 func spawn(object: StructureObject) -> bool:

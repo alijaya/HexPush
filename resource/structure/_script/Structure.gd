@@ -8,16 +8,15 @@ class_name Structure
 static var structurePrefab = load("res://prefab/StructureObject.tscn")
 static var infoStructurePrefab = load("res://prefab/info_panel/InfoStructure.tscn")
 
+static var Blocker = load("res://resource/structure/StructureBlocker.tres")
 
 func create_object() -> StructureObject:
 	var object: StructureObject = structurePrefab.instantiate()
 	object.structure = self
 	return object
 
-func create_info(object: StructureObject) -> InfoStructure:
-	var info: InfoStructure = infoStructurePrefab.instantiate()
-	info.structure = object
-	return info
+func get_info_prefab(object: StructureObject) -> PackedScene:
+	return infoStructurePrefab
 
 func is_flat() -> bool:
 	return false
@@ -60,7 +59,7 @@ func _update_view(object: StructureObject):
 		object.sprite.texture = texture
 		object.dummy.text = ""
 		object.dummy.color = Color.TRANSPARENT
-		object.dummy.text_color = color
+		object.dummy.text_color = Color.WHITE
 	else:
 		object.dummy.text = name
 		object.dummy.color = color

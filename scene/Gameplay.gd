@@ -17,13 +17,15 @@ var leftHoldTimer: Timer
 var rightHoldTimer: Timer
 
 var structureToAdd := {
-	Key.KEY_1: StructureGatherer.LumberCamp,
-	Key.KEY_2: StructureGatherer.Quarry,
-	Key.KEY_3: StructureDestroyer.Default,
-	Key.KEY_4: StructureBubbler.Default,
-	Key.KEY_5: StructureCombiner.Default,
-	Key.KEY_6: StructureSplitter.Default,
-	Key.KEY_7: StructureCrossover.Default,
+	Key.KEY_L: StructureGatherer.LumberCamp,
+	Key.KEY_Q: StructureGatherer.Quarry,
+	Key.KEY_D: StructureDestroyer.Default,
+	Key.KEY_B: StructureBubbler.Default,
+	Key.KEY_X: Structure.Blocker,
+	Key.KEY_C: StructureCombiner.Default,
+	Key.KEY_S: StructureSplitter.Default,
+	Key.KEY_O: StructureCrossover.Default,
+	Key.KEY_M: StructureMachine.Sawmill,
 }
 
 var pickedItem: ItemObject
@@ -79,10 +81,10 @@ func generateMap():
 		var layer = Constant.BiomeToLayer[biome]
 		var tile = Constant.BiomeToTile[biome]
 		for coordsi in list:
-			tilemap.set_cell(layer, coordsi, tile[0], tile[1], tile[2])
+			#tilemap.set_cell(layer, coordsi, tile[0], tile[1], tile[2])
 			tilemap.set_data(coordsi, Constant.DataKey.Biome, biome)
-		#BetterTerrain.set_cells(tilemap, Constant.BiomeToLayer[biome], list, Constant.BiomeToTerrain[biome])
-		#BetterTerrain.update_terrain_cells(tilemap, Constant.BiomeToLayer[biome], list)
+		BetterTerrain.set_cells(tilemap, Constant.BiomeToLayer[biome], list, Constant.BiomeToTerrain[biome])
+		BetterTerrain.update_terrain_cells(tilemap, Constant.BiomeToLayer[biome], list)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -155,6 +157,9 @@ func on_left_click():
 	select_cell(mouseCoords)
 	var structure := get_structure(mouseCoords)
 	swap_item(mouseCoords)
+	if pickedItem and pickedItem.equals(ItemBubble.Default):
+		pickedItem.delete(true)
+		pickedItem = null
 	if structure:
 		structure._on_left_click()
 
@@ -177,6 +182,10 @@ func on_left_hold():
 				swap_item(mouseCoords)
 				item = get_item(mouseCoords)
 				if item: item.build_structure()
+	
+	if pickedItem and pickedItem.equals(ItemBubble.Default):
+		pickedItem.delete(true)
+		pickedItem = null
 
 func on_right_click():
 	var structure := get_structure(mouseCoords)

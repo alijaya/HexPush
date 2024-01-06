@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=4 format=3 uid="uid://hd3k3cne6jld"]
+
+[ext_resource type="Script" path="res://resource/recipe/Recipe.gd" id="1_v2xs1"]
+[ext_resource type="Resource" uid="uid://fw4g2tgxefnj" path="res://resource/item/ItemWood.tres" id="1_voc4t"]
+[ext_resource type="Resource" uid="uid://xefuwfupf33" path="res://resource/item/ItemPlank.tres" id="2_1vj3v"]
+
+[resource]
+script = ExtResource("1_v2xs1")
+duration = 9
+inputs = Array[Resource("res://resource/item/_script/Item.gd")]([ExtResource("1_voc4t"), ExtResource("1_voc4t"), ExtResource("1_voc4t")])
+output = ExtResource("2_1vj3v")
