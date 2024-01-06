@@ -15,7 +15,7 @@ func _process(_delta):
 			if activeRecipe:
 				recipeSprite.texture = activeRecipe.output.texture
 				recipeLabel.text = activeRecipe.output.name
-				tickProgressBar.max_value = activeRecipe.duration
+				tickProgressBar.max_value = activeRecipe.duration - 1
 				tickProgressBar.value = tick
 			else:
 				recipeSprite.texture = null

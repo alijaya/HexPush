@@ -1,18 +1,28 @@
 extends Structure
 class_name StructureMachine
 
-static var Sawmill = load("res://resource/structure/StructureSawmill.tres")
-#static var StoneGenerator = load("res://resource/structure/StructureStoneGenerator.tres")
+static var Sawmill = load("res://resource/structure/machine/StructureSawmill.tres")
+static var Brickyard = load("res://resource/structure/machine/StructureBrickyard.tres")
+static var Smelter = load("res://resource/structure/machine/StructureSmelter.tres")
+static var LogisticShop = load("res://resource/structure/machine/StructureLogisticShop.tres")
+static var Workshop = load("res://resource/structure/machine/StructureWorkshop.tres")
 
 static var infoStructureMachinePrefab := load("res://prefab/info_panel/InfoStructureMachine.tscn")
 
 @export var recipes: Array[Recipe]
+@export var recipes_path: Array[String] # handling cyclic dependency
 
 const TICK := &"tick"
 const RECIPE := &"recipe"
 
 func get_info_prefab(object: StructureObject) -> PackedScene:
 	return infoStructureMachinePrefab
+
+func get_all_recipes() -> Array[Recipe]:
+	var new_recipes: Array[Recipe] = recipes.duplicate()
+	for path in recipes_path:
+		new_recipes.append(load(path))
+	return new_recipes
 
 func _update_view(object: StructureObject):
 	super(object)
@@ -54,7 +64,9 @@ func update_active_recipe(object: StructureObject):
 	var active_recipe := get_recipe(object)
 	var lastRecipe := active_recipe
 	active_recipe = null
-	for recipe in recipes:
+	var all_recipes := get_all_recipes()
+	all_recipes.sort_custom(func (a, b): return a.inputs.size() > b.inputs.size())
+	for recipe in all_recipes:
 		var dup := recipe.inputs.duplicate()
 		for input in inputs:
 			if dup.has(input.item): dup.erase(input.item)

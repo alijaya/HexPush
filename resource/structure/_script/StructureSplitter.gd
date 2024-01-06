@@ -1,7 +1,7 @@
 extends Structure
 class_name StructureSplitter
 
-static var Default = load("res://resource/structure/StructureSplitter.tres")
+static var Default = load("res://resource/structure/logistic/StructureSplitter.tres")
 
 const OUTPUT_INDEX := &"output_index"
 const output_dirs: Array[int] = [0, 1, -1]

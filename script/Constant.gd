@@ -14,6 +14,7 @@ enum Biome {
 enum Feature {
 	Tree,
 	Rock,
+	IronNode,
 	None = -1,
 }
 
@@ -27,6 +28,7 @@ const BiomeToColor := {
 const FeatureToColor := {
 	Feature.Tree: Color.DARK_GREEN,
 	Feature.Rock: Color.DARK_SLATE_GRAY,
+	Feature.IronNode: Color.CADET_BLUE,
 	Feature.None: Color.TRANSPARENT,
 }
 

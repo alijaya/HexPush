@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=4 format=3 uid="uid://cwg0sgma7125e"]
+
+[ext_resource type="Resource" uid="uid://81fxvt1jidtu" path="res://resource/item/ItemIronOre.tres" id="1_3h1d0"]
+[ext_resource type="Resource" uid="uid://wka1ly0ehm0p" path="res://resource/item/ItemIronPlate.tres" id="2_gqq4v"]
+[ext_resource type="Script" path="res://resource/recipe/Recipe.gd" id="3_yh13n"]
+
+[resource]
+script = ExtResource("3_yh13n")
+duration = 12
+inputs = Array[Resource("res://resource/item/_script/Item.gd")]([ExtResource("1_3h1d0"), ExtResource("1_3h1d0"), ExtResource("1_3h1d0")])
+output = ExtResource("2_gqq4v")

@@ -1,7 +1,7 @@
 extends Structure
 class_name StructureCombiner
 
-static var Default = load("res://resource/structure/StructureCombiner.tres")
+static var Default = load("res://resource/structure/logistic/StructureCombiner.tres")
 
 func _update_view(object: StructureObject):
 	super(object)

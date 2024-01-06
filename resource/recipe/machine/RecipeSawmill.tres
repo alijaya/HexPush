@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=7 format=3 uid="uid://dv6henj1ws715"]
+
+[ext_resource type="Resource" uid="uid://fw4g2tgxefnj" path="res://resource/item/ItemWood.tres" id="1_0k28v"]
+[ext_resource type="Resource" uid="uid://81fxvt1jidtu" path="res://resource/item/ItemIronOre.tres" id="3_3p0hm"]
+[ext_resource type="Script" path="res://resource/item/_script/ItemStructure.gd" id="3_e30fk"]
+[ext_resource type="Script" path="res://resource/recipe/Recipe.gd" id="5_lncrn"]
+[ext_resource type="Resource" uid="uid://4li3kueb714c" path="res://resource/structure/machine/StructureSawmill.tres" id="5_qbhdh"]
+
+[sub_resource type="Resource" id="Resource_444k6"]
+script = ExtResource("3_e30fk")
+structure = ExtResource("5_qbhdh")
+name = ""
+color = Color(1, 1, 1, 1)
+
+[resource]
+script = ExtResource("5_lncrn")
+duration = 3
+inputs = Array[Resource("res://resource/item/_script/Item.gd")]([ExtResource("1_0k28v"), ExtResource("1_0k28v"), ExtResource("1_0k28v"), ExtResource("3_3p0hm"), ExtResource("3_3p0hm")])
+output = SubResource("Resource_444k6")

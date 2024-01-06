@@ -1,7 +1,7 @@
 extends Structure
 class_name StructureCrossover
 
-static var Default = load("res://resource/structure/StructureCrossover.tres")
+static var Default = load("res://resource/structure/logistic/StructureCrossover.tres")
 
 const STORAGE := &"storage"
 #const LAST_INDEX := &"last_index"

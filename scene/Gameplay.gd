@@ -26,6 +26,7 @@ var structureToAdd := {
 	Key.KEY_S: StructureSplitter.Default,
 	Key.KEY_O: StructureCrossover.Default,
 	Key.KEY_M: StructureMachine.Sawmill,
+	Key.KEY_W: StructureMachine.Workshop,
 }
 
 var pickedItem: ItemObject

@@ -2,8 +2,9 @@ extends Structure
 class_name StructureResource
 
 static var Feature:= {
-	Constant.Feature.Tree : load("res://resource/structure/StructureTree.tres"),
-	Constant.Feature.Rock : load("res://resource/structure/StructureRock.tres"),
+	Constant.Feature.Tree : load("res://resource/structure/resource/StructureTree.tres"),
+	Constant.Feature.Rock : load("res://resource/structure/resource/StructureRock.tres"),
+	Constant.Feature.IronNode : load("res://resource/structure/resource/StructureIronNode.tres"),
 }
 
 static var infoStructureResourcePrefab := load("res://prefab/info_panel/InfoStructureResource.tscn")

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=7 format=3 uid="uid://dsa7gl2tygrql"]
+
+[ext_resource type="Resource" uid="uid://cu82nk7kwdtgt" path="res://resource/item/ItemStone.tres" id="2_qpvuo"]
+[ext_resource type="Resource" uid="uid://81fxvt1jidtu" path="res://resource/item/ItemIronOre.tres" id="3_xieik"]
+[ext_resource type="Script" path="res://resource/item/_script/ItemStructure.gd" id="4_u2gqk"]
+[ext_resource type="Resource" uid="uid://cteiwru5n13lt" path="res://resource/structure/machine/StructureBrickyard.tres" id="5_m11hw"]
+[ext_resource type="Script" path="res://resource/recipe/Recipe.gd" id="6_nmlod"]
+
+[sub_resource type="Resource" id="Resource_444k6"]
+script = ExtResource("4_u2gqk")
+structure = ExtResource("5_m11hw")
+name = ""
+color = Color(1, 1, 1, 1)
+
+[resource]
+script = ExtResource("6_nmlod")
+duration = 12
+inputs = Array[Resource("res://resource/item/_script/Item.gd")]([ExtResource("2_qpvuo"), ExtResource("2_qpvuo"), ExtResource("2_qpvuo"), ExtResource("3_xieik"), ExtResource("3_xieik")])
+output = SubResource("Resource_444k6")

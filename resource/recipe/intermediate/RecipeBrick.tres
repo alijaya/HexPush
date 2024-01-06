@@ -6,6 +6,6 @@
 
 [resource]
 script = ExtResource("3_1e2qi")
-duration = 1
+duration = 9
 inputs = Array[Resource("res://resource/item/_script/Item.gd")]([ExtResource("1_x5epb"), ExtResource("1_x5epb"), ExtResource("1_x5epb")])
 output = ExtResource("2_a15a0")

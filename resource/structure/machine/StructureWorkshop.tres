@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="StructureMachine" load_steps=10 format=3 uid="uid://dvx7nk61qtlgo"]
+
+[ext_resource type="Resource" uid="uid://h73iwumvk4nh" path="res://resource/recipe/gatherer/RecipeLumberCamp.tres" id="1_8catn"]
+[ext_resource type="Resource" uid="uid://dicrfkkgbenmc" path="res://resource/recipe/gatherer/RecipeQuarry.tres" id="2_xysba"]
+[ext_resource type="Resource" uid="uid://f5vruw1tjsy7" path="res://resource/recipe/gatherer/RecipeMiner.tres" id="3_miyjy"]
+[ext_resource type="Resource" uid="uid://dv6henj1ws715" path="res://resource/recipe/machine/RecipeSawmill.tres" id="4_k7lx8"]
+[ext_resource type="Resource" uid="uid://dsa7gl2tygrql" path="res://resource/recipe/machine/RecipeBrickyard.tres" id="5_ypup2"]
+[ext_resource type="Resource" uid="uid://gp2kpw8t8evi" path="res://resource/recipe/machine/RecipeSmelter.tres" id="6_to2km"]
+[ext_resource type="Resource" uid="uid://d1oyt0wagpclt" path="res://resource/recipe/machine/RecipeLogisticShop.tres" id="7_yn34a"]
+[ext_resource type="Script" path="res://resource/structure/_script/StructureMachine.gd" id="9_3idgm"]
+[ext_resource type="Texture2D" uid="uid://box8ffhm877ve" path="res://asset/structure/006.workshop.png" id="10_0vf8x"]
+
+[resource]
+script = ExtResource("9_3idgm")
+recipes = Array[Resource("res://resource/recipe/Recipe.gd")]([ExtResource("1_8catn"), ExtResource("2_xysba"), ExtResource("3_miyjy"), ExtResource("4_k7lx8"), ExtResource("5_ypup2"), ExtResource("6_to2km"), ExtResource("7_yn34a")])
+recipes_path = Array[String](["res://resource/recipe/machine/RecipeWorkshop.tres"])
+texture = ExtResource("10_0vf8x")
+name = "Workshop"
+color = Color(1, 1, 1, 1)

@@ -8,7 +8,7 @@ class_name Structure
 static var structurePrefab = load("res://prefab/StructureObject.tscn")
 static var infoStructurePrefab = load("res://prefab/info_panel/InfoStructure.tscn")
 
-static var Blocker = load("res://resource/structure/StructureBlocker.tres")
+static var Blocker = load("res://resource/structure/logistic/StructureBlocker.tres")
 
 func create_object() -> StructureObject:
 	var object: StructureObject = structurePrefab.instantiate()

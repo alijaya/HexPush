@@ -1,7 +1,7 @@
 extends Structure
 class_name StructureBubbler
 
-static var Default = load("res://resource/structure/StructureBubbler.tres")
+static var Default = load("res://resource/structure/logistic/StructureBubbler.tres")
 
 func _step_tick(object: StructureObject):
 	if Gameplay.I.push_item_from(object.coordsi, object.dir):

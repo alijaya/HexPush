@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://wka1ly0ehm0p"]
+
+[ext_resource type="Script" path="res://resource/item/_script/Item.gd" id="1_nyjsw"]
+[ext_resource type="Texture2D" uid="uid://dgr4rso84vemk" path="res://asset/item/iron_plate.png" id="2_in2ye"]
+
+[resource]
+script = ExtResource("1_nyjsw")
+texture = ExtResource("2_in2ye")
+name = "Iron Plate"
+color = Color(0.439216, 0.584314, 0.792157, 1)

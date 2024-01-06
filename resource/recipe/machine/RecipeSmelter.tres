@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=8 format=3 uid="uid://gp2kpw8t8evi"]
+
+[ext_resource type="Resource" uid="uid://xefuwfupf33" path="res://resource/item/ItemPlank.tres" id="2_kcihs"]
+[ext_resource type="Resource" uid="uid://dcrx6n24xmmg1" path="res://resource/item/ItemBrick.tres" id="3_050ml"]
+[ext_resource type="Resource" uid="uid://81fxvt1jidtu" path="res://resource/item/ItemIronOre.tres" id="3_ekqsn"]
+[ext_resource type="Script" path="res://resource/item/_script/ItemStructure.gd" id="4_0fnar"]
+[ext_resource type="Resource" uid="uid://3cpx4d0alxpq" path="res://resource/structure/machine/StructureSmelter.tres" id="5_f5uyx"]
+[ext_resource type="Script" path="res://resource/recipe/Recipe.gd" id="6_he0l2"]
+
+[sub_resource type="Resource" id="Resource_444k6"]
+script = ExtResource("4_0fnar")
+structure = ExtResource("5_f5uyx")
+name = ""
+color = Color(1, 1, 1, 1)
+
+[resource]
+script = ExtResource("6_he0l2")
+duration = 12
+inputs = Array[Resource("res://resource/item/_script/Item.gd")]([ExtResource("3_ekqsn"), ExtResource("3_ekqsn"), ExtResource("3_ekqsn"), ExtResource("2_kcihs"), ExtResource("3_050ml")])
+output = SubResource("Resource_444k6")

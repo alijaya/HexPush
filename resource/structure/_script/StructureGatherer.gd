@@ -1,8 +1,8 @@
 extends Structure
 class_name StructureGatherer
 
-static var LumberCamp = load("res://resource/structure/StructureLumberCamp.tres")
-static var Quarry = load("res://resource/structure/StructureQuarry.tres")
+static var LumberCamp = load("res://resource/structure/gatherer/StructureLumberCamp.tres")
+static var Quarry = load("res://resource/structure/gatherer/StructureQuarry.tres")
 
 static var infoStructureGathererPrefab := load("res://prefab/info_panel/InfoStructureGatherer.tscn")
 
@@ -30,7 +30,7 @@ func set_tick(object: StructureObject, tick: int):
 	object.set_meta(TICK, tick)
 
 func _ready(object: StructureObject):
-	object.set_meta(TICK, 0)
+	set_tick(object, 0)
 
 func _update_view(object: StructureObject):
 	super(object)

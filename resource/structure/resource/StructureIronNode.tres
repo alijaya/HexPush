@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="StructureResource" load_steps=3 format=3 uid="uid://dscr2sev6nvjk"]
+
+[ext_resource type="Resource" uid="uid://81fxvt1jidtu" path="res://resource/item/ItemIronOre.tres" id="1_1rrvm"]
+[ext_resource type="Script" path="res://resource/structure/_script/StructureResource.gd" id="2_mp1qf"]
+
+[resource]
+script = ExtResource("2_mp1qf")
+output = ExtResource("1_1rrvm")
+hardness = 6
+richness = 6
+name = "Iron Node"
+color = Color(0.368627, 0.501961, 0.807843, 1)
