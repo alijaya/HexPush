@@ -4,7 +4,7 @@ class_name Gameplay
 static var I: Gameplay
 
 @onready var secondsPerTick: float = 1.
-@onready var holdThreshold: float = .5
+@onready var holdThreshold: float = .3
 @onready var camera: CameraMouseControl = $Camera2D
 @onready var tilemap: DataTileMap = $TileMap
 @onready var infoPanels: Container = %InfoPanels
