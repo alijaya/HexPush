@@ -4,6 +4,7 @@ class_name Gameplay
 static var I: Gameplay
 
 @onready var secondsPerTick: float = 1.
+@onready var holdThreshold: float = 1.
 @onready var camera: CameraMouseControl = $Camera2D
 @onready var tilemap: DataTileMap = $TileMap
 @onready var infoPanels: Container = %InfoPanels
@@ -11,6 +12,9 @@ const infoPanelPrefab := preload("res://prefab/info_panel/InfoPanel.tscn")
 
 @export var bounding: Rect2i = Rect2i()
 @export var mapGenerator: MapGenerator
+
+var leftHoldTimer: Timer
+var rightHoldTimer: Timer
 
 var structureToAdd := {
 	Key.KEY_1: StructureGatherer.LumberCamp,
@@ -96,14 +100,49 @@ func _process(_delta):
 		pickedItem.reset_offset()
 		pickedItem.set_local_pos(mouse)
 
+func startTimer(time: float, callback: Callable) -> Timer:
+	var timer := Timer.new()
+	timer.one_shot = true
+	timer.timeout.connect(func ():
+		timer.queue_free()
+		callback.call()
+	)
+	add_child(timer)
+	timer.start(time)
+	return timer
+
+func stopTimer(timer: Timer):
+	if !timer: return
+	timer.stop()
+	timer.queue_free()
+
 func _unhandled_input(event):
 	if event is InputEventMouseButton:
 		var mb := event as InputEventMouseButton
-		if mb.pressed:
-			if mb.button_index == MOUSE_BUTTON_LEFT:
-				on_left_click()
-			elif mb.button_index == MOUSE_BUTTON_RIGHT:
-				on_right_click()
+		if mb.button_index == MOUSE_BUTTON_LEFT:
+			if mb.pressed:
+				stopTimer(leftHoldTimer)
+				leftHoldTimer = startTimer(holdThreshold, func ():
+					leftHoldTimer = null
+					on_left_hold()
+				)
+			else:
+				if leftHoldTimer:
+					on_left_click()
+					stopTimer(leftHoldTimer)
+					leftHoldTimer = null
+		elif mb.button_index == MOUSE_BUTTON_RIGHT:
+			if mb.pressed:
+				stopTimer(rightHoldTimer)
+				rightHoldTimer = startTimer(holdThreshold, func ():
+					rightHoldTimer = null
+					on_right_hold()
+				)
+			else:
+				if rightHoldTimer:
+					on_right_click()
+					stopTimer(rightHoldTimer)
+					rightHoldTimer = null
 	if event is InputEventKey:
 		var k := event as InputEventKey
 		if k.pressed and !k.echo:
@@ -115,9 +154,19 @@ func on_left_click():
 	#remove_item(coords)
 	select_cell(mouseCoords)
 	var structure := get_structure(mouseCoords)
-	if !structure or structure.is_flat(): swap_item(mouseCoords)
+	swap_item(mouseCoords)
 	if structure:
 		structure._on_left_click()
+
+func on_left_hold():
+	drop_item(mouseCoords)
+	var item := get_item(mouseCoords)
+	var structure := get_structure(mouseCoords)
+	if item and !structure:
+		item.build_structure()
+	elif !item and structure:
+		structure.pack_structure()
+		swap_item(mouseCoords)
 
 func on_right_click():
 	var structure := get_structure(mouseCoords)
@@ -125,11 +174,13 @@ func on_right_click():
 		structure.rotateCW()
 		structure._on_right_click()
 
+func on_right_hold():
+	pass
+
 func on_key_press(key: Key):
 	var structure: Structure = structureToAdd.get(key)
 	if !structure: return
-	for coords in highlightedCoords:
-		add_structure(coords, structure, true)
+	add_structure(mouseCoords, structure, true)
 
 func loop():
 	while true:
@@ -235,27 +286,35 @@ func set_structure(coordsi: Vector2i, obj: StructureObject):
 func set_item(coordsi: Vector2i, obj: ItemObject):
 	return tilemap.set_data(coordsi, Constant.DataKey.Item, obj)
 
-func pick_item(coordsi: Vector2i):
-	if pickedItem: return
+func pick_item(coordsi: Vector2i) -> bool:
+	if pickedItem: return false
 	pickedItem = get_item(coordsi)
 	set_item(coordsi, null)
+	return true
 
-func drop_item(coordsi: Vector2i):
-	if pickedItem: return
-	if get_item(coordsi) != null: return
+func drop_item(coordsi: Vector2i) -> bool:
+	if !pickedItem: return true
+	if !can_add_item(coordsi): return false
 	pickedItem.coordsi = coordsi
 	set_item(coordsi, pickedItem)
 	pickedItem = null
+	return true
 
-func swap_item(coordsi: Vector2i):
+func swap_item(coordsi: Vector2i) -> bool:
 	var tileItem = get_item(coordsi)
-	if pickedItem: pickedItem.coordsi = coordsi
-	set_item(coordsi, pickedItem)
-	pickedItem = tileItem
+	set_item(coordsi, null)
+	
+	if drop_item(coordsi):
+		pickedItem = tileItem
+		return true
+	else:
+		# balikin
+		set_item(coordsi, tileItem)
+		return false
 
-func add_structure(coords: Vector2i, structure: Structure, animate: bool = false) -> bool:
-	if get_structure(coords): return false
-	if !structure.is_flat() and get_item(coords): return false
+func add_structure(coords: Vector2i, structure: Structure, animate: bool = false) -> StructureObject:
+	if get_structure(coords): return null
+	if !structure.is_flat() and get_item(coords): return null
 	var obj := structure.create_object()
 	obj.coords = coords
 	tilemap.add_child(obj)
@@ -264,10 +323,10 @@ func add_structure(coords: Vector2i, structure: Structure, animate: bool = false
 	if animate:
 		var tween := obj.create_tween().bind_node(obj)
 		tween.tween_property(obj, "scale", Vector2.ONE, 1./4).from(Vector2.ZERO)
-	return true
+	return obj
 
-func add_item(coords: Vector2i, item: Item, animate: bool = false) -> bool:
-	if get_item(coords): return false
+func add_item(coords: Vector2i, item: Item, animate: bool = false) -> ItemObject:
+	if get_item(coords): return null
 	var obj := item.create_object()
 	obj.coords = coords
 	tilemap.add_child(obj)
@@ -276,7 +335,7 @@ func add_item(coords: Vector2i, item: Item, animate: bool = false) -> bool:
 	if animate:
 		var tween := obj.create_tween().bind_node(obj)
 		tween.tween_property(obj, "scale", Vector2.ONE, 1./4).from(Vector2.ZERO)
-	return true
+	return obj
 
 func can_add_item(coords: Vector2i) -> bool:
 	var item := get_item(coords)

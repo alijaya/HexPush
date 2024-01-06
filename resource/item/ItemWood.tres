@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://fw4g2tgxefnj"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://fw4g2tgxefnj"]
 
 [ext_resource type="Script" path="res://resource/item/_script/Item.gd" id="1_fhtea"]
+[ext_resource type="Texture2D" uid="uid://deqdhmgn0gdlc" path="res://asset/item/wood.png" id="2_7ytq8"]
 
 [resource]
 script = ExtResource("1_fhtea")
+texture = ExtResource("2_7ytq8")
 name = "Wood"
 color = Color(0.819608, 0.478431, 0.270588, 1)

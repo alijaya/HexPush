@@ -3,10 +3,15 @@ class_name ItemObject
 
 @export var item: Item
 
+@onready var sprite: Sprite2D = $Sprite2D
 @onready var dummy: DummyHex = $DummyHex
 
 func _ready():
+	_update_view()
 	if item: item._ready(self)
+
+func _update_view():
+	if item: item._update_view(self)
 
 func _process(delta: float):
 	if item: item._process(self, delta)
@@ -16,6 +21,15 @@ func _step_tick():
 
 func equals(other: Item) -> bool:
 	return item.equals(other)
+
+func build_structure() -> StructureObject:
+	var itemStructure := item as ItemStructure
+	if !itemStructure: return null
+	if self != Gameplay.I.get_item(coordsi): return null # not matching
+	if Gameplay.I.get_structure(coordsi): return null # can't build on structure
+	
+	delete(true) # delete this item
+	return Gameplay.I.add_structure(coordsi, itemStructure.structure, true)
 
 func delete(animate: bool = false):
 	if self == Gameplay.I.get_item(coordsi):

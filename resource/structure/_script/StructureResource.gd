@@ -17,6 +17,9 @@ func _ready(object: StructureObject):
 	object.set_meta(WORK, 0)
 	object.set_meta(COUNT, richness)
 	
+func can_pack() -> bool:
+	return false
+
 func work(object: StructureObject, on_trigger: Callable):
 	var work_count: int = object.get_meta(WORK, 0)
 	var count: int = object.get_meta(COUNT, richness)

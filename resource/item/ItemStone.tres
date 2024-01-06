@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://cu82nk7kwdtgt"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cu82nk7kwdtgt"]
 
 [ext_resource type="Script" path="res://resource/item/_script/Item.gd" id="1_1dbl2"]
+[ext_resource type="Texture2D" uid="uid://ccliplhdi1shr" path="res://asset/item/stone.png" id="2_2rq7w"]
 
 [resource]
 script = ExtResource("1_1dbl2")
+texture = ExtResource("2_2rq7w")
 name = "Stone"
 color = Color(0.654902, 0.658824, 0.705882, 1)

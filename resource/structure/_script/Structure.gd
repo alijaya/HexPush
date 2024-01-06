@@ -18,6 +18,9 @@ func is_flat() -> bool:
 func get_priority() -> int:
 	return 0
 
+func can_pack() -> bool:
+	return true
+
 func can_accept_multiple() -> bool:
 	return false
 

@@ -14,9 +14,8 @@ class_name StructureObject
 var priority: int = 0
 
 func _ready():
-	if structure:
-		structure._update_view(self)
-		structure._ready(self)
+	_update_view()
+	if structure: structure._ready(self)
 
 func _process(delta: float):
 	if structure: structure._process(self, delta)
@@ -66,6 +65,17 @@ func rotateCCW():
 
 func rotateCW():
 	dir = posmod(dir-1, 6) as Constant.Direction
+
+func pack_structure() -> ItemObject:
+	if !structure: return null
+	if !structure.can_pack(): return null
+	if self != Gameplay.I.get_structure(coordsi): return null # not matching
+	if Gameplay.I.get_item(coordsi): return null # can't pack structure on item
+	
+	delete(true) # delete this item
+	var itemStructure := ItemStructure.new()
+	itemStructure.structure = structure
+	return Gameplay.I.add_item(coordsi, itemStructure, true)
 
 func delete(animate: bool = false):
 	if self == Gameplay.I.get_structure(coordsi):

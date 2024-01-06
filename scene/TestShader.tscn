@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7gxjd2or7w5i"]
+
+[ext_resource type="Material" uid="uid://brqjxgpp4s4qf" path="res://shader/OutlineMaterialtres.tres" id="1_hacw2"]
+[ext_resource type="Texture2D" uid="uid://deqdhmgn0gdlc" path="res://asset/item/wood.png" id="2_xcvfj"]
+
+[node name="TestShader" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("1_hacw2")
+texture = ExtResource("2_xcvfj")

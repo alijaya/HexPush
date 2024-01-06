@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7roxfbqyp2gg"]
+[gd_scene load_steps=4 format=3 uid="uid://b7roxfbqyp2gg"]
 
 [ext_resource type="PackedScene" uid="uid://br8wrqwhs85in" path="res://prefab/DummyHex.tscn" id="1_8tqif"]
 [ext_resource type="Script" path="res://prefab/ItemObject.gd" id="1_r5tu8"]
+[ext_resource type="Material" uid="uid://brqjxgpp4s4qf" path="res://shader/OutlineMaterialtres.tres" id="2_uxaeu"]
 
 [node name="ItemObject" type="Node2D"]
 script = ExtResource("1_r5tu8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("2_uxaeu")
+scale = Vector2(0.5, 0.5)
 
 [node name="DummyHex" parent="." instance=ExtResource("1_8tqif")]
 scale = Vector2(0.5, 0.5)

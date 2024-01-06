@@ -1,7 +1,10 @@
 extends Item
 class_name ItemStructure
 
-@export var structure: Structure
+@export var structure: Structure:
+	set(v):
+		structure = v
+		if structure: texture = structure.texture
 
 func equals(other) -> bool:
 	var otherItemStructure := other as ItemStructure
