@@ -8,6 +8,9 @@ static var Default = load("res://resource/structure/misc/StructureHearth.tres")
 #func get_info_prefab(object: StructureObject) -> PackedScene:
 	#return infoStructureMachinePrefab
 
+func can_pack() -> bool:
+	return false
+
 func _step_tick(object: StructureObject):
 	consume_inputs(object)
 
