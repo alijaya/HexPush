@@ -38,7 +38,7 @@ func build_structure() -> StructureObject:
 func delete(animate: bool = false):
 	if self == Gameplay.I.get_item(coordsi):
 		Gameplay.I.set_item(coordsi, null)
-	Gameplay.I.items.erase(self)
+	#Gameplay.I.items.erase(self)
 	if animate:
 		var tween := create_tween().bind_node(self)
 		tween.tween_property(self, "scale", Vector2.ZERO, Gameplay.I.secondsPerTick/4)

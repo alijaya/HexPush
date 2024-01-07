@@ -90,7 +90,7 @@ func pack_structure() -> ItemObject:
 func delete(animate: bool = false):
 	if self == Gameplay.I.get_structure(coordsi):
 		Gameplay.I.set_structure(coordsi, null)
-	Gameplay.I.structures.erase(self)
+	#Gameplay.I.structures.erase(self)
 	if animate:
 		var tween := create_tween().bind_node(self)
 		tween.tween_property(self, "scale", Vector2.ZERO, Gameplay.I.secondsPerTick/4)
