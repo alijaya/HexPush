@@ -8,6 +8,14 @@ class_name Item
 static var itemPrefab = load("res://prefab/ItemObject.tscn")
 static var infoItemPrefab = load("res://prefab/info_panel/InfoItem.tscn")
 
+static var ItemWood = load("res://resource/item/ItemWood.tres")
+static var ItemPlank = load("res://resource/item/ItemPlank.tres")
+static var ItemStone = load("res://resource/item/ItemStone.tres")
+static var ItemBrick = load("res://resource/item/ItemBrick.tres")
+static var ItemIronOre = load("res://resource/item/ItemIronOre.tres")
+static var ItemIronPlate = load("res://resource/item/ItemIronPlate.tres")
+static var ItemCoal = load("res://resource/item/ItemCoal.tres")
+
 func create_object() -> ItemObject:
 	var object: ItemObject = itemPrefab.instantiate()
 	object.item = self

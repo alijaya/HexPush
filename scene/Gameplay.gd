@@ -11,7 +11,7 @@ static var I: Gameplay
 const infoPanelPrefab := preload("res://prefab/info_panel/InfoPanel.tscn")
 
 @export var bounding: Rect2i = Rect2i()
-@export var initSize: int = 10
+@export var initSize: int = 4
 @export var mapGenerator: MapGenerator
 
 var leftHoldTimer: Timer
@@ -97,7 +97,9 @@ func exploreMaps(coordss: Array[Vector2i]):
 	
 	for edge_coords in edgeChecks:
 		set_biome(edge_coords, Constant.Biome.Edge)
-		add_structure(edge_coords, StructureEdge.Default)
+		var edgeObject := add_structure(edge_coords, StructureEdge.Default)
+		var edgeStructure = edgeObject.structure as StructureEdge
+		edgeStructure.set_requirements(edgeObject, [Item.ItemWood])
 	
 	for biome in biomeCoords:
 		var list = biomeCoords.get(biome, [])
