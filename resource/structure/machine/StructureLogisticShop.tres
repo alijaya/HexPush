@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="StructureMachine" load_steps=7 format=3 uid="uid://dusk4uj4twktt"]
+[gd_resource type="Resource" script_class="StructureMachine" load_steps=8 format=3 uid="uid://dusk4uj4twktt"]
 
 [ext_resource type="Resource" uid="uid://fx3gthlljayi" path="res://resource/recipe/logistic/RecipeCrossover.tres" id="1_dtcuf"]
 [ext_resource type="Resource" uid="uid://djbr51y4h245q" path="res://resource/recipe/logistic/RecipeCombiner.tres" id="2_cyyul"]
@@ -6,10 +6,12 @@
 [ext_resource type="Script" path="res://resource/structure/_script/StructureMachine.gd" id="3_lwu5j"]
 [ext_resource type="Resource" uid="uid://px6jwritq3l" path="res://resource/recipe/logistic/RecipeBubbler.tres" id="4_0hbmi"]
 [ext_resource type="Resource" uid="uid://bubsunv1nabgi" path="res://resource/recipe/logistic/RecipeSplitter.tres" id="5_hfpu3"]
+[ext_resource type="Texture2D" uid="uid://cd11jp1lundya" path="res://asset/structure/logistic_shop.png" id="7_el3ka"]
 
 [resource]
 script = ExtResource("3_lwu5j")
 recipes = Array[Resource("res://resource/recipe/Recipe.gd")]([ExtResource("1_dtcuf"), ExtResource("2_cyyul"), ExtResource("3_1hnnh"), ExtResource("4_0hbmi"), ExtResource("5_hfpu3")])
 recipes_path = Array[String]([])
+texture = ExtResource("7_el3ka")
 name = "Logistic Shop"
 color = Color(1, 1, 1, 1)
