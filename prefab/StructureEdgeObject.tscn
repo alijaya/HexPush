@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://i38ims1b7opm"]
+
+[ext_resource type="PackedScene" uid="uid://dxprdbqqm8kin" path="res://prefab/StructureObject.tscn" id="1_xqupt"]
+[ext_resource type="Script" path="res://prefab/StructureEdgeObject.gd" id="2_xta7n"]
+[ext_resource type="Material" uid="uid://brqjxgpp4s4qf" path="res://shader/OutlineMaterialtres.tres" id="3_chjtk"]
+[ext_resource type="Texture2D" uid="uid://d1wb8uv1mqfll" path="res://asset/item/brick.png" id="3_oq6mw"]
+
+[node name="StructureObject" instance=ExtResource("1_xqupt")]
+script = ExtResource("2_xta7n")
+
+[node name="Container" type="CenterContainer" parent="." index="2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -75.0
+offset_right = 100.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(100, 75)
+
+[node name="RequirementGroup" type="GridContainer" parent="Container" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 2
+
+[node name="ImageTemplate" type="TextureRect" parent="Container/RequirementGroup" index="0"]
+unique_name_in_owner = true
+material = ExtResource("3_chjtk")
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("3_oq6mw")
+expand_mode = 1
+stretch_mode = 5

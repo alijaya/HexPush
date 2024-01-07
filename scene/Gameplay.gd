@@ -45,13 +45,16 @@ func _ready():
 	I = self
 	generateMap()
 	
-	var coords := []
-	for i in range(tilemap.get_layers_count()):
-		coords.append_array(tilemap.get_used_cells(i))
-#	var rect := tilemap.get_used_rect()
-#	var coords := [rect.position, rect.position + Vector2i(rect.size.x-1, 0), rect.position + Vector2i(0, rect.size.y-1), rect.end - Vector2i.ONE]
+	# add initial workshop
+	remove_structure(Vector2i.ZERO)
+	add_structure(Vector2i.ZERO, StructureMachine.Workshop)
 	
+	loop()
+
+func calculate_camera_bounding():
 	var boundingRect: Rect2
+	
+	var coords := tilemap.get_data_layer(Constant.DataKey.Biome).keys()
 	
 	for coord in coords:
 		var pos := tilemap.to_global(tilemap.map_to_local(coord))
@@ -59,12 +62,6 @@ func _ready():
 		else: boundingRect = Rect2(pos, Vector2.ZERO)
 	
 	camera.boundingRect = boundingRect
-	
-	# add initial workshop
-	remove_structure(Vector2i.ZERO)
-	add_structure(Vector2i.ZERO, StructureMachine.Workshop)
-	
-	loop()
 
 func generateMap():
 	mapGenerator.setup()
@@ -101,8 +98,22 @@ func exploreMaps(coordss: Array[Vector2i]):
 		set_biome(edge_coords, Constant.Biome.Edge)
 		var edgeObject := add_structure(edge_coords, StructureEdge.Default)
 		if !edgeObject: continue # already has edge object
+		
+		var uv = Coords.coords_to_pixel(DataTileMap.hex_unit_layout, edge_coords)
+		var biome = mapGenerator.f_biome.call(uv.x, uv.y)
+		var feature = mapGenerator.f_feature.call(uv.x, uv.y)
+		
+		var requirements: Array[Item] = []
+		requirements.append(Item.ItemStone)
+		if biome != Constant.Biome.Water:
+			match feature:
+				Constant.Feature.Tree: requirements.append(Item.ItemStone)
+				Constant.Feature.Rock: requirements.append(Item.ItemWood)
+				Constant.Feature.CoalNode: requirements.append(Item.ItemIronOre)
+				Constant.Feature.IronNode: requirements.append(Item.ItemCoal)
+		
 		var edgeStructure = edgeObject.structure as StructureEdge
-		edgeStructure.set_requirements(edgeObject, [Item.ItemWood])
+		edgeStructure.set_requirements(edgeObject, requirements)
 	
 	for biome in biomeCoords:
 		var list = biomeCoords.get(biome, [])
@@ -112,6 +123,8 @@ func exploreMaps(coordss: Array[Vector2i]):
 			set_biome(coordsi, biome)
 		BetterTerrain.set_cells(tilemap, Constant.BiomeToLayer[biome], list, Constant.BiomeToTerrain[biome])
 		BetterTerrain.update_terrain_cells(tilemap, Constant.BiomeToLayer[biome], list)
+	
+	calculate_camera_bounding()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
