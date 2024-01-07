@@ -19,7 +19,7 @@ func _step_tick(object: StructureObject):
 		requirements.erase(item.item)
 	if requirements.is_empty():
 		Gameplay.I.exploreMap(object.coordsi)
-		#object.delete()
+		object.delete()
 	
 func get_requirements(object: StructureObject) -> Array[Item]:
 	var result: Array[Item] = []

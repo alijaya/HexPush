@@ -84,7 +84,9 @@ func exploreMaps(coordss: Array[Vector2i]):
 	for coords in coordss: coordsDict[coords] = true
 	for coords in coordss:
 		for edge_coords in Coords.coords_ring(coords, 1):
-			if !coordsDict.has(edge_coords): edgeChecks[edge_coords] = true
+			if coordsDict.has(edge_coords): continue
+			if get_biome(edge_coords) != Constant.Biome.None: continue
+			edgeChecks[edge_coords] = true
 		var uv = Coords.coords_to_pixel(DataTileMap.hex_unit_layout, coords)
 		var biome = mapGenerator.f_biome.call(uv.x, uv.y)
 		var feature = mapGenerator.f_feature.call(uv.x, uv.y)
@@ -98,6 +100,7 @@ func exploreMaps(coordss: Array[Vector2i]):
 	for edge_coords in edgeChecks:
 		set_biome(edge_coords, Constant.Biome.Edge)
 		var edgeObject := add_structure(edge_coords, StructureEdge.Default)
+		if !edgeObject: continue # already has edge object
 		var edgeStructure = edgeObject.structure as StructureEdge
 		edgeStructure.set_requirements(edgeObject, [Item.ItemWood])
 	
