@@ -15,6 +15,8 @@ var priority: int = 0
 
 signal state_changed
 
+var custom_data: Dictionary = {}
+
 func _ready():
 	_update_view()
 	if structure: structure._ready(self)
@@ -100,3 +102,15 @@ func delete(animate: bool = false):
 func equals(other: Structure) -> bool:
 	if structure: return structure.equals(other)
 	return false
+
+func get_data(key: StringName, default: Variant = null):
+	return custom_data.get(key, default)
+
+func erase_data(key: StringName):
+	custom_data.erase(key)
+
+func set_data(key: StringName, value: Variant):
+	if value == null:
+		erase_data(key)
+		return
+	custom_data[key] = value

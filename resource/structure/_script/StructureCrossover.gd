@@ -4,7 +4,6 @@ class_name StructureCrossover
 static var Default = load("res://resource/structure/logistic/StructureCrossover.tres")
 
 const STORAGE := &"storage"
-#const LAST_INDEX := &"last_index"
 
 func _update_view(object: StructureObject):
 	super(object)
@@ -17,9 +16,11 @@ func can_accept_multiple() -> bool:
 	return true
 
 func get_storage(object: StructureObject) -> Dictionary:
-	if !object.has_meta(STORAGE):
-		object.set_meta(STORAGE, {})
-	return object.get_meta(STORAGE)
+	var storage = object.get_data(STORAGE)
+	if !storage:
+		storage = {}
+		object.set_data(STORAGE, storage)
+	return storage
 
 func _on_item_enter(object: StructureObject, item: ItemObject, input_dir: Constant.Direction):
 	var storage: Dictionary = get_storage(object)

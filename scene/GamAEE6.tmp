@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbbbaid6qsenw"]
+
+[ext_resource type="Script" path="res://scene/Gameplay.gd" id="1_skbf5"]
+[ext_resource type="Resource" uid="uid://60xy72c72keb" path="res://resource/MapGenerator.tres" id="2_2d7ta"]
+[ext_resource type="TileSet" uid="uid://b02bhtuwbt788" path="res://resource/TileSet.tres" id="2_4gish"]
+[ext_resource type="Script" path="res://script/DataTileMap.gd" id="3_6purl"]
+[ext_resource type="Script" path="res://script/CameraMouseControl.gd" id="5_opsyr"]
+
+[node name="Gameplay" type="Node2D"]
+script = ExtResource("1_skbf5")
+bounding = Rect2i(-40, -40, 80, 80)
+mapGenerator = ExtResource("2_2d7ta")
+
+[node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
+position = Vector2(-100, -75)
+tile_set = ExtResource("2_4gish")
+format = 2
+layer_0/name = "water"
+layer_0/y_sort_enabled = true
+layer_0/z_index = -3
+layer_1/name = "mountain"
+layer_1/y_sort_enabled = true
+layer_1/z_index = -3
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "forest"
+layer_2/y_sort_enabled = true
+layer_2/z_index = -3
+layer_2/tile_data = PackedInt32Array()
+layer_3/name = "grassland"
+layer_3/y_sort_enabled = true
+layer_3/z_index = -3
+layer_3/tile_data = PackedInt32Array()
+layer_4/name = "selection"
+layer_4/y_sort_enabled = true
+layer_4/z_index = -2
+layer_4/tile_data = PackedInt32Array()
+layer_5/name = "decoration"
+layer_5/y_sort_enabled = true
+layer_5/z_index = -3
+layer_5/tile_data = PackedInt32Array()
+layer_6/name = "feature"
+layer_6/y_sort_enabled = true
+layer_6/tile_data = PackedInt32Array()
+layer_7/name = "data"
+layer_7/y_sort_enabled = true
+layer_7/tile_data = PackedInt32Array()
+script = ExtResource("3_6purl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.8
+drag_top_margin = 0.8
+drag_right_margin = 0.8
+drag_bottom_margin = 0.8
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = ExtResource("5_opsyr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="ReferenceRect" parent="CanvasLayer"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+pivot_offset = Vector2(960, 540)
+mouse_filter = 2
+
+[node name="InfoPanels" type="HBoxContainer" parent="CanvasLayer/HUD"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -219.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 2

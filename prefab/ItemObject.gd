@@ -6,6 +6,8 @@ class_name ItemObject
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var dummy: DummyHex = $DummyHex
 
+var custom_data: Dictionary = {}
+
 func _ready():
 	_update_view()
 	if item: item._ready(self)
@@ -44,3 +46,17 @@ func delete(animate: bool = false):
 		tween.tween_property(self, "scale", Vector2.ZERO, Gameplay.I.secondsPerTick/4)
 		tween.tween_callback(func (): queue_free())
 	else: queue_free()
+
+func get_data(key: StringName, default: Variant = null):
+	var result = custom_data.get(key, default)
+	if is_instance_valid(result) or not (result is Object): return result
+	else: return default
+
+func erase_data(key: StringName):
+	custom_data.erase(key)
+
+func set_data(key: StringName, value: Variant):
+	if value == null:
+		erase_data(key)
+		return
+	custom_data[key] = value

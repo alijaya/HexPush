@@ -16,18 +16,18 @@ func get_info_prefab(object: StructureObject) -> PackedScene:
 	return infoStructureGathererPrefab
 
 func get_resource(object: StructureObject) -> StructureObject:
-	if object.has_meta(RESOURCE):
-		return object.get_meta(RESOURCE)
-	else: return null
+	var resource = object.get_data(RESOURCE)
+	if !is_instance_valid(resource): return null
+	return resource
 
 func set_resource(object: StructureObject, resource: StructureObject):
-	object.set_meta(RESOURCE, resource)
+	object.set_data(RESOURCE, resource)
 
 func get_tick(object: StructureObject) -> int:
-	return object.get_meta(TICK, 0)
+	return object.get_data(TICK, 0)
 
 func set_tick(object: StructureObject, tick: int):
-	object.set_meta(TICK, tick)
+	object.set_data(TICK, tick)
 
 func _ready(object: StructureObject):
 	set_tick(object, 0)
@@ -59,8 +59,7 @@ func work(object: StructureObject) -> bool:
 				set_resource(object, resource)
 				break
 	if !resource: return false
-	resourceType.work(resource, func (): return spawn(object))
-	return true
+	return resourceType.work(resource, func (): return spawn(object))
 
 func spawn(object: StructureObject) -> bool:
 	var nex_coordsi := Coords.coords_neighbor(object.coordsi, object.dir)

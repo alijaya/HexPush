@@ -29,18 +29,16 @@ func _update_view(object: StructureObject):
 	object.dummy.direction_flags = 1 << object.dir
 
 func get_recipe(object: StructureObject) -> Recipe:
-	if object.has_meta(RECIPE):
-		return object.get_meta(RECIPE)
-	else: return null
+	return object.get_data(RECIPE)
 
 func set_recipe(object: StructureObject, recipe: Recipe):
-	object.set_meta(RECIPE, recipe)
+	object.set_data(RECIPE, recipe)
 
 func get_tick(object: StructureObject) -> int:
-	return object.get_meta(TICK, 0)
+	return object.get_data(TICK, 0)
 
 func set_tick(object: StructureObject, tick: int):
-	object.set_meta(TICK, tick)
+	object.set_data(TICK, tick)
 
 func _step_tick(object: StructureObject):
 	update_active_recipe(object)

@@ -17,45 +17,46 @@ const WORK := &"work"
 const COUNT := &"count"
 
 func _ready(object: StructureObject):
-	object.set_meta(WORK, 0)
-	object.set_meta(COUNT, richness)
+	set_work(object, 0)
+	set_count(object, richness)
 
 func get_info_prefab(object: StructureObject) -> PackedScene:
 	return infoStructureResourcePrefab
 
 func get_work(object: StructureObject) -> int:
-	return object.get_meta(WORK, 0)
+	return object.get_data(WORK, 0)
 
 func set_work(object: StructureObject, work_count: int):
-	object.set_meta(WORK, work_count)
+	object.set_data(WORK, work_count)
 
 func get_count(object: StructureObject) -> int:
-	return object.get_meta(COUNT, richness)
+	return object.get_data(COUNT, richness)
 
 func set_count(object: StructureObject, count: int):
-	object.set_meta(COUNT, count)
+	object.set_data(COUNT, count)
 
 func can_pack() -> bool:
 	return false
 
-func work(object: StructureObject, on_trigger: Callable):
+func work(object: StructureObject, on_trigger: Callable) -> bool:
 	var work_count := get_work(object)
 	var count := get_count(object)
 	work_count += 1
 	if work_count < hardness:
 		set_work(object, work_count)
-		return
+		return true
 	
-	if !on_trigger.call(): return
+	if !on_trigger.call(): return false
 	
 	set_work(object, 0)
 	count -= 1
 	
 	if count > 0:
 		set_count(object, count)
-		return
+		return true
 	
 	object.delete(true)
+	return true
 
 func _on_left_click(object: StructureObject):
 	work(object, func (): return spawn(object))
