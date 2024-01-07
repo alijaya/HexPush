@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://k3ue4wly14em"]
+
+[ext_resource type="Script" path="res://resource/item/_script/Item.gd" id="1_0xfit"]
+[ext_resource type="Texture2D" uid="uid://6f00w0qppp7o" path="res://asset/item/iron.png" id="2_xrgcu"]
+
+[resource]
+script = ExtResource("1_0xfit")
+texture = ExtResource("2_xrgcu")
+name = "Coal"
+color = Color(0.439216, 0.584314, 0.792157, 1)

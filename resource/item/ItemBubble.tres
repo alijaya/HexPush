@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="ItemBubble" load_steps=2 format=3 uid="uid://b8gvqlv0770b7"]
+[gd_resource type="Resource" script_class="ItemBubble" load_steps=3 format=3 uid="uid://b8gvqlv0770b7"]
 
 [ext_resource type="Script" path="res://resource/item/_script/ItemBubble.gd" id="1_dfr54"]
+[ext_resource type="Texture2D" uid="uid://bw7rgv68xmv6q" path="res://asset/item/bubble.png" id="2_dxjf6"]
 
 [resource]
 script = ExtResource("1_dfr54")
+texture = ExtResource("2_dxjf6")
 name = "Bubble"
 color = Color(0.709804, 0.87451, 0.968627, 1)

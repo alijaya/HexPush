@@ -25,3 +25,4 @@ maxRockProbs = 0.6
 minTreeProbs = -1.0
 maxTreeProbs = 1.0
 ironProbs = 0.05
+coalProbs = 0.05

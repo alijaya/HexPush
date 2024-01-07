@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://dcrx6n24xmmg1"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dcrx6n24xmmg1"]
 
 [ext_resource type="Script" path="res://resource/item/_script/Item.gd" id="1_0l8bs"]
+[ext_resource type="Texture2D" uid="uid://d1wb8uv1mqfll" path="res://asset/item/brick.png" id="2_h8sa2"]
 
 [resource]
 script = ExtResource("1_0l8bs")
+texture = ExtResource("2_h8sa2")
 name = "Brick"
 color = Color(0.458824, 0.462745, 0.513726, 1)

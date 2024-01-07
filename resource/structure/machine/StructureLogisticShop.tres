@@ -10,5 +10,6 @@
 [resource]
 script = ExtResource("3_lwu5j")
 recipes = Array[Resource("res://resource/recipe/Recipe.gd")]([ExtResource("1_dtcuf"), ExtResource("2_cyyul"), ExtResource("3_1hnnh"), ExtResource("4_0hbmi"), ExtResource("5_hfpu3")])
+recipes_path = Array[String]([])
 name = "Logistic Shop"
 color = Color(1, 1, 1, 1)

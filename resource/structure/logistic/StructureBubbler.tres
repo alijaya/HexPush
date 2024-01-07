@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="StructureBubbler" load_steps=2 format=3 uid="uid://c7lob1ibeeeqc"]
+[gd_resource type="Resource" script_class="StructureBubbler" load_steps=3 format=3 uid="uid://c7lob1ibeeeqc"]
 
 [ext_resource type="Script" path="res://resource/structure/_script/StructureBubbler.gd" id="1_r00e5"]
+[ext_resource type="Texture2D" uid="uid://cyidln4x1ssvf" path="res://asset/structure/008.bubble generator.png" id="2_fw8oo"]
 
 [resource]
 script = ExtResource("1_r00e5")
+texture = ExtResource("2_fw8oo")
 name = "Bubbler"
 color = Color(0.243137, 0.576471, 0.662745, 1)
-is_flat = true

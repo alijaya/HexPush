@@ -4,6 +4,7 @@ class_name StructureResource
 static var Feature:= {
 	Constant.Feature.Tree : load("res://resource/structure/resource/StructureTree.tres"),
 	Constant.Feature.Rock : load("res://resource/structure/resource/StructureRock.tres"),
+	Constant.Feature.CoalNode : load("res://resource/structure/resource/StructureCoalNode.tres"),
 	Constant.Feature.IronNode : load("res://resource/structure/resource/StructureIronNode.tres"),
 }
 

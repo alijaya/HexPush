@@ -16,12 +16,14 @@ class_name MapGenerator
 @export var minTreeProbs: float = -1.
 @export var maxTreeProbs: float = 1.
 @export var ironProbs: float = .05
+@export var coalProbs: float = .05
 var colorImage: Image
 
 var f_elevation: Callable
 var f_moisture: Callable
 var f_tree_blue_noise: Callable
 var f_rock_blue_noise: Callable
+var f_coal_blue_noise: Callable
 var f_iron_blue_noise: Callable
 var f_tree_probs: Callable
 var f_rock_probs: Callable
@@ -39,6 +41,7 @@ func setup():
 	
 	f_tree_blue_noise = NoiseF.from_random_array_texture(blueNoises)
 	f_rock_blue_noise = NoiseF.from_random_array_texture(blueNoises)
+	f_coal_blue_noise = NoiseF.from_random_array_texture(blueNoises)
 	f_iron_blue_noise = NoiseF.from_random_array_texture(blueNoises)
 	f_tree_probs = NoiseF.f_remap(f_moisture, 0, 1, minTreeProbs, maxTreeProbs)
 	f_rock_probs = NoiseF.f_remap(f_elevation, 0, 1, minRockProbs, maxRockProbs)
@@ -57,16 +60,19 @@ func setup():
 		var rock_blue_noise: float = f_rock_blue_noise.call(x, y)
 		var rock_probs: float = f_rock_probs.call(x, y)
 		var rock: bool = rock_blue_noise < rock_probs
+		var coal_blue_noise: float = f_coal_blue_noise.call(x, y)
+		var coal: bool = coal_blue_noise < coalProbs
 		var iron_blue_noise: float = f_iron_blue_noise.call(x, y)
 		var iron: bool = iron_blue_noise < ironProbs
 		
+		var treeOrCoal := Constant.Feature.CoalNode if iron else Constant.Feature.Tree
 		var rockOrIron := Constant.Feature.IronNode if iron else Constant.Feature.Rock
 		
 		if rock and tree:
 			if rock_probs > tree_probs: return rockOrIron
-			else: return Constant.Feature.Tree
+			else: return treeOrCoal
 		elif rock: return rockOrIron
-		elif tree: return Constant.Feature.Tree
+		elif tree: return treeOrCoal
 		else: return Constant.Feature.None
 
 func get_biome(elevation: float, moisture: float) -> Constant.Biome:

@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="StructureGatherer" load_steps=3 format=3 uid="uid://d3rb7siiedwvq"]
+[gd_resource type="Resource" script_class="StructureGatherer" load_steps=4 format=3 uid="uid://d3rb7siiedwvq"]
 
 [ext_resource type="Resource" uid="uid://dscr2sev6nvjk" path="res://resource/structure/resource/StructureIronNode.tres" id="1_7agqk"]
 [ext_resource type="Script" path="res://resource/structure/_script/StructureGatherer.gd" id="2_8osoc"]
+[ext_resource type="Texture2D" uid="uid://cb1eh3mwdkn2a" path="res://asset/structure/009.miner.png" id="3_p2y2u"]
 
 [resource]
 script = ExtResource("2_8osoc")
 resourceType = ExtResource("1_7agqk")
 tickPerClick = 4
+texture = ExtResource("3_p2y2u")
 name = "Miner"
 color = Color(0.454902, 0.592157, 0.827451, 1)
