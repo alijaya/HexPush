@@ -1,7 +1,7 @@
 extends Structure
 class_name StructureDestroyer
 
-static var Default = load("res://resource/structure/debug/StructureDestroyer.tres")
+static var Default = load("res://resource/structure/misc/StructureDestroyer.tres")
 
 func is_flat():
 	return true

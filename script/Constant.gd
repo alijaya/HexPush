@@ -4,6 +4,7 @@ class_name Constant
 enum Direction { SE, NE, N, NW, SW, S, None = -1 }
 
 enum Biome {
+	Edge,
 	Grassland,
 	Forest,
 	Mountain,
@@ -75,8 +76,8 @@ const FeatureToTiles := {
 const Layer := {
 	Water = 0,
 	Mountain = 1,
-	Forest = 2,
-	Grassland = 3,
+	Grassland = 2,
+	Forest = 3,
 	Selection = 4,
 	Decoration = 5,
 	Feature = 6,

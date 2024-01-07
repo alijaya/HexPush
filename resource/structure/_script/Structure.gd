@@ -18,6 +18,9 @@ func create_object() -> StructureObject:
 func get_info_prefab(object: StructureObject) -> PackedScene:
 	return infoStructurePrefab
 
+func get_texture(object: StructureObject) -> Texture2D:
+	return texture
+
 func is_flat() -> bool:
 	return false
 
@@ -54,9 +57,10 @@ func _on_right_hold(object: StructureObject):
 func _update_view(object: StructureObject):
 	object.z_index = 0 if !is_flat() else -1
 	object.dummy.visible = true
-	if texture:
+	var curTexture := get_texture(object)
+	if curTexture:
 		object.sprite.visible = true
-		object.sprite.texture = texture
+		object.sprite.texture = curTexture
 		object.dummy.text = ""
 		object.dummy.color = Color.TRANSPARENT
 		object.dummy.text_color = Color.WHITE
@@ -70,6 +74,9 @@ func _on_item_enter(object: StructureObject, item: ItemObject, input_dir: Consta
 	pass
 
 func _on_item_exit(object: StructureObject, item: ItemObject, output_dir: Constant.Direction):
+	pass
+
+func delete(object: StructureObject, animate: bool = false):
 	pass
 
 func push_item_to(object: StructureObject, item: ItemObject, input_dir: Constant.Direction) -> bool:

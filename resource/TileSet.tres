@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://b02bhtuwbt788"]
+[gd_resource type="TileSet" load_steps=19 format=3 uid="uid://b02bhtuwbt788"]
 
 [ext_resource type="Texture2D" uid="uid://cuwi3qdt25okw" path="res://asset/autotile transparent.png" id="1_ftcox"]
 [ext_resource type="Texture2D" uid="uid://dbx08mwanl7tv" path="res://asset/flat top 30 solid.png" id="2_3jrp4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cq6f50lni1tcx" path="res://asset/new biome/mountain.png" id="4_lqe7d"]
 [ext_resource type="Texture2D" uid="uid://km8rgab50lex" path="res://asset/new biome/water.png" id="5_nh7r6"]
 [ext_resource type="Texture2D" uid="uid://5x1bio14bhyl" path="res://asset/new biome/grassland atlas.png" id="7_36dft"]
+[ext_resource type="Texture2D" uid="uid://b1210wv2fom84" path="res://asset/new biome/forest atlas.png" id="9_eev24"]
 [ext_resource type="Texture2D" uid="uid://byirvk27iaoku" path="res://asset/new biome/grassland.png" id="13_0eb1w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l8k8b"]
@@ -474,30 +475,6 @@ texture_region_size = Vector2i(300, 300)
 "type": 0
 }
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uydag"]
-texture = ExtResource("3_v6yow")
-texture_region_size = Vector2i(300, 300)
-0:0/0 = 0
-0:0/0/metadata/_better_terrain = {
-"type": 2
-}
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jiped"]
-texture = ExtResource("4_lqe7d")
-texture_region_size = Vector2i(300, 300)
-0:0/0 = 0
-0:0/0/metadata/_better_terrain = {
-"type": 3
-}
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_np0nv"]
-texture = ExtResource("5_nh7r6")
-texture_region_size = Vector2i(300, 300)
-0:0/0 = 0
-0:0/0/metadata/_better_terrain = {
-"type": 4
-}
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14k4e"]
 texture = ExtResource("3_ejcl7")
 texture_region_size = Vector2i(300, 300)
@@ -950,7 +927,39 @@ texture_region_size = Vector2i(300, 300)
 "type": 5
 }
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qld8q"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yfdn1"]
+texture = ExtResource("13_0eb1w")
+texture_region_size = Vector2i(300, 300)
+0:0/0 = 0
+0:0/0/metadata/_better_terrain = {
+"type": 1
+}
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uydag"]
+texture = ExtResource("3_v6yow")
+texture_region_size = Vector2i(300, 300)
+0:0/0 = 0
+0:0/0/metadata/_better_terrain = {
+"type": 2
+}
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jiped"]
+texture = ExtResource("4_lqe7d")
+texture_region_size = Vector2i(300, 300)
+0:0/0 = 0
+0:0/0/metadata/_better_terrain = {
+"type": 3
+}
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_np0nv"]
+texture = ExtResource("5_nh7r6")
+texture_region_size = Vector2i(300, 300)
+0:0/0 = 0
+0:0/0/metadata/_better_terrain = {
+"type": 4
+}
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0p8lg"]
 texture = ExtResource("7_36dft")
 texture_region_size = Vector2i(300, 300)
 0:0/0 = 0
@@ -1398,12 +1407,452 @@ texture_region_size = Vector2i(300, 300)
 "type": -1
 }
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yfdn1"]
-texture = ExtResource("13_0eb1w")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8xue0"]
+texture = ExtResource("9_eev24")
 texture_region_size = Vector2i(300, 300)
 0:0/0 = 0
 0:0/0/metadata/_better_terrain = {
-"type": 1
+2: [2],
+4: [2],
+6: [2],
+10: [2],
+12: [2],
+14: [2],
+"type": -1
+}
+2:0/0 = 0
+2:0/0/metadata/_better_terrain = {
+2: [2],
+4: [2],
+6: [2],
+10: [2],
+14: [2],
+"type": -1
+}
+3:0/0 = 0
+3:0/0/metadata/_better_terrain = {
+2: [2],
+4: [2],
+6: [2],
+10: [2],
+12: [2],
+"type": -1
+}
+4:0/0 = 0
+4:0/0/metadata/_better_terrain = {
+4: [2],
+6: [2],
+10: [2],
+12: [2],
+14: [2],
+"type": -1
+}
+5:0/0 = 0
+5:0/0/metadata/_better_terrain = {
+2: [2],
+6: [2],
+10: [2],
+12: [2],
+14: [2],
+"type": -1
+}
+6:0/0 = 0
+6:0/0/metadata/_better_terrain = {
+2: [2],
+4: [2],
+10: [2],
+12: [2],
+14: [2],
+"type": -1
+}
+7:0/0 = 0
+7:0/0/metadata/_better_terrain = {
+2: [2],
+4: [2],
+6: [2],
+12: [2],
+14: [2],
+"type": -1
+}
+0:1/0 = 0
+0:1/0/metadata/_better_terrain = {
+2: [2],
+6: [2],
+12: [2],
+"type": -1
+}
+1:1/0 = 0
+1:1/0/metadata/_better_terrain = {
+4: [2],
+10: [2],
+14: [2],
+"type": -1
+}
+2:1/0 = 0
+2:1/0/metadata/_better_terrain = {
+12: [2],
+"type": -1
+}
+3:1/0 = 0
+3:1/0/metadata/_better_terrain = {
+14: [2],
+"type": -1
+}
+4:1/0 = 0
+4:1/0/metadata/_better_terrain = {
+2: [2],
+"type": -1
+}
+5:1/0 = 0
+5:1/0/metadata/_better_terrain = {
+4: [2],
+"type": -1
+}
+6:1/0 = 0
+6:1/0/metadata/_better_terrain = {
+6: [2],
+"type": -1
+}
+7:1/0 = 0
+7:1/0/metadata/_better_terrain = {
+10: [2],
+"type": -1
+}
+0:2/0 = 0
+0:2/0/metadata/_better_terrain = {
+2: [2],
+10: [2],
+12: [2],
+"type": -1
+}
+1:2/0 = 0
+1:2/0/metadata/_better_terrain = {
+4: [2],
+6: [2],
+14: [2],
+"type": -1
+}
+2:2/0 = 0
+2:2/0/metadata/_better_terrain = {
+4: [2],
+6: [2],
+10: [2],
+12: [2],
+"type": -1
+}
+3:2/0 = 0
+3:2/0/metadata/_better_terrain = {
+6: [2],
+10: [2],
+12: [2],
+14: [2],
+"type": -1
+}
+4:2/0 = 0
+4:2/0/metadata/_better_terrain = {
+2: [2],
+10: [2],
+12: [2],
+14: [2],
+"type": -1
+}
+5:2/0 = 0
+5:2/0/metadata/_better_terrain = {
+2: [2],
+4: [2],
+12: [2],
+14: [2],
+"type": -1
+}
+6:2/0 = 0
+6:2/0/metadata/_better_terrain = {
+2: [2],
+4: [2],
+6: [2],
+14: [2],
+"type": -1
+}
+7:2/0 = 0
+7:2/0/metadata/_better_terrain = {
+2: [2],
+4: [2],
+6: [2],
+10: [2],
+"type": -1
+}
+0:3/0 = 0
+0:3/0/metadata/_better_terrain = {
+4: [2],
+12: [2],
+14: [2],
+"type": -1
+}
+1:3/0 = 0
+1:3/0/metadata/_better_terrain = {
+2: [2],
+6: [2],
+10: [2],
+"type": -1
+}
+2:3/0 = 0
+2:3/0/metadata/_better_terrain = {
+2: [2],
+14: [2],
+"type": -1
+}
+3:3/0 = 0
+3:3/0/metadata/_better_terrain = {
+2: [2],
+4: [2],
+"type": -1
+}
+4:3/0 = 0
+4:3/0/metadata/_better_terrain = {
+4: [2],
+6: [2],
+"type": -1
+}
+5:3/0 = 0
+5:3/0/metadata/_better_terrain = {
+6: [2],
+10: [2],
+"type": -1
+}
+6:3/0 = 0
+6:3/0/metadata/_better_terrain = {
+10: [2],
+12: [2],
+"type": -1
+}
+7:3/0 = 0
+7:3/0/metadata/_better_terrain = {
+12: [2],
+14: [2],
+"type": -1
+}
+0:4/0 = 0
+0:4/0/metadata/_better_terrain = {
+2: [2],
+6: [2],
+14: [2],
+"type": -1
+}
+1:4/0 = 0
+1:4/0/metadata/_better_terrain = {
+4: [2],
+10: [2],
+12: [2],
+"type": -1
+}
+2:4/0 = 0
+2:4/0/metadata/_better_terrain = {
+2: [2],
+4: [2],
+6: [2],
+"type": -1
+}
+3:4/0 = 0
+3:4/0/metadata/_better_terrain = {
+4: [2],
+6: [2],
+10: [2],
+"type": -1
+}
+4:4/0 = 0
+4:4/0/metadata/_better_terrain = {
+6: [2],
+10: [2],
+12: [2],
+"type": -1
+}
+5:4/0 = 0
+5:4/0/metadata/_better_terrain = {
+10: [2],
+12: [2],
+14: [2],
+"type": -1
+}
+6:4/0 = 0
+6:4/0/metadata/_better_terrain = {
+2: [2],
+12: [2],
+14: [2],
+"type": -1
+}
+7:4/0 = 0
+7:4/0/metadata/_better_terrain = {
+2: [2],
+4: [2],
+14: [2],
+"type": -1
+}
+0:5/0 = 0
+0:5/0/metadata/_better_terrain = {
+2: [2],
+4: [2],
+10: [2],
+"type": -1
+}
+1:5/0 = 0
+1:5/0/metadata/_better_terrain = {
+6: [2],
+12: [2],
+14: [2],
+"type": -1
+}
+2:5/0 = 0
+2:5/0/metadata/_better_terrain = {
+2: [2],
+4: [2],
+6: [2],
+12: [2],
+"type": -1
+}
+3:5/0 = 0
+3:5/0/metadata/_better_terrain = {
+4: [2],
+6: [2],
+10: [2],
+14: [2],
+"type": -1
+}
+4:5/0 = 0
+4:5/0/metadata/_better_terrain = {
+2: [2],
+6: [2],
+10: [2],
+12: [2],
+"type": -1
+}
+5:5/0 = 0
+5:5/0/metadata/_better_terrain = {
+4: [2],
+10: [2],
+12: [2],
+14: [2],
+"type": -1
+}
+6:5/0 = 0
+6:5/0/metadata/_better_terrain = {
+2: [2],
+6: [2],
+12: [2],
+14: [2],
+"type": -1
+}
+7:5/0 = 0
+7:5/0/metadata/_better_terrain = {
+2: [2],
+4: [2],
+10: [2],
+14: [2],
+"type": -1
+}
+0:6/0 = 0
+0:6/0/metadata/_better_terrain = {
+4: [2],
+6: [2],
+12: [2],
+"type": -1
+}
+1:6/0 = 0
+1:6/0/metadata/_better_terrain = {
+2: [2],
+10: [2],
+14: [2],
+"type": -1
+}
+2:6/0 = 0
+2:6/0/metadata/_better_terrain = {
+10: [2],
+14: [2],
+"type": -1
+}
+3:6/0 = 0
+3:6/0/metadata/_better_terrain = {
+2: [2],
+12: [2],
+"type": -1
+}
+4:6/0 = 0
+4:6/0/metadata/_better_terrain = {
+4: [2],
+14: [2],
+"type": -1
+}
+5:6/0 = 0
+5:6/0/metadata/_better_terrain = {
+2: [2],
+6: [2],
+"type": -1
+}
+6:6/0 = 0
+6:6/0/metadata/_better_terrain = {
+4: [2],
+10: [2],
+"type": -1
+}
+7:6/0 = 0
+7:6/0/metadata/_better_terrain = {
+6: [2],
+12: [2],
+"type": -1
+}
+0:7/0 = 0
+0:7/0/metadata/_better_terrain = {
+6: [2],
+10: [2],
+14: [2],
+"type": -1
+}
+1:7/0 = 0
+1:7/0/metadata/_better_terrain = {
+2: [2],
+4: [2],
+12: [2],
+"type": -1
+}
+2:7/0 = 0
+2:7/0/metadata/_better_terrain = {
+2: [2],
+6: [2],
+10: [2],
+14: [2],
+"type": -1
+}
+3:7/0 = 0
+3:7/0/metadata/_better_terrain = {
+2: [2],
+4: [2],
+10: [2],
+12: [2],
+"type": -1
+}
+4:7/0 = 0
+4:7/0/metadata/_better_terrain = {
+4: [2],
+6: [2],
+12: [2],
+14: [2],
+"type": -1
+}
+5:7/0 = 0
+5:7/0/metadata/_better_terrain = {
+4: [2],
+12: [2],
+"type": -1
+}
+6:7/0 = 0
+6:7/0/metadata/_better_terrain = {
+6: [2],
+14: [2],
+"type": -1
+}
+7:7/0 = 0
+7:7/0/metadata/_better_terrain = {
+2: [2],
+10: [2],
+"type": -1
 }
 
 [resource]
@@ -1413,13 +1862,14 @@ tile_offset_axis = 1
 tile_size = Vector2i(200, 150)
 sources/2 = SubResource("TileSetAtlasSource_14k4e")
 sources/1 = SubResource("TileSetAtlasSource_qv2vk")
-sources/9 = SubResource("TileSetAtlasSource_yfdn1")
-sources/10 = SubResource("TileSetAtlasSource_uydag")
-sources/11 = SubResource("TileSetAtlasSource_jiped")
-sources/12 = SubResource("TileSetAtlasSource_np0nv")
 sources/0 = SubResource("TileSetAtlasSource_l8k8b")
-sources/269 = SubResource("TileSetAtlasSource_qld8q")
-tile_proxies/coords_level = [[141, Vector2i(0, 0)], [204, Vector2i(0, 0)], [142, Vector2i(0, 0)], [204, Vector2i(1, 0)], [143, Vector2i(0, 0)], [204, Vector2i(2, 0)], [144, Vector2i(0, 0)], [204, Vector2i(3, 0)], [145, Vector2i(0, 0)], [204, Vector2i(4, 0)], [146, Vector2i(0, 0)], [204, Vector2i(5, 0)], [147, Vector2i(0, 0)], [204, Vector2i(6, 0)], [148, Vector2i(0, 0)], [204, Vector2i(7, 0)], [149, Vector2i(0, 0)], [204, Vector2i(0, 1)], [150, Vector2i(0, 0)], [204, Vector2i(1, 1)], [151, Vector2i(0, 0)], [204, Vector2i(2, 1)], [152, Vector2i(0, 0)], [204, Vector2i(3, 1)], [153, Vector2i(0, 0)], [204, Vector2i(4, 1)], [154, Vector2i(0, 0)], [204, Vector2i(5, 1)], [155, Vector2i(0, 0)], [204, Vector2i(6, 1)], [156, Vector2i(0, 0)], [204, Vector2i(7, 1)], [157, Vector2i(0, 0)], [204, Vector2i(0, 2)], [158, Vector2i(0, 0)], [204, Vector2i(1, 2)], [159, Vector2i(0, 0)], [204, Vector2i(2, 2)], [160, Vector2i(0, 0)], [204, Vector2i(3, 2)], [161, Vector2i(0, 0)], [204, Vector2i(4, 2)], [162, Vector2i(0, 0)], [204, Vector2i(5, 2)], [163, Vector2i(0, 0)], [204, Vector2i(6, 2)], [164, Vector2i(0, 0)], [204, Vector2i(7, 2)], [165, Vector2i(0, 0)], [204, Vector2i(0, 3)], [166, Vector2i(0, 0)], [204, Vector2i(1, 3)], [167, Vector2i(0, 0)], [204, Vector2i(2, 3)], [168, Vector2i(0, 0)], [204, Vector2i(3, 3)], [169, Vector2i(0, 0)], [204, Vector2i(4, 3)], [170, Vector2i(0, 0)], [204, Vector2i(5, 3)], [171, Vector2i(0, 0)], [204, Vector2i(6, 3)], [172, Vector2i(0, 0)], [204, Vector2i(7, 3)], [173, Vector2i(0, 0)], [204, Vector2i(0, 4)], [174, Vector2i(0, 0)], [204, Vector2i(1, 4)], [175, Vector2i(0, 0)], [204, Vector2i(2, 4)], [176, Vector2i(0, 0)], [204, Vector2i(3, 4)], [177, Vector2i(0, 0)], [204, Vector2i(4, 4)], [178, Vector2i(0, 0)], [204, Vector2i(5, 4)], [179, Vector2i(0, 0)], [204, Vector2i(6, 4)], [180, Vector2i(0, 0)], [204, Vector2i(7, 4)], [181, Vector2i(0, 0)], [204, Vector2i(0, 5)], [182, Vector2i(0, 0)], [204, Vector2i(1, 5)], [183, Vector2i(0, 0)], [204, Vector2i(2, 5)], [184, Vector2i(0, 0)], [204, Vector2i(3, 5)], [185, Vector2i(0, 0)], [204, Vector2i(4, 5)], [186, Vector2i(0, 0)], [204, Vector2i(5, 5)], [187, Vector2i(0, 0)], [204, Vector2i(6, 5)], [188, Vector2i(0, 0)], [204, Vector2i(7, 5)], [189, Vector2i(0, 0)], [204, Vector2i(0, 6)], [190, Vector2i(0, 0)], [204, Vector2i(1, 6)], [191, Vector2i(0, 0)], [204, Vector2i(2, 6)], [192, Vector2i(0, 0)], [204, Vector2i(3, 6)], [193, Vector2i(0, 0)], [204, Vector2i(4, 6)], [194, Vector2i(0, 0)], [204, Vector2i(5, 6)], [195, Vector2i(0, 0)], [204, Vector2i(6, 6)], [196, Vector2i(0, 0)], [204, Vector2i(7, 6)], [197, Vector2i(0, 0)], [204, Vector2i(0, 7)], [198, Vector2i(0, 0)], [204, Vector2i(1, 7)], [199, Vector2i(0, 0)], [204, Vector2i(2, 7)], [200, Vector2i(0, 0)], [204, Vector2i(3, 7)], [201, Vector2i(0, 0)], [204, Vector2i(4, 7)], [202, Vector2i(0, 0)], [204, Vector2i(5, 7)], [203, Vector2i(0, 0)], [204, Vector2i(6, 7)], [205, Vector2i(0, 0)], [269, Vector2i(0, 0)], [206, Vector2i(0, 0)], [269, Vector2i(1, 0)], [207, Vector2i(0, 0)], [269, Vector2i(2, 0)], [208, Vector2i(0, 0)], [269, Vector2i(3, 0)], [209, Vector2i(0, 0)], [269, Vector2i(4, 0)], [210, Vector2i(0, 0)], [269, Vector2i(5, 0)], [211, Vector2i(0, 0)], [269, Vector2i(6, 0)], [212, Vector2i(0, 0)], [269, Vector2i(7, 0)], [213, Vector2i(0, 0)], [269, Vector2i(0, 1)], [214, Vector2i(0, 0)], [269, Vector2i(1, 1)], [215, Vector2i(0, 0)], [269, Vector2i(2, 1)], [216, Vector2i(0, 0)], [269, Vector2i(3, 1)], [217, Vector2i(0, 0)], [269, Vector2i(4, 1)], [218, Vector2i(0, 0)], [269, Vector2i(5, 1)], [219, Vector2i(0, 0)], [269, Vector2i(6, 1)], [220, Vector2i(0, 0)], [269, Vector2i(7, 1)], [221, Vector2i(0, 0)], [269, Vector2i(0, 2)], [222, Vector2i(0, 0)], [269, Vector2i(1, 2)], [223, Vector2i(0, 0)], [269, Vector2i(2, 2)], [224, Vector2i(0, 0)], [269, Vector2i(3, 2)], [225, Vector2i(0, 0)], [269, Vector2i(4, 2)], [226, Vector2i(0, 0)], [269, Vector2i(5, 2)], [227, Vector2i(0, 0)], [269, Vector2i(6, 2)], [228, Vector2i(0, 0)], [269, Vector2i(7, 2)], [229, Vector2i(0, 0)], [269, Vector2i(0, 3)], [230, Vector2i(0, 0)], [269, Vector2i(1, 3)], [231, Vector2i(0, 0)], [269, Vector2i(2, 3)], [232, Vector2i(0, 0)], [269, Vector2i(3, 3)], [233, Vector2i(0, 0)], [269, Vector2i(4, 3)], [234, Vector2i(0, 0)], [269, Vector2i(5, 3)], [235, Vector2i(0, 0)], [269, Vector2i(6, 3)], [236, Vector2i(0, 0)], [269, Vector2i(7, 3)], [237, Vector2i(0, 0)], [269, Vector2i(0, 4)], [238, Vector2i(0, 0)], [269, Vector2i(1, 4)], [239, Vector2i(0, 0)], [269, Vector2i(2, 4)], [240, Vector2i(0, 0)], [269, Vector2i(3, 4)], [241, Vector2i(0, 0)], [269, Vector2i(4, 4)], [242, Vector2i(0, 0)], [269, Vector2i(5, 4)], [243, Vector2i(0, 0)], [269, Vector2i(6, 4)], [244, Vector2i(0, 0)], [269, Vector2i(7, 4)], [245, Vector2i(0, 0)], [269, Vector2i(0, 5)], [246, Vector2i(0, 0)], [269, Vector2i(1, 5)], [247, Vector2i(0, 0)], [269, Vector2i(2, 5)], [248, Vector2i(0, 0)], [269, Vector2i(3, 5)], [249, Vector2i(0, 0)], [269, Vector2i(4, 5)], [250, Vector2i(0, 0)], [269, Vector2i(5, 5)], [251, Vector2i(0, 0)], [269, Vector2i(6, 5)], [252, Vector2i(0, 0)], [269, Vector2i(7, 5)], [253, Vector2i(0, 0)], [269, Vector2i(0, 6)], [254, Vector2i(0, 0)], [269, Vector2i(1, 6)], [255, Vector2i(0, 0)], [269, Vector2i(2, 6)], [256, Vector2i(0, 0)], [269, Vector2i(3, 6)], [257, Vector2i(0, 0)], [269, Vector2i(4, 6)], [258, Vector2i(0, 0)], [269, Vector2i(5, 6)], [259, Vector2i(0, 0)], [269, Vector2i(6, 6)], [260, Vector2i(0, 0)], [269, Vector2i(7, 6)], [261, Vector2i(0, 0)], [269, Vector2i(0, 7)], [262, Vector2i(0, 0)], [269, Vector2i(1, 7)], [263, Vector2i(0, 0)], [269, Vector2i(2, 7)], [264, Vector2i(0, 0)], [269, Vector2i(3, 7)], [265, Vector2i(0, 0)], [269, Vector2i(4, 7)], [266, Vector2i(0, 0)], [269, Vector2i(5, 7)], [267, Vector2i(0, 0)], [269, Vector2i(6, 7)], [268, Vector2i(0, 0)], [269, Vector2i(7, 7)]]
+sources/3 = SubResource("TileSetAtlasSource_yfdn1")
+sources/4 = SubResource("TileSetAtlasSource_uydag")
+sources/5 = SubResource("TileSetAtlasSource_jiped")
+sources/6 = SubResource("TileSetAtlasSource_np0nv")
+sources/7 = SubResource("TileSetAtlasSource_0p8lg")
+sources/8 = SubResource("TileSetAtlasSource_8xue0")
+tile_proxies/coords_level = [[3, Vector2i(0, 0)], [71, Vector2i(0, 0)], [4, Vector2i(0, 0)], [71, Vector2i(1, 0)], [5, Vector2i(0, 0)], [71, Vector2i(2, 0)], [6, Vector2i(0, 0)], [71, Vector2i(3, 0)], [7, Vector2i(0, 0)], [71, Vector2i(4, 0)], [8, Vector2i(0, 0)], [72, Vector2i(0, 0)], [9, Vector2i(0, 0)], [72, Vector2i(1, 0)], [10, Vector2i(0, 0)], [72, Vector2i(2, 0)], [11, Vector2i(0, 0)], [72, Vector2i(3, 0)], [12, Vector2i(0, 0)], [72, Vector2i(4, 0)], [13, Vector2i(0, 0)], [72, Vector2i(5, 0)], [14, Vector2i(0, 0)], [72, Vector2i(6, 0)], [15, Vector2i(0, 0)], [72, Vector2i(7, 0)], [16, Vector2i(0, 0)], [72, Vector2i(0, 1)], [17, Vector2i(0, 0)], [72, Vector2i(1, 1)], [18, Vector2i(0, 0)], [72, Vector2i(2, 1)], [19, Vector2i(0, 0)], [72, Vector2i(3, 1)], [20, Vector2i(0, 0)], [72, Vector2i(4, 1)], [21, Vector2i(0, 0)], [72, Vector2i(5, 1)], [22, Vector2i(0, 0)], [72, Vector2i(6, 1)], [23, Vector2i(0, 0)], [72, Vector2i(7, 1)], [24, Vector2i(0, 0)], [72, Vector2i(0, 2)], [25, Vector2i(0, 0)], [72, Vector2i(1, 2)], [26, Vector2i(0, 0)], [72, Vector2i(2, 2)], [27, Vector2i(0, 0)], [72, Vector2i(3, 2)], [28, Vector2i(0, 0)], [72, Vector2i(4, 2)], [29, Vector2i(0, 0)], [72, Vector2i(5, 2)], [30, Vector2i(0, 0)], [72, Vector2i(6, 2)], [31, Vector2i(0, 0)], [72, Vector2i(7, 2)], [32, Vector2i(0, 0)], [72, Vector2i(0, 3)], [33, Vector2i(0, 0)], [72, Vector2i(1, 3)], [34, Vector2i(0, 0)], [72, Vector2i(2, 3)], [35, Vector2i(0, 0)], [72, Vector2i(3, 3)], [36, Vector2i(0, 0)], [72, Vector2i(4, 3)], [37, Vector2i(0, 0)], [72, Vector2i(5, 3)], [38, Vector2i(0, 0)], [72, Vector2i(6, 3)], [39, Vector2i(0, 0)], [72, Vector2i(7, 3)], [40, Vector2i(0, 0)], [72, Vector2i(0, 4)], [41, Vector2i(0, 0)], [72, Vector2i(1, 4)], [42, Vector2i(0, 0)], [72, Vector2i(2, 4)], [43, Vector2i(0, 0)], [72, Vector2i(3, 4)], [44, Vector2i(0, 0)], [72, Vector2i(4, 4)], [45, Vector2i(0, 0)], [72, Vector2i(5, 4)], [46, Vector2i(0, 0)], [72, Vector2i(6, 4)], [47, Vector2i(0, 0)], [72, Vector2i(7, 4)], [48, Vector2i(0, 0)], [72, Vector2i(0, 5)], [49, Vector2i(0, 0)], [72, Vector2i(1, 5)], [50, Vector2i(0, 0)], [72, Vector2i(2, 5)], [51, Vector2i(0, 0)], [72, Vector2i(3, 5)], [52, Vector2i(0, 0)], [72, Vector2i(4, 5)], [53, Vector2i(0, 0)], [72, Vector2i(5, 5)], [54, Vector2i(0, 0)], [72, Vector2i(6, 5)], [55, Vector2i(0, 0)], [72, Vector2i(7, 5)], [56, Vector2i(0, 0)], [72, Vector2i(0, 6)], [57, Vector2i(0, 0)], [72, Vector2i(1, 6)], [58, Vector2i(0, 0)], [72, Vector2i(2, 6)], [59, Vector2i(0, 0)], [72, Vector2i(3, 6)], [60, Vector2i(0, 0)], [72, Vector2i(4, 6)], [61, Vector2i(0, 0)], [72, Vector2i(5, 6)], [62, Vector2i(0, 0)], [72, Vector2i(6, 6)], [63, Vector2i(0, 0)], [72, Vector2i(7, 6)], [64, Vector2i(0, 0)], [72, Vector2i(0, 7)], [65, Vector2i(0, 0)], [72, Vector2i(1, 7)], [66, Vector2i(0, 0)], [72, Vector2i(2, 7)], [67, Vector2i(0, 0)], [72, Vector2i(3, 7)], [68, Vector2i(0, 0)], [72, Vector2i(4, 7)], [69, Vector2i(0, 0)], [72, Vector2i(5, 7)], [70, Vector2i(0, 0)], [72, Vector2i(6, 7)], [71, Vector2i(0, 0)], [72, Vector2i(7, 7)], [141, Vector2i(0, 0)], [204, Vector2i(0, 0)], [142, Vector2i(0, 0)], [204, Vector2i(1, 0)], [143, Vector2i(0, 0)], [204, Vector2i(2, 0)], [144, Vector2i(0, 0)], [204, Vector2i(3, 0)], [145, Vector2i(0, 0)], [204, Vector2i(4, 0)], [146, Vector2i(0, 0)], [204, Vector2i(5, 0)], [147, Vector2i(0, 0)], [204, Vector2i(6, 0)], [148, Vector2i(0, 0)], [204, Vector2i(7, 0)], [149, Vector2i(0, 0)], [204, Vector2i(0, 1)], [150, Vector2i(0, 0)], [204, Vector2i(1, 1)], [151, Vector2i(0, 0)], [204, Vector2i(2, 1)], [152, Vector2i(0, 0)], [204, Vector2i(3, 1)], [153, Vector2i(0, 0)], [204, Vector2i(4, 1)], [154, Vector2i(0, 0)], [204, Vector2i(5, 1)], [155, Vector2i(0, 0)], [204, Vector2i(6, 1)], [156, Vector2i(0, 0)], [204, Vector2i(7, 1)], [157, Vector2i(0, 0)], [204, Vector2i(0, 2)], [158, Vector2i(0, 0)], [204, Vector2i(1, 2)], [159, Vector2i(0, 0)], [204, Vector2i(2, 2)], [160, Vector2i(0, 0)], [204, Vector2i(3, 2)], [161, Vector2i(0, 0)], [204, Vector2i(4, 2)], [162, Vector2i(0, 0)], [204, Vector2i(5, 2)], [163, Vector2i(0, 0)], [204, Vector2i(6, 2)], [164, Vector2i(0, 0)], [204, Vector2i(7, 2)], [165, Vector2i(0, 0)], [204, Vector2i(0, 3)], [166, Vector2i(0, 0)], [204, Vector2i(1, 3)], [167, Vector2i(0, 0)], [204, Vector2i(2, 3)], [168, Vector2i(0, 0)], [204, Vector2i(3, 3)], [169, Vector2i(0, 0)], [204, Vector2i(4, 3)], [170, Vector2i(0, 0)], [204, Vector2i(5, 3)], [171, Vector2i(0, 0)], [204, Vector2i(6, 3)], [172, Vector2i(0, 0)], [204, Vector2i(7, 3)], [173, Vector2i(0, 0)], [204, Vector2i(0, 4)], [174, Vector2i(0, 0)], [204, Vector2i(1, 4)], [175, Vector2i(0, 0)], [204, Vector2i(2, 4)], [176, Vector2i(0, 0)], [204, Vector2i(3, 4)], [177, Vector2i(0, 0)], [204, Vector2i(4, 4)], [178, Vector2i(0, 0)], [204, Vector2i(5, 4)], [179, Vector2i(0, 0)], [204, Vector2i(6, 4)], [180, Vector2i(0, 0)], [204, Vector2i(7, 4)], [181, Vector2i(0, 0)], [204, Vector2i(0, 5)], [182, Vector2i(0, 0)], [204, Vector2i(1, 5)], [183, Vector2i(0, 0)], [204, Vector2i(2, 5)], [184, Vector2i(0, 0)], [204, Vector2i(3, 5)], [185, Vector2i(0, 0)], [204, Vector2i(4, 5)], [186, Vector2i(0, 0)], [204, Vector2i(5, 5)], [187, Vector2i(0, 0)], [204, Vector2i(6, 5)], [188, Vector2i(0, 0)], [204, Vector2i(7, 5)], [189, Vector2i(0, 0)], [204, Vector2i(0, 6)], [190, Vector2i(0, 0)], [204, Vector2i(1, 6)], [191, Vector2i(0, 0)], [204, Vector2i(2, 6)], [192, Vector2i(0, 0)], [204, Vector2i(3, 6)], [193, Vector2i(0, 0)], [204, Vector2i(4, 6)], [194, Vector2i(0, 0)], [204, Vector2i(5, 6)], [195, Vector2i(0, 0)], [204, Vector2i(6, 6)], [196, Vector2i(0, 0)], [204, Vector2i(7, 6)], [197, Vector2i(0, 0)], [204, Vector2i(0, 7)], [198, Vector2i(0, 0)], [204, Vector2i(1, 7)], [199, Vector2i(0, 0)], [204, Vector2i(2, 7)], [200, Vector2i(0, 0)], [204, Vector2i(3, 7)], [201, Vector2i(0, 0)], [204, Vector2i(4, 7)], [202, Vector2i(0, 0)], [204, Vector2i(5, 7)], [203, Vector2i(0, 0)], [204, Vector2i(6, 7)], [205, Vector2i(0, 0)], [269, Vector2i(0, 0)], [206, Vector2i(0, 0)], [269, Vector2i(1, 0)], [207, Vector2i(0, 0)], [269, Vector2i(2, 0)], [208, Vector2i(0, 0)], [269, Vector2i(3, 0)], [209, Vector2i(0, 0)], [269, Vector2i(4, 0)], [210, Vector2i(0, 0)], [269, Vector2i(5, 0)], [211, Vector2i(0, 0)], [269, Vector2i(6, 0)], [212, Vector2i(0, 0)], [269, Vector2i(7, 0)], [213, Vector2i(0, 0)], [269, Vector2i(0, 1)], [214, Vector2i(0, 0)], [269, Vector2i(1, 1)], [215, Vector2i(0, 0)], [269, Vector2i(2, 1)], [216, Vector2i(0, 0)], [269, Vector2i(3, 1)], [217, Vector2i(0, 0)], [269, Vector2i(4, 1)], [218, Vector2i(0, 0)], [269, Vector2i(5, 1)], [219, Vector2i(0, 0)], [269, Vector2i(6, 1)], [220, Vector2i(0, 0)], [269, Vector2i(7, 1)], [221, Vector2i(0, 0)], [269, Vector2i(0, 2)], [222, Vector2i(0, 0)], [269, Vector2i(1, 2)], [223, Vector2i(0, 0)], [269, Vector2i(2, 2)], [224, Vector2i(0, 0)], [269, Vector2i(3, 2)], [225, Vector2i(0, 0)], [269, Vector2i(4, 2)], [226, Vector2i(0, 0)], [269, Vector2i(5, 2)], [227, Vector2i(0, 0)], [269, Vector2i(6, 2)], [228, Vector2i(0, 0)], [269, Vector2i(7, 2)], [229, Vector2i(0, 0)], [269, Vector2i(0, 3)], [230, Vector2i(0, 0)], [269, Vector2i(1, 3)], [231, Vector2i(0, 0)], [269, Vector2i(2, 3)], [232, Vector2i(0, 0)], [269, Vector2i(3, 3)], [233, Vector2i(0, 0)], [269, Vector2i(4, 3)], [234, Vector2i(0, 0)], [269, Vector2i(5, 3)], [235, Vector2i(0, 0)], [269, Vector2i(6, 3)], [236, Vector2i(0, 0)], [269, Vector2i(7, 3)], [237, Vector2i(0, 0)], [269, Vector2i(0, 4)], [238, Vector2i(0, 0)], [269, Vector2i(1, 4)], [239, Vector2i(0, 0)], [269, Vector2i(2, 4)], [240, Vector2i(0, 0)], [269, Vector2i(3, 4)], [241, Vector2i(0, 0)], [269, Vector2i(4, 4)], [242, Vector2i(0, 0)], [269, Vector2i(5, 4)], [243, Vector2i(0, 0)], [269, Vector2i(6, 4)], [244, Vector2i(0, 0)], [269, Vector2i(7, 4)], [245, Vector2i(0, 0)], [269, Vector2i(0, 5)], [246, Vector2i(0, 0)], [269, Vector2i(1, 5)], [247, Vector2i(0, 0)], [269, Vector2i(2, 5)], [248, Vector2i(0, 0)], [269, Vector2i(3, 5)], [249, Vector2i(0, 0)], [269, Vector2i(4, 5)], [250, Vector2i(0, 0)], [269, Vector2i(5, 5)], [251, Vector2i(0, 0)], [269, Vector2i(6, 5)], [252, Vector2i(0, 0)], [269, Vector2i(7, 5)], [253, Vector2i(0, 0)], [269, Vector2i(0, 6)], [254, Vector2i(0, 0)], [269, Vector2i(1, 6)], [255, Vector2i(0, 0)], [269, Vector2i(2, 6)], [256, Vector2i(0, 0)], [269, Vector2i(3, 6)], [257, Vector2i(0, 0)], [269, Vector2i(4, 6)], [258, Vector2i(0, 0)], [269, Vector2i(5, 6)], [259, Vector2i(0, 0)], [269, Vector2i(6, 6)], [260, Vector2i(0, 0)], [269, Vector2i(7, 6)], [261, Vector2i(0, 0)], [269, Vector2i(0, 7)], [262, Vector2i(0, 0)], [269, Vector2i(1, 7)], [263, Vector2i(0, 0)], [269, Vector2i(2, 7)], [264, Vector2i(0, 0)], [269, Vector2i(3, 7)], [265, Vector2i(0, 0)], [269, Vector2i(4, 7)], [266, Vector2i(0, 0)], [269, Vector2i(5, 7)], [267, Vector2i(0, 0)], [269, Vector2i(6, 7)], [268, Vector2i(0, 0)], [269, Vector2i(7, 7)]]
 metadata/_better_terrain = {
 "decoration": ["Decoration", Color(0.411765, 0.411765, 0.411765, 1), 3, [], {
 "path": "res://addons/better-terrain/icons/Decoration.svg"
@@ -1429,16 +1879,16 @@ metadata/_better_terrain = {
 "source_id": 1
 }], ["Grassland", Color(0.407843, 0.580392, 0.34902, 1), 0, [], {
 "coord": Vector2i(0, 0),
-"source_id": 9
+"source_id": 3
 }], ["Forest", Color(0.254902, 0.505882, 0.333333, 1), 0, [], {
 "coord": Vector2i(0, 0),
-"source_id": 10
+"source_id": 4
 }], ["Mountain", Color(0.356863, 0.356863, 0.356863, 1), 0, [], {
 "coord": Vector2i(0, 0),
-"source_id": 11
+"source_id": 5
 }], ["Water", Color(0.329412, 0.313726, 0.478431, 1), 0, [], {
 "coord": Vector2i(0, 0),
-"source_id": 12
+"source_id": 6
 }], ["Selection", Color(1, 1, 1, 1), 0, [], {
 "coord": Vector2i(0, 0),
 "source_id": 2

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StructureEdge" load_steps=3 format=3 uid="uid://bg45pr026f7oc"]
+
+[ext_resource type="Script" path="res://resource/structure/_script/StructureEdge.gd" id="1_r2txv"]
+[ext_resource type="Texture2D" uid="uid://bufg1iubu1g7s" path="res://asset/structure/edge.png" id="2_3x7wq"]
+
+[resource]
+script = ExtResource("1_r2txv")
+texture = ExtResource("2_3x7wq")
+name = "Edge"
+color = Color(1, 1, 1, 1)

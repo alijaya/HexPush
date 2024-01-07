@@ -11,6 +11,7 @@ static var I: Gameplay
 const infoPanelPrefab := preload("res://prefab/info_panel/InfoPanel.tscn")
 
 @export var bounding: Rect2i = Rect2i()
+@export var initSize: int = 10
 @export var mapGenerator: MapGenerator
 
 var leftHoldTimer: Timer
@@ -22,11 +23,14 @@ var structureToAdd := {
 	Key.KEY_D: StructureDestroyer.Default,
 	Key.KEY_B: StructureBubbler.Default,
 	Key.KEY_X: Structure.Blocker,
+	Key.KEY_1: StructureSplitter.Splitter1Way,
+	Key.KEY_2: StructureSplitter.Splitter2Way,
+	Key.KEY_3: StructureSplitter.Splitter3Way,
 	Key.KEY_C: StructureCombiner.Default,
-	Key.KEY_S: StructureSplitter.Default,
 	Key.KEY_O: StructureCrossover.Default,
 	Key.KEY_M: StructureMachine.Sawmill,
 	Key.KEY_W: StructureMachine.Workshop,
+	Key.KEY_G: StructureGenerator.WoodGenerator,
 }
 
 var pickedItem: ItemObject
@@ -56,15 +60,31 @@ func _ready():
 	
 	camera.boundingRect = boundingRect
 	
+	# add initial workshop
+	remove_structure(Vector2i.ZERO)
+	add_structure(Vector2i.ZERO, StructureMachine.Workshop)
+	
 	loop()
 
 func generateMap():
 	mapGenerator.setup()
-	var origin := Coords.flat_offset_to_coords(Hex.OffsetType.EVEN, bounding.position)
-	var coordss := Coords.create_map_rectangle_flat(Hex.OffsetType.EVEN, bounding.size.x, bounding.size.y)
+	#var origin := Coords.flat_offset_to_coords(Hex.OffsetType.EVEN, bounding.position)
+	#var coordss := Coords.create_map_rectangle_flat(Hex.OffsetType.EVEN, bounding.size.x, bounding.size.y)
+	#coordss.assign(coordss.map(func (v): return v + origin))
+	var coordss := Coords.create_map_hexagon(initSize)
+	exploreMaps(coordss)
+
+func exploreMap(coords: Vector2i):
+	exploreMaps([coords])
+
+func exploreMaps(coordss: Array[Vector2i]):
+	var coordsDict := {}
+	var edgeChecks := {}
 	var biomeCoords := {}
+	for coords in coordss: coordsDict[coords] = true
 	for coords in coordss:
-		coords = coords + origin
+		for edge_coords in Coords.coords_ring(coords, 1):
+			if !coordsDict.has(edge_coords): edgeChecks[edge_coords] = true
 		var uv = Coords.coords_to_pixel(DataTileMap.hex_unit_layout, coords)
 		var biome = mapGenerator.f_biome.call(uv.x, uv.y)
 		var feature = mapGenerator.f_feature.call(uv.x, uv.y)
@@ -73,17 +93,18 @@ func generateMap():
 		biomeCoords[biome] = list
 		
 		if biome != Constant.Biome.Water and feature != Constant.Feature.None:
-			#var tile = Constant.FeatureToTiles[feature].pick_random()
-			#tilemap.set_cell(Constant.Layer.Feature, coords, tile[0], tile[1], tile[2])
 			add_structure(coords, StructureResource.Feature[feature])
+	
+	for edge_coords in edgeChecks:
+		set_biome(edge_coords, Constant.Biome.Edge)
+		add_structure(edge_coords, StructureEdge.Default)
 	
 	for biome in biomeCoords:
 		var list = biomeCoords.get(biome, [])
 		var layer = Constant.BiomeToLayer[biome]
 		var tile = Constant.BiomeToTile[biome]
 		for coordsi in list:
-			#tilemap.set_cell(layer, coordsi, tile[0], tile[1], tile[2])
-			tilemap.set_data(coordsi, Constant.DataKey.Biome, biome)
+			set_biome(coordsi, biome)
 		BetterTerrain.set_cells(tilemap, Constant.BiomeToLayer[biome], list, Constant.BiomeToTerrain[biome])
 		BetterTerrain.update_terrain_cells(tilemap, Constant.BiomeToLayer[biome], list)
 
@@ -191,7 +212,7 @@ func on_left_hold():
 func on_right_click():
 	var structure := get_structure(mouseCoords)
 	if structure:
-		structure.rotateCW()
+		structure.rotateCCW()
 		structure._on_right_click()
 
 func on_right_hold():
@@ -234,7 +255,7 @@ func push_item_from(coords: Vector2i, output_dir: Constant.Direction) -> bool:
 	else:
 		var nex_coords := Coords.coords_neighbor(coords, output_dir)
 		
-		if can_enter(nex_coords, output_dir) and push_item_to(item, nex_coords, output_dir):
+		if push_item_to(item, nex_coords, output_dir):
 			tilemap.erase_data(coords, Constant.DataKey.Item)
 			if structure: structure._on_item_exit(item, output_dir)
 			result = true
@@ -246,6 +267,7 @@ func push_item_from(coords: Vector2i, output_dir: Constant.Direction) -> bool:
 	return result
 
 func push_item_to(item: ItemObject, coords: Vector2i, input_dir: Constant.Direction) -> bool:
+	if !can_enter(coords, input_dir): return false
 	var structure: StructureObject = get_structure(coords)
 	
 	tilemap.set_data(coords, Constant.DataKey.Visited, true)
@@ -265,7 +287,7 @@ func push_item_to(item: ItemObject, coords: Vector2i, input_dir: Constant.Direct
 			item.set_coords_keep_position(coords)
 			item.reset_offset(true)
 			tilemap.set_data(coords, Constant.DataKey.Confirmed, true)
-			if structure: structure._on_item_enter(item, input_dir)
+		if structure: structure._on_item_enter(item, input_dir)
 	
 	return result
 
@@ -310,6 +332,9 @@ func get_structure(coordsi: Vector2i) -> StructureObject:
 
 func get_item(coordsi: Vector2i) -> ItemObject:
 	return tilemap.get_data(coordsi, Constant.DataKey.Item)
+
+func set_biome(coordsi: Vector2i, biome: Constant.Biome):
+	return tilemap.set_data(coordsi, Constant.DataKey.Biome, biome)
 
 func set_structure(coordsi: Vector2i, obj: StructureObject):
 	return tilemap.set_data(coordsi, Constant.DataKey.Structure, obj)

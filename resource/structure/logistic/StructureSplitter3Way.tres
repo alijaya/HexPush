@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="StructureSplitter" load_steps=8 format=3 uid="uid://dargcpruy1x5s"]
+
+[ext_resource type="Script" path="res://resource/structure/_script/StructureSplitter.gd" id="1_ocapi"]
+[ext_resource type="Texture2D" uid="uid://q6msgjgp2l5k" path="res://asset/structure/combiner-3/com-3-se.png" id="2_2qwun"]
+[ext_resource type="Texture2D" uid="uid://ro3k3o15ndjs" path="res://asset/structure/combiner-3/com-3-ne.png" id="3_8i2kh"]
+[ext_resource type="Texture2D" uid="uid://dralw4ecsvf8j" path="res://asset/structure/combiner-3/com-3-n.png" id="4_2pr56"]
+[ext_resource type="Texture2D" uid="uid://d05m0nnx7ett" path="res://asset/structure/combiner-3/com-3-nw.png" id="5_83lyi"]
+[ext_resource type="Texture2D" uid="uid://cjfya4c83d7wt" path="res://asset/structure/combiner-3/com-3-sw.png" id="6_188dd"]
+[ext_resource type="Texture2D" uid="uid://ccnpgjxiw0qnd" path="res://asset/structure/combiner-3/com-3-s.png" id="7_lcqyj"]
+
+[resource]
+script = ExtResource("1_ocapi")
+outputs = 35
+textures = Array[Texture2D]([ExtResource("2_2qwun"), ExtResource("3_8i2kh"), ExtResource("4_2pr56"), ExtResource("5_83lyi"), ExtResource("6_188dd"), ExtResource("7_lcqyj")])
+texture = ExtResource("7_lcqyj")
+name = "Splitter"
+color = Color(0.541176, 0.662745, 0.301961, 1)

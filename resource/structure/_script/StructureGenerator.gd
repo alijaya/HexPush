@@ -1,8 +1,8 @@
 extends Structure
 class_name StructureGenerator
 
-static var WoodGenerator = load("res://resource/structure/debug/StructureWoodGenerator.tres")
-static var StoneGenerator = load("res://resource/structure/debug/StructureStoneGenerator.tres")
+static var WoodGenerator = load("res://resource/structure/misc/StructureWoodGenerator.tres")
+static var StoneGenerator = load("res://resource/structure/misc/StructureStoneGenerator.tres")
 
 @export var output: Item
 @export var tick: int = 1

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Recipe" load_steps=6 format=3 uid="uid://bubsunv1nabgi"]
 
 [ext_resource type="Resource" uid="uid://xefuwfupf33" path="res://resource/item/ItemPlank.tres" id="1_g8al3"]
-[ext_resource type="Resource" uid="uid://dargcpruy1x5s" path="res://resource/structure/logistic/StructureSplitter.tres" id="3_g5m62"]
+[ext_resource type="Resource" uid="uid://dargcpruy1x5s" path="res://resource/structure/logistic/StructureSplitter3Way.tres" id="3_g5m62"]
 [ext_resource type="Script" path="res://resource/item/_script/ItemStructure.gd" id="3_nigpq"]
 [ext_resource type="Script" path="res://resource/recipe/Recipe.gd" id="5_l1bq5"]
 

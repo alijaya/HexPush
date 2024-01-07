@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="StructureCrossover" load_steps=2 format=3 uid="uid://dqp67qar07342"]
+[gd_resource type="Resource" script_class="StructureCrossover" load_steps=3 format=3 uid="uid://dqp67qar07342"]
 
 [ext_resource type="Script" path="res://resource/structure/_script/StructureCrossover.gd" id="1_2miua"]
+[ext_resource type="Texture2D" uid="uid://drsvidernd4ix" path="res://asset/structure/crossover.png" id="2_vrnrf"]
 
 [resource]
 script = ExtResource("1_2miua")
+texture = ExtResource("2_vrnrf")
 name = "Crossover"
 color = Color(0.894118, 0.54902, 0.811765, 1)
