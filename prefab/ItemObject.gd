@@ -9,8 +9,8 @@ class_name ItemObject
 var custom_data: Dictionary = {}
 
 func _ready():
-	_update_view()
 	if item: item._ready(self)
+	_update_view()
 
 func _update_view():
 	if item: item._update_view(self)

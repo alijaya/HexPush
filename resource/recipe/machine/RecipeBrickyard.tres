@@ -11,6 +11,7 @@ script = ExtResource("4_u2gqk")
 structure = ExtResource("5_m11hw")
 name = ""
 color = Color(1, 1, 1, 1)
+burn_value = -1
 
 [resource]
 script = ExtResource("6_nmlod")

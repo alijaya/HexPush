@@ -3,12 +3,12 @@
 [ext_resource type="Resource" uid="uid://fw4g2tgxefnj" path="res://resource/item/ItemWood.tres" id="1_6x0hh"]
 [ext_resource type="Resource" uid="uid://cu82nk7kwdtgt" path="res://resource/item/ItemStone.tres" id="2_gkfr1"]
 [ext_resource type="Script" path="res://resource/item/_script/ItemStructure.gd" id="3_c0tev"]
-[ext_resource type="Resource" uid="uid://kjt6w0djwg7k" path="res://resource/structure/logistic/StructureCombiner.tres" id="4_1b6km"]
+[ext_resource type="Resource" uid="uid://2pf1no2m2sys" path="res://resource/structure/logistic/StructureSplitter1Way.tres" id="4_08eiu"]
 [ext_resource type="Script" path="res://resource/recipe/Recipe.gd" id="5_1gfqe"]
 
 [sub_resource type="Resource" id="Resource_444k6"]
 script = ExtResource("3_c0tev")
-structure = ExtResource("4_1b6km")
+structure = ExtResource("4_08eiu")
 name = ""
 color = Color(1, 1, 1, 1)
 burn_value = -1
