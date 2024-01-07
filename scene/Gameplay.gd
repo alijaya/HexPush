@@ -217,8 +217,8 @@ func step_tick():
 		if a_structure_priority != b_structure_priority: return a_structure_priority > b_structure_priority
 		else: return a.priority > b.priority
 	)
-	tilemap.erase_data_key(Constant.DataKey.Visited)
-	tilemap.erase_data_key(Constant.DataKey.Confirmed)
+	tilemap.erase_data_layer(Constant.DataKey.Visited)
+	tilemap.erase_data_layer(Constant.DataKey.Confirmed)
 	for structure in structures:
 		structure._step_tick()
 
