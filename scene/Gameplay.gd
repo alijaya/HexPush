@@ -10,6 +10,9 @@ static var I: Gameplay
 @onready var infoPanels: Container = %InfoPanels
 const infoPanelPrefab := preload("res://prefab/info_panel/InfoPanel.tscn")
 
+@export var bgm: AudioStream
+@export var sfxClick: AudioStream
+@export var sfxHold: AudioStream
 @export var bounding: Rect2i = Rect2i()
 @export var initSize: int = 4
 @export var mapGenerator: MapGenerator
@@ -43,6 +46,7 @@ var highlightedCoords: Array[Vector2i] = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	I = self
+	Global.playBGM(bgm)
 	generateMap()
 	
 	# add initial workshop
@@ -191,6 +195,7 @@ func _unhandled_input(event):
 			on_key_press(k.physical_keycode)
 
 func on_left_click():
+	Global.playSFX(sfxClick)
 	#add_structure(coords, StructureGenerator.Default)
 	#remove_structure(coords)
 	#remove_item(coords)
@@ -204,6 +209,7 @@ func on_left_click():
 		structure._on_left_click()
 
 func on_left_hold():
+	Global.playSFX(sfxHold)
 	var structure := get_structure(mouseCoords)
 	if structure:
 		pick_item(mouseCoords)
@@ -228,12 +234,14 @@ func on_left_hold():
 		pickedItem = null
 
 func on_right_click():
+	Global.playSFX(sfxClick)
 	var structure := get_structure(mouseCoords)
 	if structure:
 		structure.rotateCCW()
 		structure._on_right_click()
 
 func on_right_hold():
+	Global.playSFX(sfxHold)
 	pass
 
 func on_key_press(key: Key):

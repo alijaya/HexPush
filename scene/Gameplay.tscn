@@ -1,13 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbbbaid6qsenw"]
+[gd_scene load_steps=9 format=3 uid="uid://cbbbaid6qsenw"]
 
 [ext_resource type="Script" path="res://scene/Gameplay.gd" id="1_skbf5"]
 [ext_resource type="Resource" uid="uid://60xy72c72keb" path="res://resource/MapGenerator.tres" id="2_2d7ta"]
 [ext_resource type="TileSet" uid="uid://b02bhtuwbt788" path="res://resource/TileSet.tres" id="2_4gish"]
 [ext_resource type="Script" path="res://script/DataTileMap.gd" id="3_6purl"]
+[ext_resource type="AudioStream" uid="uid://bacuqics366g4" path="res://asset/sfx/CLACK.mp3" id="3_nic3w"]
+[ext_resource type="AudioStream" uid="uid://bg5j5wao3uycm" path="res://asset/sfx/CLICK.mp3" id="4_giog3"]
 [ext_resource type="Script" path="res://script/CameraMouseControl.gd" id="5_opsyr"]
+[ext_resource type="AudioStream" uid="uid://b5saav8k5exkv" path="res://asset/bgm/bgm-loop.mp3" id="6_lbrus"]
 
 [node name="Gameplay" type="Node2D"]
 script = ExtResource("1_skbf5")
+bgm = ExtResource("6_lbrus")
+sfxClick = ExtResource("3_nic3w")
+sfxHold = ExtResource("4_giog3")
 bounding = Rect2i(-40, -40, 80, 80)
 mapGenerator = ExtResource("2_2d7ta")
 
