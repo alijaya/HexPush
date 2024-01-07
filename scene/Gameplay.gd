@@ -33,8 +33,8 @@ var pickedItem: ItemObject
 
 var mouseCoords: Vector2i = Vector2i.ZERO
 var highlightedCoords: Array[Vector2i] = []
-var structures: Array[StructureObject] = []
-var items: Array[ItemObject] = []
+#var structures: Array[StructureObject] = []
+#var items: Array[ItemObject] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -208,6 +208,7 @@ func loop():
 		step_tick()
 
 func step_tick():
+	var structures := get_all_structures()
 	structures.sort_custom(func (a, b):
 		if !b.structure: return true
 		if !a.structure: return false
@@ -294,6 +295,16 @@ func add_feature(coords: Vector2i, sourceID: int, atlasCoords: Vector2i, alterna
 func get_biome(coordsi: Vector2i) -> Constant.Biome:
 	return tilemap.get_data(coordsi, Constant.DataKey.Biome, Constant.Biome.None)
 
+func get_all_structures() -> Array[StructureObject]:
+	var result: Array[StructureObject] = []
+	result.assign(tilemap.get_data_layer(Constant.DataKey.Structure).values())
+	return result
+
+func get_all_items() -> Array[ItemObject]:
+	var result: Array[ItemObject] = []
+	result.assign(tilemap.get_data_layer(Constant.DataKey.Item).values())
+	return result
+
 func get_structure(coordsi: Vector2i) -> StructureObject:
 	return tilemap.get_data(coordsi, Constant.DataKey.Structure)
 
@@ -339,7 +350,7 @@ func add_structure(coords: Vector2i, structure: Structure, animate: bool = false
 	obj.coords = coords
 	tilemap.add_child(obj)
 	tilemap.set_data(coords, Constant.DataKey.Structure, obj)
-	structures.append(obj)
+	#structures.append(obj)
 	if animate:
 		var tween := obj.create_tween().bind_node(obj)
 		tween.tween_property(obj, "scale", Vector2.ONE, 1./4).from(Vector2.ZERO)
@@ -351,7 +362,7 @@ func add_item(coords: Vector2i, item: Item, animate: bool = false) -> ItemObject
 	obj.coords = coords
 	tilemap.add_child(obj)
 	tilemap.set_data(coords, Constant.DataKey.Item, obj)
-	items.append(obj)
+	#items.append(obj)
 	if animate:
 		var tween := obj.create_tween().bind_node(obj)
 		tween.tween_property(obj, "scale", Vector2.ONE, 1./4).from(Vector2.ZERO)
