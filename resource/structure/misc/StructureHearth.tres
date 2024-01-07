@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StructureHearth" load_steps=3 format=3 uid="uid://cpnsyalqiofy7"]
+
+[ext_resource type="Script" path="res://resource/structure/_script/StructureHearth.gd" id="1_hrv55"]
+[ext_resource type="Texture2D" uid="uid://c0q10rvkiff4h" path="res://asset/structure/008.fire.png" id="2_cwud4"]
+
+[resource]
+script = ExtResource("1_hrv55")
+texture = ExtResource("2_cwud4")
+name = "Hearth"
+color = Color(1, 1, 1, 1)

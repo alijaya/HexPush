@@ -14,7 +14,7 @@ const infoPanelPrefab := preload("res://prefab/info_panel/InfoPanel.tscn")
 @export var sfxClick: AudioStream
 @export var sfxHold: AudioStream
 @export var bounding: Rect2i = Rect2i()
-@export var initSize: int = 4
+@export var initSize: int = 5
 @export var mapGenerator: MapGenerator
 
 var leftHoldTimer: Timer
@@ -43,15 +43,39 @@ var highlightedCoords: Array[Vector2i] = []
 #var structures: Array[StructureObject] = []
 #var items: Array[ItemObject] = []
 
+@onready var hearthProgressBar: ProgressBar = %HearthProgressBar
+
+@export var max_hearth: int = 300:
+	set(v):
+		max_hearth = v
+		_update_hearth()
+
+@export var hearth: int = 120:
+	set(v):
+		hearth = v
+		_update_hearth()
+
+@export var empty_hearth: int:
+	get:
+		return max_hearth - hearth
+
+func _update_hearth():
+	hearthProgressBar.max_value = max_hearth
+	hearthProgressBar.value = hearth
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	I = self
+	_update_hearth()
 	Global.playBGM(bgm)
 	generateMap()
 	
+	# add initial hearth
+	remove_structure(Vector2i(0, 0))
+	add_structure(Vector2i(0, 0), StructureHearth.Default)
 	# add initial workshop
-	remove_structure(Vector2i.ZERO)
-	add_structure(Vector2i.ZERO, StructureMachine.Workshop)
+	remove_structure(Vector2i(3, 3))
+	add_structure(Vector2i(3, 3), StructureMachine.Workshop)
 	
 	loop()
 
@@ -252,9 +276,14 @@ func on_key_press(key: Key):
 func loop():
 	while true:
 		await get_tree().create_timer(secondsPerTick, false).timeout
-		step_tick()
+		if !step_tick(): break
 
 func step_tick():
+	hearth -= 1
+	if hearth <= 0:
+		gameover()
+		return false
+	
 	var structures := get_all_structures()
 	structures.sort_custom(func (a, b):
 		if !b.structure: return true
@@ -268,6 +297,11 @@ func step_tick():
 	tilemap.erase_data_layer(Constant.DataKey.Confirmed)
 	for structure in structures:
 		structure._step_tick()
+	
+	return true
+
+func gameover():
+	print("lose")
 
 func clear_selection():
 	tilemap.clear_layer(Constant.Layer.Selection)

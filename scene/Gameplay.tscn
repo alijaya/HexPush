@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbbbaid6qsenw"]
+[gd_scene load_steps=12 format=3 uid="uid://cbbbaid6qsenw"]
 
 [ext_resource type="Script" path="res://scene/Gameplay.gd" id="1_skbf5"]
 [ext_resource type="Resource" uid="uid://60xy72c72keb" path="res://resource/MapGenerator.tres" id="2_2d7ta"]
@@ -8,6 +8,21 @@
 [ext_resource type="AudioStream" uid="uid://bg5j5wao3uycm" path="res://asset/sfx/CLICK.mp3" id="4_giog3"]
 [ext_resource type="Script" path="res://script/CameraMouseControl.gd" id="5_opsyr"]
 [ext_resource type="AudioStream" uid="uid://b5saav8k5exkv" path="res://asset/bgm/bgm-loop.mp3" id="6_lbrus"]
+[ext_resource type="Texture2D" uid="uid://bhr5aevuls1ux" path="res://asset/bg/sky-1.png" id="6_lntw0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqq3x"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sm2np"]
+bg_color = Color(0.811765, 0.505882, 0.619608, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="Gameplay" type="Node2D"]
 script = ExtResource("1_skbf5")
@@ -16,6 +31,18 @@ sfxClick = ExtResource("3_nic3w")
 sfxHold = ExtResource("4_giog3")
 bounding = Rect2i(-40, -40, 80, 80)
 mapGenerator = ExtResource("2_2d7ta")
+
+[node name="BG" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="BG"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_lntw0")
+stretch_mode = 6
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -86,3 +113,19 @@ offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 0
 alignment = 2
+
+[node name="HearthProgressBar" type="ProgressBar" parent="CanvasLayer/HUD"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 32.0
+offset_top = 28.0
+offset_right = -32.0
+offset_bottom = 55.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_xqq3x")
+theme_override_styles/fill = SubResource("StyleBoxFlat_sm2np")
+step = 1.0
+value = 100.0
+show_percentage = false

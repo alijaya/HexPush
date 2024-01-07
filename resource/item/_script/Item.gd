@@ -5,6 +5,8 @@ class_name Item
 @export var name: String = ""
 @export var color: Color = Color.WHITE
 
+@export var burn_value: int = -1
+
 static var itemPrefab = load("res://prefab/ItemObject.tscn")
 static var infoItemPrefab = load("res://prefab/info_panel/InfoItem.tscn")
 

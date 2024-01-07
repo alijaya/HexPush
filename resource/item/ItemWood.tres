@@ -8,3 +8,4 @@ script = ExtResource("1_fhtea")
 texture = ExtResource("2_7ytq8")
 name = "Wood"
 color = Color(0.819608, 0.478431, 0.270588, 1)
+burn_value = 10

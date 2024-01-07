@@ -8,3 +8,4 @@ script = ExtResource("1_0xfit")
 texture = ExtResource("2_cm0h4")
 name = "Coal"
 color = Color(0.439216, 0.584314, 0.792157, 1)
+burn_value = 60
