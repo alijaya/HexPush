@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("1_5tlkx")
 resourceType = ExtResource("1_mgjrq")
-tickPerClick = 1
+tickPerClick = 4
 texture = ExtResource("3_2jlqs")
 name = "Lumber Camp"
 color = Color(0.784314, 0.364706, 0.168627, 1)

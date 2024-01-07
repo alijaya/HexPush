@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="StructureResource" load_steps=3 format=3 uid="uid://b2kjhr8je0wby"]
+[gd_resource type="Resource" script_class="StructureResource" load_steps=4 format=3 uid="uid://b2kjhr8je0wby"]
 
 [ext_resource type="Script" path="res://resource/structure/_script/StructureResource.gd" id="1_20ac5"]
 [ext_resource type="Resource" uid="uid://cu82nk7kwdtgt" path="res://resource/item/ItemStone.tres" id="1_p7s8j"]
+[ext_resource type="Texture2D" uid="uid://ds28awelweihm" path="res://asset/structure/rock.png" id="3_1fjg4"]
 
 [resource]
 script = ExtResource("1_20ac5")
 output = ExtResource("1_p7s8j")
 hardness = 3
 richness = 15
+texture = ExtResource("3_1fjg4")
 name = "Rock"
 color = Color(0.0745098, 0.145098, 0.196078, 1)
